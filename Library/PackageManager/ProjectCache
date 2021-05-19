@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637565712020326114
-    m_Hash: 2053551833
+      ticks: 637570137168234434
+    m_Hash: 864861835
   m_LockFileStatus:
     m_FilePath: C:/Users/mjyou/Desktop/LectureFile/OSS/TeamProject/Team_Virus/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637565712139976389
-    m_Hash: 2154220959
+      ticks: 637570137168313792
+    m_Hash: 1377510044
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -92,13 +92,15 @@ m_PackageAssets:
         - 5.0.2
         - 5.0.3
         - 5.0.4
+        - 5.0.5
         - 6.0.0-pre.1
         - 6.0.0-pre.2
         - 6.0.1
         - 6.0.3
         compatible:
         - 5.0.4
-        verified: 5.0.4
+        - 5.0.5
+        verified: 5.0.5
       dependencies:
       - name: com.unity.2d.common
         version: 4.0.3
@@ -455,12 +457,14 @@ m_PackageAssets:
         - 5.0.2
         - 5.1.0
         - 5.1.1
+        - 5.1.2
         - 6.0.0-pre.1
         - 6.0.0-pre.2
         - 6.0.0
         compatible:
         - 5.1.1
-        verified: 5.1.1
+        - 5.1.2
+        verified: 5.1.2
       dependencies:
       - name: com.unity.mathematics
         version: 1.1.0
@@ -921,6 +925,80 @@ m_PackageAssets:
         type: git
         url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.vscode.git
         revision: b5ec9b38109e52b1b26597d521e4df75e042ebb9
+        path: 
+    - packageId: com.unity.mobile.android-logcat@1.2.1
+      testable: 0
+      isDirectDependency: 1
+      version: 1.2.1
+      source: 1
+      resolvedPath: C:\Users\mjyou\Desktop\LectureFile\OSS\TeamProject\Team_Virus\Library\PackageCache\com.unity.mobile.android-logcat@1.2.1
+      assetPath: Packages/com.unity.mobile.android-logcat
+      name: com.unity.mobile.android-logcat
+      displayName: Android Logcat
+      author:
+        name: 
+        email: 
+        url: 
+      category: 
+      type: 
+      description: "Android Logcat package adds support for displaying log messages
+        coming from Android devices in Unity Editor. Click the 'View documentation'
+        link above for more information.\n\nThe window can be accessed in Unity Editor
+        via 'Window > Analysis > Android Logcat', or simply by pressing 'Alt+6' on
+        Windows or 'Option+6' on macOS. \n\nMake sure to have Android module loaded
+        and switch to Android build target in 'Build Settings' window if the menu
+        doesn't exist."
+      status: 4
+      errors: []
+      versions:
+        all:
+        - 0.1.5-preview
+        - 0.2.7-preview
+        - 1.0.0
+        - 1.0.1-preview
+        - 1.0.3-preview
+        - 1.1.0
+        - 1.1.1
+        - 1.2.0-preview
+        - 1.2.0
+        - 1.2.1
+        compatible:
+        - 0.1.5-preview
+        - 0.2.7-preview
+        - 1.0.0
+        - 1.0.1-preview
+        - 1.0.3-preview
+        - 1.1.0
+        - 1.1.1
+        - 1.2.0-preview
+        - 1.2.0
+        - 1.2.1
+        verified: 1.2.1
+      dependencies: []
+      resolvedDependencies: []
+      keywords:
+      - Mobile
+      - Android
+      - Logcat
+      registry:
+        id: main
+        name: 
+        url: https://packages.unity.com
+        scopes: []
+        isDefault: 1
+        capabilities: 7
+      hasRegistry: 1
+      hideInEditor: 1
+      entitlements:
+        isAllowed: 1
+      isAssetStorePackage: 0
+      datePublishedTicks: 637479648140000000
+      documentationUrl: 
+      hasRepository: 1
+      repository:
+        type: git
+        url: git+https://github.com/Unity-Technologies/com.unity.mobile.logcat.git
+        revision: 1bb3d0b67733fc73fbd6c88358cfd882d64cc428
         path: 
     - packageId: com.unity.test-framework@1.1.24
       testable: 0
@@ -3174,7 +3252,7 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 0
+      datePublishedTicks: 637429759280000000
       documentationUrl: 
       hasRepository: 1
       repository:
@@ -3287,6 +3365,7 @@ m_PackageAssets:
         - 1.2.0-preview.1
         - 2.0.1
         - 2.0.2
+        - 2.1.0
         - 3.0.0
         - 3.0.1
         - 4.0.0
@@ -3294,6 +3373,8 @@ m_PackageAssets:
         - 4.0.2
         - 4.0.3
         - 5.0.0-pre.1
+        - 5.0.0-pre.2
+        - 5.0.0
         compatible:
         - 4.0.2
         - 4.0.3
@@ -3367,12 +3448,15 @@ m_PackageAssets:
         - 2.0.4
         - 2.0.5
         - 2.0.6
+        - 2.1.0
         - 3.0.0
         - 3.0.1
         - 3.0.2
         - 4.0.0
         - 4.0.1
         - 5.0.0-pre.1
+        - 5.0.0-pre.2
+        - 5.0.0
         compatible:
         - 4.0.1
         verified: 4.0.1

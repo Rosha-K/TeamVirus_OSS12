@@ -6,6 +6,7 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
+    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.IK.Runtime.dll:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
@@ -603,4 +604,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/MaineScene.unity
-  playerPath: C:/Users/mjyou/Desktop/LectureFile/OSS/TeamProject/Team_Virus/TestBuild/Test1.apk
+  playerPath: C:/Users/mjyou/Desktop/LectureFile/OSS/TeamProject/Team_Virus/TestBuild/Test2.apk
