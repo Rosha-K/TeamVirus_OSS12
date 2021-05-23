@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Manager : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -24,7 +24,39 @@ public class Manager : MonoBehaviour
 
 
         }
+
+
     }
-    
+    public void GotoMain()
+    {
+
+        SceneManager.LoadScene("MainScene");
+
+
+    }
+    public void GotoCityState()
+    {
+        
+        SceneManager.LoadScene("CoronaCityState");
+        
+
+    }
+    public void GotoCenterMap()
+    {
+
+        SceneManager.LoadScene("CoronaCenterMap");
+
+
+    }
+    public void GotoStatistics()
+    {
+
+        SceneManager.LoadScene("CoronaStatistics");
+
+
+    }
+
+
+
 
 }
