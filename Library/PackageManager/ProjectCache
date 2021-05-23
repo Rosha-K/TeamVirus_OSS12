@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637570137168234434
-    m_Hash: 864861835
+      ticks: 637573713438970425
+    m_Hash: 3321676380
   m_LockFileStatus:
     m_FilePath: C:/Users/mjyou/Desktop/LectureFile/OSS/TeamProject/Team_Virus/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637570137168313792
-    m_Hash: 1377510044
+      ticks: 637573713438985306
+    m_Hash: 2928641381
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -715,6 +715,7 @@ m_PackageAssets:
         - 3.0.4
         - 3.0.5
         - 3.0.6
+        - 3.0.7
         compatible:
         - 1.0.2
         - 1.0.6
@@ -740,6 +741,7 @@ m_PackageAssets:
         - 3.0.4
         - 3.0.5
         - 3.0.6
+        - 3.0.7
         verified: 2.0.7
       dependencies:
       - name: com.unity.test-framework
