@@ -59,8 +59,8 @@
     <Compile Include="Assets\YouMustSeeIt.cs" />
     <Compile Include="Assets\Scripts\Manager.cs" />
     <Compile Include="Assets\Scripts\ApplicationChrome.cs" />
-    <Compile Include="Assets\Scripts\GoogleMapAPI.cs" />
-    <Compile Include="Assets\Scripts\LoadAPi.cs" />
+    <Compile Include="Assets\Scripts\LoadAPI.cs" />
+    <Compile Include="Assets\Scripts\GoogleMap.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - LoadAPI
     - Manager
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
@@ -17,6 +18,8 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
+    Unity.Mobile.AndroidLogcat.Editor.dll:
+    - Unity.Android.Logcat.AndroidLogcatManager
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.TestRunner.dll:
@@ -30,7 +33,88 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.RawImage
   sceneClasses:
+    Assets/Scenes/CoronaCenterMap.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 2250}
+    - Class: 114
+      Script: {instanceID: 2470}
+    - Class: 114
+      Script: {instanceID: 2622}
+    - Class: 114
+      Script: {instanceID: 2740}
+    - Class: 114
+      Script: {instanceID: 2810}
+    - Class: 114
+      Script: {instanceID: 3028}
+    - Class: 114
+      Script: {instanceID: 20354}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/CoronaCityState.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 2470}
+    - Class: 114
+      Script: {instanceID: 2622}
+    - Class: 114
+      Script: {instanceID: 2740}
+    - Class: 114
+      Script: {instanceID: 2810}
+    - Class: 114
+      Script: {instanceID: 3028}
+    - Class: 114
+      Script: {instanceID: 4236}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
     Assets/Scenes/MaineScene.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -51,17 +135,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1486}
     - Class: 114
-      Script: {instanceID: 2444}
+      Script: {instanceID: 2470}
     - Class: 114
-      Script: {instanceID: 2590}
+      Script: {instanceID: 2622}
     - Class: 114
-      Script: {instanceID: 2696}
+      Script: {instanceID: 2740}
     - Class: 114
-      Script: {instanceID: 2762}
+      Script: {instanceID: 2810}
     - Class: 114
-      Script: {instanceID: 2972}
+      Script: {instanceID: 3028}
     - Class: 114
-      Script: {instanceID: 3074}
+      Script: {instanceID: 3134}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -513,6 +597,12 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LoadAPI
+  - hash:
+      serializedVersion: 2
       Hash: 18c222bef9ae745ce69ddde9b74337ca
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -604,4 +694,6 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/MaineScene.unity
-  playerPath: C:/Users/mjyou/Desktop/LectureFile/OSS/TeamProject/Team_Virus/TestBuild/Test2.apk
+  - Assets/Scenes/CoronaCityState.unity
+  - Assets/Scenes/CoronaCenterMap.unity
+  playerPath: C:/Users/mjyou/Desktop/LectureFile/OSS/TeamProject/Team_Virus/TestBuild/Test3.apk
