@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CoronaCenterMap.unity
     guid: 094c885c6d2297740a42a8e4e1877301
+  - enabled: 1
+    path: Assets/Scenes/CoronaStatistics.unity
+    guid: a9cbea61a26b7614d997275a69b488cf
   m_configObjects: {}

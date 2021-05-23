@@ -35,6 +35,7 @@
         "C:/Users/mjyou/Desktop/LectureFile/OSS/TeamProject/Team_Virus/Temp/StagingArea/assets/bin/Data/Managed/UnityEngine.CoreModule.dll",
         "C:/Users/mjyou/Desktop/LectureFile/OSS/TeamProject/Team_Virus/Temp/StagingArea/assets/bin/Data/Managed/UnityEngine.dll",
         "C:/Users/mjyou/Desktop/LectureFile/OSS/TeamProject/Team_Virus/Temp/StagingArea/assets/bin/Data/Managed/UnityEngine.GridModule.dll",
+        "C:/Users/mjyou/Desktop/LectureFile/OSS/TeamProject/Team_Virus/Temp/StagingArea/assets/bin/Data/Managed/UnityEngine.ImageConversionModule.dll",
         "C:/Users/mjyou/Desktop/LectureFile/OSS/TeamProject/Team_Virus/Temp/StagingArea/assets/bin/Data/Managed/UnityEngine.IMGUIModule.dll",
         "C:/Users/mjyou/Desktop/LectureFile/OSS/TeamProject/Team_Virus/Temp/StagingArea/assets/bin/Data/Managed/UnityEngine.InputLegacyModule.dll",
         "C:/Users/mjyou/Desktop/LectureFile/OSS/TeamProject/Team_Virus/Temp/StagingArea/assets/bin/Data/Managed/UnityEngine.Physics2DModule.dll",
@@ -45,7 +46,8 @@
         "C:/Users/mjyou/Desktop/LectureFile/OSS/TeamProject/Team_Virus/Temp/StagingArea/assets/bin/Data/Managed/UnityEngine.TilemapModule.dll",
         "C:/Users/mjyou/Desktop/LectureFile/OSS/TeamProject/Team_Virus/Temp/StagingArea/assets/bin/Data/Managed/UnityEngine.UI.dll",
         "C:/Users/mjyou/Desktop/LectureFile/OSS/TeamProject/Team_Virus/Temp/StagingArea/assets/bin/Data/Managed/UnityEngine.UIModule.dll",
-        "C:/Users/mjyou/Desktop/LectureFile/OSS/TeamProject/Team_Virus/Temp/StagingArea/assets/bin/Data/Managed/UnityEngine.UnityWebRequestModule.dll"
+        "C:/Users/mjyou/Desktop/LectureFile/OSS/TeamProject/Team_Virus/Temp/StagingArea/assets/bin/Data/Managed/UnityEngine.UnityWebRequestModule.dll",
+        "C:/Users/mjyou/Desktop/LectureFile/OSS/TeamProject/Team_Virus/Temp/StagingArea/assets/bin/Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll"
       ],
       "Outputs": [
         "C:/Users/mjyou/Desktop/LectureFile/OSS/TeamProject/Team_Virus/Library/Il2cppBuildCache/Android/armeabi-v7a/Native/armeabi-v7a/libil2cpp.so"

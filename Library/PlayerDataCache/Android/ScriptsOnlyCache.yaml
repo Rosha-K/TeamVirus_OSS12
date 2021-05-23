@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - GoogleMap
     - LoadAPI
     - Manager
     Unity.2D.Animation.Editor.dll:
@@ -53,19 +54,23 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 2250}
+      Script: {instanceID: 1486}
     - Class: 114
-      Script: {instanceID: 2470}
+      Script: {instanceID: 2018}
     - Class: 114
-      Script: {instanceID: 2622}
+      Script: {instanceID: 2252}
     - Class: 114
-      Script: {instanceID: 2740}
+      Script: {instanceID: 2472}
     - Class: 114
-      Script: {instanceID: 2810}
+      Script: {instanceID: 2624}
     - Class: 114
-      Script: {instanceID: 3028}
+      Script: {instanceID: 2742}
     - Class: 114
-      Script: {instanceID: 20354}
+      Script: {instanceID: 2812}
+    - Class: 114
+      Script: {instanceID: 3030}
+    - Class: 114
+      Script: {instanceID: 3136}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -73,6 +78,8 @@ ScriptsOnlyBuild:
     - Class: 196
       Script: {instanceID: 0}
     - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
       Script: {instanceID: 0}
     - Class: 222
       Script: {instanceID: 0}
@@ -87,6 +94,57 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 20
       Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 60
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1486}
+    - Class: 114
+      Script: {instanceID: 2472}
+    - Class: 114
+      Script: {instanceID: 2624}
+    - Class: 114
+      Script: {instanceID: 2742}
+    - Class: 114
+      Script: {instanceID: 2812}
+    - Class: 114
+      Script: {instanceID: 3030}
+    - Class: 114
+      Script: {instanceID: 3136}
+    - Class: 114
+      Script: {instanceID: 4238}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/CoronaStatistics.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
     - Class: 28
       Script: {instanceID: 0}
     - Class: 81
@@ -94,28 +152,34 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 2470}
+      Script: {instanceID: 1486}
     - Class: 114
-      Script: {instanceID: 2622}
+      Script: {instanceID: 2472}
     - Class: 114
-      Script: {instanceID: 2740}
+      Script: {instanceID: 2624}
     - Class: 114
-      Script: {instanceID: 2810}
+      Script: {instanceID: 2742}
     - Class: 114
-      Script: {instanceID: 3028}
+      Script: {instanceID: 2812}
     - Class: 114
-      Script: {instanceID: 4236}
+      Script: {instanceID: 3030}
+    - Class: 114
+      Script: {instanceID: 3136}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
       Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
-    Assets/Scenes/MaineScene.unity:
+    Assets/Scenes/MainScene.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -135,17 +199,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1486}
     - Class: 114
-      Script: {instanceID: 2470}
+      Script: {instanceID: 2472}
     - Class: 114
-      Script: {instanceID: 2622}
+      Script: {instanceID: 2624}
     - Class: 114
-      Script: {instanceID: 2740}
+      Script: {instanceID: 2742}
     - Class: 114
-      Script: {instanceID: 2810}
+      Script: {instanceID: 2812}
     - Class: 114
-      Script: {instanceID: 3028}
+      Script: {instanceID: 3030}
     - Class: 114
-      Script: {instanceID: 3134}
+      Script: {instanceID: 3136}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -247,6 +311,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_FontAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 031b15ded38ccce7084b77609f67d5d1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GoogleMap
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -693,7 +763,8 @@ ScriptsOnlyBuild:
     className: FabrikSolver2D
   platform: 13
   scenePathNames:
-  - Assets/Scenes/MaineScene.unity
+  - Assets/Scenes/MainScene.unity
   - Assets/Scenes/CoronaCityState.unity
   - Assets/Scenes/CoronaCenterMap.unity
+  - Assets/Scenes/CoronaStatistics.unity
   playerPath: C:/Users/mjyou/Desktop/LectureFile/OSS/TeamProject/Team_Virus/TestBuild/Test3.apk

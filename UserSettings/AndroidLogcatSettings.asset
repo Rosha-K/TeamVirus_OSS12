@@ -1,9 +1,9 @@
 {
     "m_SelectedDeviceId": "LMV409N8cbc56af",
     "m_SelectedPackage": {
-        "deviceId": "LMV409N8cbc56af",
-        "name": "com.Team_Virus.Corona19livecheck",
-        "processId": 1281,
+        "deviceId": "",
+        "name": "",
+        "processId": 0,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -12,6 +12,24 @@
             "deviceId": "LMV409N8cbc56af",
             "name": "com.Team_Virus.Corona19livecheck",
             "processId": 1281,
+            "exited": true
+        },
+        {
+            "deviceId": "LMV409N8cbc56af",
+            "name": "com.Team_Virus.Corona19livecheck",
+            "processId": 27242,
+            "exited": true
+        },
+        {
+            "deviceId": "LMV409N8cbc56af",
+            "name": "com.Team_Virus.Corona19livecheck",
+            "processId": 28050,
+            "exited": true
+        },
+        {
+            "deviceId": "LMV409N8cbc56af",
+            "name": "com.lge.launcher3",
+            "processId": 3004,
             "exited": false
         }
     ],

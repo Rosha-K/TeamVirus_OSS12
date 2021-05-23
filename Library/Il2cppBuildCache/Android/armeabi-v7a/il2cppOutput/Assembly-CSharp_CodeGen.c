@@ -56,39 +56,73 @@ extern void ApplicationChrome_get_navigationBarColor_mC5F05B846AA80A827C46B6B800
 extern void ApplicationChrome_set_navigationBarColor_mF5C508174D9F53F8F19BA1579D428F8525D71EFB (void);
 // 0x00000016 System.Void ApplicationChrome::.ctor()
 extern void ApplicationChrome__ctor_m8BB8C42369132FC28B53A87D6677C5D2803EDCCE (void);
-// 0x00000017 System.Void LoadAPI::Start()
+// 0x00000017 System.Void GoogleMap::Start()
+extern void GoogleMap_Start_m3B81192D26B7538F15FE18A4108D90995E8501D5 (void);
+// 0x00000018 System.Void GoogleMap::Refresh()
+extern void GoogleMap_Refresh_m2F5F56403A77E3DD56AE1E7BC0AB1CF7ADE6D1FC (void);
+// 0x00000019 System.Collections.IEnumerator GoogleMap::_Refresh()
+extern void GoogleMap__Refresh_mD17B4CE9DCB0A180C0634AA8E7F0EACE3BE12415 (void);
+// 0x0000001A System.Void GoogleMap::.ctor()
+extern void GoogleMap__ctor_m7A455F11A67AD30B38A0981C97F4EC74C7F3E45F (void);
+// 0x0000001B System.Void GoogleMap/<_Refresh>d__13::.ctor(System.Int32)
+extern void U3C_RefreshU3Ed__13__ctor_m2B840FAE445FF21376D2C933236B399C8B2240C0 (void);
+// 0x0000001C System.Void GoogleMap/<_Refresh>d__13::System.IDisposable.Dispose()
+extern void U3C_RefreshU3Ed__13_System_IDisposable_Dispose_m615BA0FA3EE09BA271A26AE545A886A4643A6CDA (void);
+// 0x0000001D System.Boolean GoogleMap/<_Refresh>d__13::MoveNext()
+extern void U3C_RefreshU3Ed__13_MoveNext_m5759944127B4E681E531656613A0CB1D42D9FC9A (void);
+// 0x0000001E System.Object GoogleMap/<_Refresh>d__13::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+extern void U3C_RefreshU3Ed__13_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m2D5854A33346D22C694C063D020B5A9069E67043 (void);
+// 0x0000001F System.Void GoogleMap/<_Refresh>d__13::System.Collections.IEnumerator.Reset()
+extern void U3C_RefreshU3Ed__13_System_Collections_IEnumerator_Reset_m2D15B3767DD81F4C054C51B9621554786E1002D0 (void);
+// 0x00000020 System.Object GoogleMap/<_Refresh>d__13::System.Collections.IEnumerator.get_Current()
+extern void U3C_RefreshU3Ed__13_System_Collections_IEnumerator_get_Current_mEEDAECA241737B8B57305D4AB7C927B8C18F7F0D (void);
+// 0x00000021 System.Void GoogleMapLocation::.ctor()
+extern void GoogleMapLocation__ctor_m55EACD332351F45FFDD8F6AD2B81F972508C0D34 (void);
+// 0x00000022 System.Void GoogleMapMarker::.ctor()
+extern void GoogleMapMarker__ctor_mCED8D827BB135B43593FED4183ACC1C7C02A0DDA (void);
+// 0x00000023 System.Void GoogleMapPath::.ctor()
+extern void GoogleMapPath__ctor_mCCEC252024CDD9215AADAACB267B4C9421FB43C2 (void);
+// 0x00000024 System.Void LoadAPI::Start()
 extern void LoadAPI_Start_mD1109BAE13AAC2C9CFB62C2A6FE97A84FEAEC8A0 (void);
-// 0x00000018 System.Collections.IEnumerator LoadAPI::LoadData()
+// 0x00000025 System.Collections.IEnumerator LoadAPI::LoadData()
 extern void LoadAPI_LoadData_mF005641800DD29E4D53E5876334A18658DBF713F (void);
-// 0x00000019 System.Void LoadAPI::.ctor()
+// 0x00000026 System.Void LoadAPI::.ctor()
 extern void LoadAPI__ctor_m0438416BA4E17E3B46CF2815A649B651BD576CF0 (void);
-// 0x0000001A System.Void LoadAPI/<LoadData>d__3::.ctor(System.Int32)
+// 0x00000027 System.Void LoadAPI/<LoadData>d__3::.ctor(System.Int32)
 extern void U3CLoadDataU3Ed__3__ctor_m6C481B496607CB52D7542307F3BBD6742D96A4AC (void);
-// 0x0000001B System.Void LoadAPI/<LoadData>d__3::System.IDisposable.Dispose()
+// 0x00000028 System.Void LoadAPI/<LoadData>d__3::System.IDisposable.Dispose()
 extern void U3CLoadDataU3Ed__3_System_IDisposable_Dispose_m65DBF7BAAE731C052DEFCB30ECC7ED07B4E1EEA7 (void);
-// 0x0000001C System.Boolean LoadAPI/<LoadData>d__3::MoveNext()
+// 0x00000029 System.Boolean LoadAPI/<LoadData>d__3::MoveNext()
 extern void U3CLoadDataU3Ed__3_MoveNext_mC11B02EDBECB98D0D48A40076EC3607CD31D1C9F (void);
-// 0x0000001D System.Void LoadAPI/<LoadData>d__3::<>m__Finally1()
+// 0x0000002A System.Void LoadAPI/<LoadData>d__3::<>m__Finally1()
 extern void U3CLoadDataU3Ed__3_U3CU3Em__Finally1_m37B7E7D2901033F8620D2C861DD1AC9DAE873E68 (void);
-// 0x0000001E System.Object LoadAPI/<LoadData>d__3::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x0000002B System.Object LoadAPI/<LoadData>d__3::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CLoadDataU3Ed__3_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mA1D825602658C7F81EC3FC41770E13777BABC7E7 (void);
-// 0x0000001F System.Void LoadAPI/<LoadData>d__3::System.Collections.IEnumerator.Reset()
+// 0x0000002C System.Void LoadAPI/<LoadData>d__3::System.Collections.IEnumerator.Reset()
 extern void U3CLoadDataU3Ed__3_System_Collections_IEnumerator_Reset_m7D14A77BE20FFE988B6FEC375EF6A1F7CE391776 (void);
-// 0x00000020 System.Object LoadAPI/<LoadData>d__3::System.Collections.IEnumerator.get_Current()
+// 0x0000002D System.Object LoadAPI/<LoadData>d__3::System.Collections.IEnumerator.get_Current()
 extern void U3CLoadDataU3Ed__3_System_Collections_IEnumerator_get_Current_m89B172F43835C3FFC388FD73CF31AB4A604E8358 (void);
-// 0x00000021 System.Void Manager::Start()
+// 0x0000002E System.Void Manager::Start()
 extern void Manager_Start_mD3C29E49C67909A303603541E6CE9BC5C26796CD (void);
-// 0x00000022 System.Void Manager::Update()
+// 0x0000002F System.Void Manager::Update()
 extern void Manager_Update_m75BF2DFC9C300743E190F02E9D8427F36DB70780 (void);
-// 0x00000023 System.Void Manager::.ctor()
+// 0x00000030 System.Void Manager::GotoMain()
+extern void Manager_GotoMain_m2585756FE6792C34A0AF322CC72939631CD8B74D (void);
+// 0x00000031 System.Void Manager::GotoCityState()
+extern void Manager_GotoCityState_mAA010B0A85DC445C209B49C3310326B58F174678 (void);
+// 0x00000032 System.Void Manager::GotoCenterMap()
+extern void Manager_GotoCenterMap_mEA2466DD0EFF276CDF081E61FFBC792312CB1584 (void);
+// 0x00000033 System.Void Manager::GotoStatistics()
+extern void Manager_GotoStatistics_m8EC96B849ACD1839440EC42CDBF73A720621DDD5 (void);
+// 0x00000034 System.Void Manager::.ctor()
 extern void Manager__ctor_m5B9F7AAE653DB0466943D59D3579FFCCFC32631E (void);
-// 0x00000024 System.Void NewBehaviourScript::Start()
+// 0x00000035 System.Void NewBehaviourScript::Start()
 extern void NewBehaviourScript_Start_m783F84A617DADC4574B0BF1524481E6B96C65661 (void);
-// 0x00000025 System.Void NewBehaviourScript::Update()
+// 0x00000036 System.Void NewBehaviourScript::Update()
 extern void NewBehaviourScript_Update_m411C4D5C2D993FD70092FDA0FE2AC4786F8AC001 (void);
-// 0x00000026 System.Void NewBehaviourScript::.ctor()
+// 0x00000037 System.Void NewBehaviourScript::.ctor()
 extern void NewBehaviourScript__ctor_m437970EA37D66BDF32972F4CC0F65B95E5961FAA (void);
-static Il2CppMethodPointer s_methodPointers[38] = 
+static Il2CppMethodPointer s_methodPointers[55] = 
 {
 	ApplicationChrome__cctor_m6909A1137009CAC2DCD7405D507757C7CBA88329,
 	ApplicationChrome_applyUIStates_mD2B9ACFC934A227B04815695103E2F5CA60FFFA0,
@@ -112,6 +146,19 @@ static Il2CppMethodPointer s_methodPointers[38] =
 	ApplicationChrome_get_navigationBarColor_mC5F05B846AA80A827C46B6B8002204DDFE90ED9F,
 	ApplicationChrome_set_navigationBarColor_mF5C508174D9F53F8F19BA1579D428F8525D71EFB,
 	ApplicationChrome__ctor_m8BB8C42369132FC28B53A87D6677C5D2803EDCCE,
+	GoogleMap_Start_m3B81192D26B7538F15FE18A4108D90995E8501D5,
+	GoogleMap_Refresh_m2F5F56403A77E3DD56AE1E7BC0AB1CF7ADE6D1FC,
+	GoogleMap__Refresh_mD17B4CE9DCB0A180C0634AA8E7F0EACE3BE12415,
+	GoogleMap__ctor_m7A455F11A67AD30B38A0981C97F4EC74C7F3E45F,
+	U3C_RefreshU3Ed__13__ctor_m2B840FAE445FF21376D2C933236B399C8B2240C0,
+	U3C_RefreshU3Ed__13_System_IDisposable_Dispose_m615BA0FA3EE09BA271A26AE545A886A4643A6CDA,
+	U3C_RefreshU3Ed__13_MoveNext_m5759944127B4E681E531656613A0CB1D42D9FC9A,
+	U3C_RefreshU3Ed__13_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m2D5854A33346D22C694C063D020B5A9069E67043,
+	U3C_RefreshU3Ed__13_System_Collections_IEnumerator_Reset_m2D15B3767DD81F4C054C51B9621554786E1002D0,
+	U3C_RefreshU3Ed__13_System_Collections_IEnumerator_get_Current_mEEDAECA241737B8B57305D4AB7C927B8C18F7F0D,
+	GoogleMapLocation__ctor_m55EACD332351F45FFDD8F6AD2B81F972508C0D34,
+	GoogleMapMarker__ctor_mCED8D827BB135B43593FED4183ACC1C7C02A0DDA,
+	GoogleMapPath__ctor_mCCEC252024CDD9215AADAACB267B4C9421FB43C2,
 	LoadAPI_Start_mD1109BAE13AAC2C9CFB62C2A6FE97A84FEAEC8A0,
 	LoadAPI_LoadData_mF005641800DD29E4D53E5876334A18658DBF713F,
 	LoadAPI__ctor_m0438416BA4E17E3B46CF2815A649B651BD576CF0,
@@ -124,58 +171,79 @@ static Il2CppMethodPointer s_methodPointers[38] =
 	U3CLoadDataU3Ed__3_System_Collections_IEnumerator_get_Current_m89B172F43835C3FFC388FD73CF31AB4A604E8358,
 	Manager_Start_mD3C29E49C67909A303603541E6CE9BC5C26796CD,
 	Manager_Update_m75BF2DFC9C300743E190F02E9D8427F36DB70780,
+	Manager_GotoMain_m2585756FE6792C34A0AF322CC72939631CD8B74D,
+	Manager_GotoCityState_mAA010B0A85DC445C209B49C3310326B58F174678,
+	Manager_GotoCenterMap_mEA2466DD0EFF276CDF081E61FFBC792312CB1584,
+	Manager_GotoStatistics_m8EC96B849ACD1839440EC42CDBF73A720621DDD5,
 	Manager__ctor_m5B9F7AAE653DB0466943D59D3579FFCCFC32631E,
 	NewBehaviourScript_Start_m783F84A617DADC4574B0BF1524481E6B96C65661,
 	NewBehaviourScript_Update_m411C4D5C2D993FD70092FDA0FE2AC4786F8AC001,
 	NewBehaviourScript__ctor_m437970EA37D66BDF32972F4CC0F65B95E5961FAA,
 };
-static const int32_t s_InvokerIndices[38] = 
+static const int32_t s_InvokerIndices[55] = 
 {
-	1933,
-	1933,
-	1933,
-	1933,
-	1899,
-	1897,
-	1933,
-	1897,
-	1933,
-	1933,
-	1933,
-	1916,
-	1897,
-	1916,
-	1897,
-	1927,
-	1901,
-	1916,
-	1897,
-	1916,
-	1897,
-	1134,
-	1134,
-	1103,
-	1134,
-	963,
-	1134,
-	1122,
-	1134,
-	1103,
-	1134,
-	1103,
-	1134,
-	1134,
-	1134,
-	1134,
-	1134,
-	1134,
+	1982,
+	1982,
+	1982,
+	1982,
+	1947,
+	1945,
+	1982,
+	1945,
+	1982,
+	1982,
+	1982,
+	1964,
+	1945,
+	1964,
+	1945,
+	1976,
+	1949,
+	1964,
+	1945,
+	1964,
+	1945,
+	1151,
+	1151,
+	1151,
+	1120,
+	1151,
+	978,
+	1151,
+	1139,
+	1120,
+	1151,
+	1120,
+	1151,
+	1151,
+	1151,
+	1151,
+	1120,
+	1151,
+	978,
+	1151,
+	1139,
+	1151,
+	1120,
+	1151,
+	1120,
+	1151,
+	1151,
+	1151,
+	1151,
+	1151,
+	1151,
+	1151,
+	1151,
+	1151,
+	1151,
 };
 extern const CustomAttributesCacheGenerator g_AssemblyU2DCSharp_AttributeGenerators[];
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	38,
+	55,
 	s_methodPointers,
 	0,
 	NULL,
