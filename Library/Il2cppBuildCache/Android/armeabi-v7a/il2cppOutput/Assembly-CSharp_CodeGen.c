@@ -82,47 +82,53 @@ extern void GoogleMapLocation__ctor_m55EACD332351F45FFDD8F6AD2B81F972508C0D34 (v
 extern void GoogleMapMarker__ctor_mCED8D827BB135B43593FED4183ACC1C7C02A0DDA (void);
 // 0x00000023 System.Void GoogleMapPath::.ctor()
 extern void GoogleMapPath__ctor_mCCEC252024CDD9215AADAACB267B4C9421FB43C2 (void);
-// 0x00000024 System.Void LoadAPI::Start()
-extern void LoadAPI_Start_mD1109BAE13AAC2C9CFB62C2A6FE97A84FEAEC8A0 (void);
-// 0x00000025 System.Collections.IEnumerator LoadAPI::LoadData()
-extern void LoadAPI_LoadData_mF005641800DD29E4D53E5876334A18658DBF713F (void);
-// 0x00000026 System.Void LoadAPI::.ctor()
-extern void LoadAPI__ctor_m0438416BA4E17E3B46CF2815A649B651BD576CF0 (void);
-// 0x00000027 System.Void LoadAPI/<LoadData>d__3::.ctor(System.Int32)
-extern void U3CLoadDataU3Ed__3__ctor_m6C481B496607CB52D7542307F3BBD6742D96A4AC (void);
-// 0x00000028 System.Void LoadAPI/<LoadData>d__3::System.IDisposable.Dispose()
-extern void U3CLoadDataU3Ed__3_System_IDisposable_Dispose_m65DBF7BAAE731C052DEFCB30ECC7ED07B4E1EEA7 (void);
-// 0x00000029 System.Boolean LoadAPI/<LoadData>d__3::MoveNext()
-extern void U3CLoadDataU3Ed__3_MoveNext_mC11B02EDBECB98D0D48A40076EC3607CD31D1C9F (void);
-// 0x0000002A System.Void LoadAPI/<LoadData>d__3::<>m__Finally1()
-extern void U3CLoadDataU3Ed__3_U3CU3Em__Finally1_m37B7E7D2901033F8620D2C861DD1AC9DAE873E68 (void);
-// 0x0000002B System.Object LoadAPI/<LoadData>d__3::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
-extern void U3CLoadDataU3Ed__3_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mA1D825602658C7F81EC3FC41770E13777BABC7E7 (void);
-// 0x0000002C System.Void LoadAPI/<LoadData>d__3::System.Collections.IEnumerator.Reset()
-extern void U3CLoadDataU3Ed__3_System_Collections_IEnumerator_Reset_m7D14A77BE20FFE988B6FEC375EF6A1F7CE391776 (void);
-// 0x0000002D System.Object LoadAPI/<LoadData>d__3::System.Collections.IEnumerator.get_Current()
-extern void U3CLoadDataU3Ed__3_System_Collections_IEnumerator_get_Current_m89B172F43835C3FFC388FD73CF31AB4A604E8358 (void);
-// 0x0000002E System.Void Manager::Start()
+// 0x00000024 System.Void Manager::Start()
 extern void Manager_Start_mD3C29E49C67909A303603541E6CE9BC5C26796CD (void);
-// 0x0000002F System.Void Manager::Update()
+// 0x00000025 System.Void Manager::Update()
 extern void Manager_Update_m75BF2DFC9C300743E190F02E9D8427F36DB70780 (void);
-// 0x00000030 System.Void Manager::GotoMain()
+// 0x00000026 System.Void Manager::GotoMain()
 extern void Manager_GotoMain_m2585756FE6792C34A0AF322CC72939631CD8B74D (void);
-// 0x00000031 System.Void Manager::GotoCityState()
+// 0x00000027 System.Void Manager::GotoCityState()
 extern void Manager_GotoCityState_mAA010B0A85DC445C209B49C3310326B58F174678 (void);
-// 0x00000032 System.Void Manager::GotoCenterMap()
+// 0x00000028 System.Void Manager::GotoCenterMap()
 extern void Manager_GotoCenterMap_mEA2466DD0EFF276CDF081E61FFBC792312CB1584 (void);
-// 0x00000033 System.Void Manager::GotoStatistics()
+// 0x00000029 System.Void Manager::GotoStatistics()
 extern void Manager_GotoStatistics_m8EC96B849ACD1839440EC42CDBF73A720621DDD5 (void);
-// 0x00000034 System.Void Manager::.ctor()
+// 0x0000002A System.Void Manager::.ctor()
 extern void Manager__ctor_m5B9F7AAE653DB0466943D59D3579FFCCFC32631E (void);
-// 0x00000035 System.Void NewBehaviourScript::Start()
+// 0x0000002B System.Void SidoStateAPI::Start()
+extern void SidoStateAPI_Start_m58A0577BD394D8B89A11312A1CE663EDC577D59C (void);
+// 0x0000002C System.Void SidoStateAPI::Update()
+extern void SidoStateAPI_Update_m668E9AC1BFA8CC960299844D2A99BDCB37CF2017 (void);
+// 0x0000002D System.Collections.IEnumerator SidoStateAPI::LoadData()
+extern void SidoStateAPI_LoadData_m66C2DA4487661064ABFE172DBBFE47A801299990 (void);
+// 0x0000002E System.Void SidoStateAPI::ProcessPlayer(System.Xml.XmlDocument)
+extern void SidoStateAPI_ProcessPlayer_m8712D7FEDBCB888B9267EB6C36895BC7B0452E05 (void);
+// 0x0000002F System.Void SidoStateAPI::showState()
+extern void SidoStateAPI_showState_m94F02018D0E954D38615227514320E554B6F65BE (void);
+// 0x00000030 System.Void SidoStateAPI::.ctor()
+extern void SidoStateAPI__ctor_mE30FB6E4F83595C6DE7498A06B05BC42FEABC752 (void);
+// 0x00000031 System.Void SidoStateAPI/<LoadData>d__8::.ctor(System.Int32)
+extern void U3CLoadDataU3Ed__8__ctor_m4952E353ED7BB786D4EEC19278DB93C3D2FE1E60 (void);
+// 0x00000032 System.Void SidoStateAPI/<LoadData>d__8::System.IDisposable.Dispose()
+extern void U3CLoadDataU3Ed__8_System_IDisposable_Dispose_m6BC43C897CCDC0A834C5FAB400281DFF8C724E51 (void);
+// 0x00000033 System.Boolean SidoStateAPI/<LoadData>d__8::MoveNext()
+extern void U3CLoadDataU3Ed__8_MoveNext_m2C42C55946A7B9C0850455B38B36081D532A1139 (void);
+// 0x00000034 System.Void SidoStateAPI/<LoadData>d__8::<>m__Finally1()
+extern void U3CLoadDataU3Ed__8_U3CU3Em__Finally1_m36C92A35E8D86D1CA72FC7BB0A0F4FE726072D51 (void);
+// 0x00000035 System.Object SidoStateAPI/<LoadData>d__8::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+extern void U3CLoadDataU3Ed__8_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mE14BFDC75FC360090166A5FA91D9B858B7D7A138 (void);
+// 0x00000036 System.Void SidoStateAPI/<LoadData>d__8::System.Collections.IEnumerator.Reset()
+extern void U3CLoadDataU3Ed__8_System_Collections_IEnumerator_Reset_mAF7BA3C3C9B5A4ED9B0F81167B6FF73506E23E9F (void);
+// 0x00000037 System.Object SidoStateAPI/<LoadData>d__8::System.Collections.IEnumerator.get_Current()
+extern void U3CLoadDataU3Ed__8_System_Collections_IEnumerator_get_Current_m6A2769C1A7DEEB5276081C7398006748EDB1CA6B (void);
+// 0x00000038 System.Void NewBehaviourScript::Start()
 extern void NewBehaviourScript_Start_m783F84A617DADC4574B0BF1524481E6B96C65661 (void);
-// 0x00000036 System.Void NewBehaviourScript::Update()
+// 0x00000039 System.Void NewBehaviourScript::Update()
 extern void NewBehaviourScript_Update_m411C4D5C2D993FD70092FDA0FE2AC4786F8AC001 (void);
-// 0x00000037 System.Void NewBehaviourScript::.ctor()
+// 0x0000003A System.Void NewBehaviourScript::.ctor()
 extern void NewBehaviourScript__ctor_m437970EA37D66BDF32972F4CC0F65B95E5961FAA (void);
-static Il2CppMethodPointer s_methodPointers[55] = 
+static Il2CppMethodPointer s_methodPointers[58] = 
 {
 	ApplicationChrome__cctor_m6909A1137009CAC2DCD7405D507757C7CBA88329,
 	ApplicationChrome_applyUIStates_mD2B9ACFC934A227B04815695103E2F5CA60FFFA0,
@@ -159,16 +165,6 @@ static Il2CppMethodPointer s_methodPointers[55] =
 	GoogleMapLocation__ctor_m55EACD332351F45FFDD8F6AD2B81F972508C0D34,
 	GoogleMapMarker__ctor_mCED8D827BB135B43593FED4183ACC1C7C02A0DDA,
 	GoogleMapPath__ctor_mCCEC252024CDD9215AADAACB267B4C9421FB43C2,
-	LoadAPI_Start_mD1109BAE13AAC2C9CFB62C2A6FE97A84FEAEC8A0,
-	LoadAPI_LoadData_mF005641800DD29E4D53E5876334A18658DBF713F,
-	LoadAPI__ctor_m0438416BA4E17E3B46CF2815A649B651BD576CF0,
-	U3CLoadDataU3Ed__3__ctor_m6C481B496607CB52D7542307F3BBD6742D96A4AC,
-	U3CLoadDataU3Ed__3_System_IDisposable_Dispose_m65DBF7BAAE731C052DEFCB30ECC7ED07B4E1EEA7,
-	U3CLoadDataU3Ed__3_MoveNext_mC11B02EDBECB98D0D48A40076EC3607CD31D1C9F,
-	U3CLoadDataU3Ed__3_U3CU3Em__Finally1_m37B7E7D2901033F8620D2C861DD1AC9DAE873E68,
-	U3CLoadDataU3Ed__3_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mA1D825602658C7F81EC3FC41770E13777BABC7E7,
-	U3CLoadDataU3Ed__3_System_Collections_IEnumerator_Reset_m7D14A77BE20FFE988B6FEC375EF6A1F7CE391776,
-	U3CLoadDataU3Ed__3_System_Collections_IEnumerator_get_Current_m89B172F43835C3FFC388FD73CF31AB4A604E8358,
 	Manager_Start_mD3C29E49C67909A303603541E6CE9BC5C26796CD,
 	Manager_Update_m75BF2DFC9C300743E190F02E9D8427F36DB70780,
 	Manager_GotoMain_m2585756FE6792C34A0AF322CC72939631CD8B74D,
@@ -176,74 +172,90 @@ static Il2CppMethodPointer s_methodPointers[55] =
 	Manager_GotoCenterMap_mEA2466DD0EFF276CDF081E61FFBC792312CB1584,
 	Manager_GotoStatistics_m8EC96B849ACD1839440EC42CDBF73A720621DDD5,
 	Manager__ctor_m5B9F7AAE653DB0466943D59D3579FFCCFC32631E,
+	SidoStateAPI_Start_m58A0577BD394D8B89A11312A1CE663EDC577D59C,
+	SidoStateAPI_Update_m668E9AC1BFA8CC960299844D2A99BDCB37CF2017,
+	SidoStateAPI_LoadData_m66C2DA4487661064ABFE172DBBFE47A801299990,
+	SidoStateAPI_ProcessPlayer_m8712D7FEDBCB888B9267EB6C36895BC7B0452E05,
+	SidoStateAPI_showState_m94F02018D0E954D38615227514320E554B6F65BE,
+	SidoStateAPI__ctor_mE30FB6E4F83595C6DE7498A06B05BC42FEABC752,
+	U3CLoadDataU3Ed__8__ctor_m4952E353ED7BB786D4EEC19278DB93C3D2FE1E60,
+	U3CLoadDataU3Ed__8_System_IDisposable_Dispose_m6BC43C897CCDC0A834C5FAB400281DFF8C724E51,
+	U3CLoadDataU3Ed__8_MoveNext_m2C42C55946A7B9C0850455B38B36081D532A1139,
+	U3CLoadDataU3Ed__8_U3CU3Em__Finally1_m36C92A35E8D86D1CA72FC7BB0A0F4FE726072D51,
+	U3CLoadDataU3Ed__8_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mE14BFDC75FC360090166A5FA91D9B858B7D7A138,
+	U3CLoadDataU3Ed__8_System_Collections_IEnumerator_Reset_mAF7BA3C3C9B5A4ED9B0F81167B6FF73506E23E9F,
+	U3CLoadDataU3Ed__8_System_Collections_IEnumerator_get_Current_m6A2769C1A7DEEB5276081C7398006748EDB1CA6B,
 	NewBehaviourScript_Start_m783F84A617DADC4574B0BF1524481E6B96C65661,
 	NewBehaviourScript_Update_m411C4D5C2D993FD70092FDA0FE2AC4786F8AC001,
 	NewBehaviourScript__ctor_m437970EA37D66BDF32972F4CC0F65B95E5961FAA,
 };
-static const int32_t s_InvokerIndices[55] = 
+static const int32_t s_InvokerIndices[58] = 
 {
-	1982,
-	1982,
-	1982,
-	1982,
-	1947,
-	1945,
-	1982,
-	1945,
-	1982,
-	1982,
-	1982,
-	1964,
-	1945,
-	1964,
-	1945,
-	1976,
-	1949,
-	1964,
-	1945,
-	1964,
-	1945,
-	1151,
-	1151,
-	1151,
-	1120,
-	1151,
-	978,
-	1151,
-	1139,
-	1120,
-	1151,
-	1120,
-	1151,
-	1151,
-	1151,
-	1151,
-	1120,
-	1151,
-	978,
-	1151,
-	1139,
-	1151,
-	1120,
-	1151,
-	1120,
-	1151,
-	1151,
-	1151,
-	1151,
-	1151,
-	1151,
-	1151,
-	1151,
-	1151,
-	1151,
+	2705,
+	2705,
+	2705,
+	2705,
+	2660,
+	2658,
+	2705,
+	2658,
+	2705,
+	2705,
+	2705,
+	2687,
+	2658,
+	2687,
+	2658,
+	2699,
+	2662,
+	2687,
+	2658,
+	2687,
+	2658,
+	1702,
+	1702,
+	1702,
+	1670,
+	1702,
+	1432,
+	1702,
+	1689,
+	1670,
+	1702,
+	1670,
+	1702,
+	1702,
+	1702,
+	1702,
+	1702,
+	1702,
+	1702,
+	1702,
+	1702,
+	1702,
+	1702,
+	1702,
+	1670,
+	1442,
+	1702,
+	1702,
+	1432,
+	1702,
+	1689,
+	1702,
+	1670,
+	1702,
+	1670,
+	1702,
+	1702,
+	1702,
 };
 extern const CustomAttributesCacheGenerator g_AssemblyU2DCSharp_AttributeGenerators[];
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	55,
+	58,
 	s_methodPointers,
 	0,
 	NULL,
