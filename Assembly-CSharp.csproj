@@ -58,10 +58,11 @@
   <ItemGroup>
     <Compile Include="Assets\YouMustSeeIt.cs" />
     <Compile Include="Assets\Scripts\Manager.cs" />
+    <Compile Include="Assets\Scripts\ImmunizationStatisticsAPI.cs" />
+    <Compile Include="Assets\Scripts\Infectionstatus.cs" />
     <Compile Include="Assets\Scripts\ApplicationChrome.cs" />
     <Compile Include="Assets\Scripts\SidoStateAPI.cs" />
-    <Compile Include="Assets\Scripts\Infectionstatus.cs" />
-    <Compile Include="Assets\Scripts\ImmunizationStatisticsAPI.cs" />
+    <Compile Include="Assets\Scripts\Chart.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -14,7 +14,10 @@ public struct LoadedData_Sido
     public String GUBUN;//시도명
     public int INC_DEC;//전일대비 증감수
     public String STD_DAY;//구분일시
-
+    public int DEATH_CNT;//사망자수
+    public int DEF_CNT;//확진자수
+    public int OVER_FLOW_CNT;//해외유입 수
+    public int LOCAL_OCC_CNT;//지역발생 수
 
 }
 
@@ -44,12 +47,12 @@ public class SidoStateAPI : MonoBehaviour
             {
                 DateTime dt = DateTime.Now.AddDays(-i);
                 loadingDate[i] = Int32.Parse(dt.ToString("yyyyMMdd"));
-                //Debug.Log(loadingDate[i]);
+                
             }
             else if (i == 0)
             {
                 loadingDate[i] = Int32.Parse(DateTime.Now.ToString("yyyyMMdd"));
-                //Debug.Log(loadingDate[i]);
+                
             }
             StartCoroutine(LoadData(loadingDate));
         }
@@ -162,7 +165,62 @@ public class SidoStateAPI : MonoBehaviour
             i++;
 
         }
-        
+        nodes = xmlData.DocumentElement.SelectNodes("//item/deathCnt");
+        i = 0;
+        j = 0;
+        foreach (XmlNode node in nodes)
+        {
+            if (i != 0)
+            {
+                d[x, j].DEATH_CNT = Int32.Parse(node.InnerText);
+                j++;
+            }
+
+
+            i++;
+        }
+        nodes = xmlData.DocumentElement.SelectNodes("//item/defCnt");
+        i = 0;
+        j = 0;
+        foreach (XmlNode node in nodes)
+        {
+            if (i != 0)
+            {
+                d[x, j].DEF_CNT = Int32.Parse(node.InnerText);
+                j++;
+            }
+
+
+            i++;
+        }
+        nodes = xmlData.DocumentElement.SelectNodes("//item/overFlowCnt");
+        i = 0;
+        j = 0;
+        foreach (XmlNode node in nodes)
+        {
+            if (i != 0)
+            {
+                d[x, j].OVER_FLOW_CNT = Int32.Parse(node.InnerText);
+                j++;
+            }
+
+
+            i++;
+        }
+        nodes = xmlData.DocumentElement.SelectNodes("//item/localOccCnt");
+        i = 0;
+        j = 0;
+        foreach (XmlNode node in nodes)
+        {
+            if (i != 0)
+            {
+                d[x, j].LOCAL_OCC_CNT = Int32.Parse(node.InnerText);
+                j++;
+            }
+
+
+            i++;
+        }
 
     }
 
