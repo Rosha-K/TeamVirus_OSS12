@@ -342,7 +342,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2f040c535f872ad49b92ffb5c5274668, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 025a3957e8b824f4ea4533e5b6d97904, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1273,7 +1273,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 412996138}
         m_TargetAssemblyTypeName: Manager, Assembly-CSharp
-        m_MethodName: GotoCenterMap
+        m_MethodName: GotoCoronaImmunizationStatistics
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

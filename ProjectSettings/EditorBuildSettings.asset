@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/CoronaCityState.unity
     guid: 02936981fe3e8184da53f753a6572129
   - enabled: 1
-    path: Assets/Scenes/CoronaCenterMap.unity
+    path: Assets/Scenes/CoronaImmunizationStatistics.unity
     guid: 094c885c6d2297740a42a8e4e1877301
   - enabled: 1
     path: Assets/Scenes/CoronaStatistics.unity

@@ -41,10 +41,10 @@ public class Manager : MonoBehaviour
         
 
     }
-    public void GotoCenterMap()
+    public void GotoCoronaImmunizationStatistics()
     {
 
-        SceneManager.LoadScene("CoronaCenterMap");
+        SceneManager.LoadScene("CoronaImmunizationStatistics");
 
 
     }

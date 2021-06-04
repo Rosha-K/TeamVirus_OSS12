@@ -8,7 +8,7 @@ using System.IO; // 2.1 네임스페이스 File
 using System.Xml;
 
 
-public struct LoadedData
+public struct LoadedData_Sido
 {
     
     public String GUBUN;//시도명
@@ -26,14 +26,34 @@ public class SidoStateAPI : MonoBehaviour
     public Text StateText;
     public Text GuidTxt;
     public Text TimeText;
+    public Text TotalText;
     XmlDocument xmlData;
-    LoadedData[] d = new LoadedData[17];
-    
+    LoadedData_Sido[,] d = new LoadedData_Sido[7, 18];
+    public int[] loadingDate = new int[7];//날짜 ****@@!!형식
+
+
+
+
     bool isOnLoading = true;
 
     void Start()
     {
-        StartCoroutine(LoadData());
+        for (int i = 0; i < 7; i++)
+        {
+            if (i != 0)
+            {
+                DateTime dt = DateTime.Now.AddDays(-i);
+                loadingDate[i] = Int32.Parse(dt.ToString("yyyyMMdd"));
+                //Debug.Log(loadingDate[i]);
+            }
+            else if (i == 0)
+            {
+                loadingDate[i] = Int32.Parse(DateTime.Now.ToString("yyyyMMdd"));
+                //Debug.Log(loadingDate[i]);
+            }
+            StartCoroutine(LoadData(loadingDate));
+        }
+        
 
 
     }
@@ -41,46 +61,59 @@ public class SidoStateAPI : MonoBehaviour
     private void Update()
     {
         showState();
-        TimeText.GetComponent<Text>().text = "기준 일시 : " + d[0].STD_DAY;
+        TimeText.GetComponent<Text>().text = "기준 일시 : " + d[0, 0].STD_DAY;
+        if (d[0,17].INC_DEC > 0)
+        {
+            TotalText.GetComponent<Text>().text = "합계 : <color=red>▲ " + d[0, 17].INC_DEC + "</color>";
+        }
+        else
+        {
+            TotalText.GetComponent<Text>().text = "합계 : " + d[0, 17].INC_DEC;
+        }
+        
     }
 
-    IEnumerator LoadData() //json 문자열 받아오기
+    IEnumerator LoadData(int[] loadingDate) //json 문자열 받아오기
     {
-        string GetDataUrl = "http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19SidoInfStateJson?serviceKey=MwUP%2BblvFPOSrJLoWUyH7o2w0o01f8KWn4sMeOl4hvG%2BM%2FZ00VD3X6QnbRdY3lfjz3EqrlnPuAybfF0qTmrv1g%3D%3D&pageNo=1&_returnType=xml";
-        using (UnityWebRequest www = UnityWebRequest.Get(GetDataUrl))
+        for (int i = 0; i < 7; i++)
         {
-            
-            //www.chunkedTransfer = true;
-            yield return www.Send();
-            if (www.isNetworkError || www.isHttpError) //불러오기 실패 시
+            string GetDataUrl = "http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19SidoInfStateJson?startCreateDt=" + loadingDate[i] + "&endCreateDt=" + loadingDate[i] + "&serviceKey=MwUP%2BblvFPOSrJLoWUyH7o2w0o01f8KWn4sMeOl4hvG%2BM%2FZ00VD3X6QnbRdY3lfjz3EqrlnPuAybfF0qTmrv1g%3D%3D&pageNo=1&_returnType=xml";
+            using (UnityWebRequest www = UnityWebRequest.Get(GetDataUrl))
             {
-                Debug.Log(www.error);
-            }
-            else
-            {
-                if (www.isDone)
+
+                //www.chunkedTransfer = true;
+                yield return www.Send();
+                if (www.isNetworkError || www.isHttpError) //불러오기 실패 시
                 {
-                    isOnLoading = false;
-
-
-                    
-                    getResult =
-                        System.Text.Encoding.UTF8.GetString(www.downloadHandler.data);
-                   
-
-                    // Debug.Log(getResult);
+                    Debug.Log(www.error);
+                }
+                else
+                {
+                    if (www.isDone)
+                    {
+                        isOnLoading = false;
 
 
 
-                    xmlData = new XmlDocument();
-                    xmlData.LoadXml(getResult);
-                    ProcessPlayer(xmlData);
+                        getResult =
+                            System.Text.Encoding.UTF8.GetString(www.downloadHandler.data);
+
+
+                        // Debug.Log(getResult);
+
+
+
+                        xmlData = new XmlDocument();
+                        xmlData.LoadXml(getResult);
+                        ProcessPlayer(xmlData, i);
+                        Debug.Log(d[i, 17].GUBUN + ", " + d[i, 17].INC_DEC + ", " + d[i, 17].STD_DAY);
+                    }
                 }
             }
         }
     }
 
-    public void ProcessPlayer(XmlDocument xmlData)
+    public void ProcessPlayer(XmlDocument xmlData, int x)
     {
        
         XmlNodeList nodes = xmlData.DocumentElement.SelectNodes("//item/gubun");
@@ -89,9 +122,9 @@ public class SidoStateAPI : MonoBehaviour
         foreach(XmlNode node in nodes)
         {
             
-            if (i != 0 && i != 18)
+            if (i != 0)
             {
-               d[j].GUBUN = node.InnerText;
+               d[x,j].GUBUN = node.InnerText;
                j++;
             }
            
@@ -103,9 +136,9 @@ public class SidoStateAPI : MonoBehaviour
         j = 0;
         foreach (XmlNode node in nodes)
         {
-            if (i != 0 && i != 18)
+            if (i != 0)
             {
-                d[j].INC_DEC = Int32.Parse(node.InnerText);
+                d[x,j].INC_DEC = Int32.Parse(node.InnerText);
                 j++;
             }
             
@@ -117,10 +150,10 @@ public class SidoStateAPI : MonoBehaviour
         j = 0;
         foreach (XmlNode node in nodes)
         {
-            if (i != 0 && i != 18)
+            if (i != 0)
             {
-                d[j].STD_DAY = node.InnerText;
-                Debug.Log(d[j].GUBUN + ", " + d[j].INC_DEC + ", " + d[j].STD_DAY);
+                d[x,j].STD_DAY = node.InnerText;
+                
                 j++;
             }
             
@@ -129,7 +162,7 @@ public class SidoStateAPI : MonoBehaviour
             i++;
 
         }
-
+        
 
     }
 
@@ -144,224 +177,224 @@ public class SidoStateAPI : MonoBehaviour
             {
                 GuidTxt.GetComponent<Text>().text = "";
                 
-                if (hit.collider.name == d[0].GUBUN)
+                if (hit.collider.name == d[0,0].GUBUN)
                 {
                     
-                    if (d[0].INC_DEC > 0)
+                    if (d[0,0].INC_DEC > 0)
                     {
-                        StateText.GetComponent<Text>().text = d[0].GUBUN+ " <color=red>▲ "+ d[0].INC_DEC+"</color>";
+                        StateText.GetComponent<Text>().text = d[0, 0].GUBUN+ " <color=red>▲ "+ d[0, 0].INC_DEC+"</color>";
                     }
-                    else if(d[0].INC_DEC == 0)
+                    else if(d[0, 0].INC_DEC == 0)
                     {
-                        StateText.GetComponent<Text>().text = d[0].GUBUN + " 〓 "+ d[0].INC_DEC;
+                        StateText.GetComponent<Text>().text = d[0, 0].GUBUN + " 〓 "+ d[0, 0].INC_DEC;
                     }
                     
                 }
-                if (hit.collider.name == d[1].GUBUN)
+                if (hit.collider.name == d[0, 1].GUBUN)
                 {
 
-                    if (d[1].INC_DEC > 0)
+                    if (d[0, 1].INC_DEC > 0)
                     {
-                        StateText.GetComponent<Text>().text = d[1].GUBUN + " <color=red>▲ " + d[1].INC_DEC + "</color>";
+                        StateText.GetComponent<Text>().text = d[0, 1].GUBUN + " <color=red>▲ " + d[0, 1].INC_DEC + "</color>";
                     }
-                    else if (d[1].INC_DEC == 0)
+                    else if (d[0, 1].INC_DEC == 0)
                     {
-                        StateText.GetComponent<Text>().text = d[1].GUBUN + " 〓 " + d[1].INC_DEC;
+                        StateText.GetComponent<Text>().text = d[0, 1].GUBUN + " 〓 " + d[0, 1].INC_DEC;
                     }
 
                 }
-                if (hit.collider.name == d[2].GUBUN)
+                if (hit.collider.name == d[0, 2].GUBUN)
                 {
 
-                    if (d[2].INC_DEC > 0)
+                    if (d[0, 2].INC_DEC > 0)
                     {
-                        StateText.GetComponent<Text>().text = d[2].GUBUN + " <color=red>▲ " + d[2].INC_DEC + "</color>";
+                        StateText.GetComponent<Text>().text = d[0, 2].GUBUN + " <color=red>▲ " + d[0, 2].INC_DEC + "</color>";
                     }
-                    else if (d[2].INC_DEC == 0)
+                    else if (d[0, 2].INC_DEC == 0)
                     {
-                        StateText.GetComponent<Text>().text = d[2].GUBUN + " 〓 " + d[2].INC_DEC;
+                        StateText.GetComponent<Text>().text = d[0, 2].GUBUN + " 〓 " + d[0, 2].INC_DEC;
                     }
 
                 }
-                if (hit.collider.name == d[3].GUBUN)
+                if (hit.collider.name == d[0, 3].GUBUN)
                 {
 
-                    if (d[3].INC_DEC > 0)
+                    if (d[0, 3].INC_DEC > 0)
                     {
-                        StateText.GetComponent<Text>().text = d[3].GUBUN + " <color=red>▲ " + d[3].INC_DEC + "</color>";
+                        StateText.GetComponent<Text>().text = d[0, 3].GUBUN + " <color=red>▲ " + d[0, 3].INC_DEC + "</color>";
                     }
-                    else if (d[3].INC_DEC == 0)
+                    else if (d[0, 3].INC_DEC == 0)
                     {
-                        StateText.GetComponent<Text>().text = d[3].GUBUN + " 〓 " + d[3].INC_DEC;
+                        StateText.GetComponent<Text>().text = d[0, 3].GUBUN + " 〓 " + d[0, 3].INC_DEC;
                     }
 
                 }
-                if (hit.collider.name == d[4].GUBUN)
+                if (hit.collider.name == d[0, 4].GUBUN)
                 {
 
-                    if (d[4].INC_DEC > 0)
+                    if (d[0, 4].INC_DEC > 0)
                     {
-                        StateText.GetComponent<Text>().text = d[4].GUBUN + " <color=red>▲ " + d[4].INC_DEC + "</color>";
+                        StateText.GetComponent<Text>().text = d[0, 4].GUBUN + " <color=red>▲ " + d[0, 4].INC_DEC + "</color>";
                     }
-                    else if (d[4].INC_DEC == 0)
+                    else if (d[0, 4].INC_DEC == 0)
                     {
-                        StateText.GetComponent<Text>().text = d[4].GUBUN + " 〓 " + d[4].INC_DEC;
+                        StateText.GetComponent<Text>().text = d[0, 4].GUBUN + " 〓 " + d[0, 4].INC_DEC;
                     }
 
                 }
-                if (hit.collider.name == d[5].GUBUN)
+                if (hit.collider.name == d[0, 5].GUBUN)
                 {
 
-                    if (d[5].INC_DEC > 0)
+                    if (d[0, 5].INC_DEC > 0)
                     {
-                        StateText.GetComponent<Text>().text = d[5].GUBUN + " <color=red>▲ " + d[5].INC_DEC + "</color>";
+                        StateText.GetComponent<Text>().text = d[0, 5].GUBUN + " <color=red>▲ " + d[0, 5].INC_DEC + "</color>";
                     }
-                    else if (d[5].INC_DEC == 0)
+                    else if (d[0, 5].INC_DEC == 0)
                     {
-                        StateText.GetComponent<Text>().text = d[5].GUBUN + " 〓 " + d[5].INC_DEC;
+                        StateText.GetComponent<Text>().text = d[0, 5].GUBUN + " 〓 " + d[0, 5].INC_DEC;
                     }
 
                 }
-                if (hit.collider.name == d[6].GUBUN)
+                if (hit.collider.name == d[0, 6].GUBUN)
                 {
 
-                    if (d[6].INC_DEC > 0)
+                    if (d[0, 6].INC_DEC > 0)
                     {
-                        StateText.GetComponent<Text>().text = d[6].GUBUN + " <color=red>▲ " + d[6].INC_DEC + "</color>";
+                        StateText.GetComponent<Text>().text = d[0, 6].GUBUN + " <color=red>▲ " + d[0, 6].INC_DEC + "</color>";
                     }
-                    else if (d[6].INC_DEC == 0)
+                    else if (d[0, 6].INC_DEC == 0)
                     {
-                        StateText.GetComponent<Text>().text = d[6].GUBUN + " 〓 " + d[6].INC_DEC;
+                        StateText.GetComponent<Text>().text = d[0, 6].GUBUN + " 〓 " + d[0, 6].INC_DEC;
                     }
 
                 }
-                if (hit.collider.name == d[7].GUBUN)
+                if (hit.collider.name == d[0, 7].GUBUN)
                 {
 
-                    if (d[7].INC_DEC > 0)
+                    if (d[0, 7].INC_DEC > 0)
                     {
-                        StateText.GetComponent<Text>().text = d[7].GUBUN + " <color=red>▲ " + d[7].INC_DEC + "</color>";
+                        StateText.GetComponent<Text>().text = d[0, 7].GUBUN + " <color=red>▲ " + d[0, 7].INC_DEC + "</color>";
                     }
-                    else if (d[7].INC_DEC == 0)
+                    else if (d[0, 7].INC_DEC == 0)
                     {
-                        StateText.GetComponent<Text>().text = d[7].GUBUN + " 〓 " + d[7].INC_DEC;
+                        StateText.GetComponent<Text>().text = d[0, 7].GUBUN + " 〓 " + d[0, 7].INC_DEC;
                     }
 
                 }
-                if (hit.collider.name == d[8].GUBUN)
+                if (hit.collider.name == d[0, 8].GUBUN)
                 {
 
-                    if (d[8].INC_DEC > 0)
+                    if (d[0, 8].INC_DEC > 0)
                     {
-                        StateText.GetComponent<Text>().text = d[8].GUBUN + " <color=red>▲ " + d[8].INC_DEC + "</color>";
+                        StateText.GetComponent<Text>().text = d[0, 8].GUBUN + " <color=red>▲ " + d[0, 8].INC_DEC + "</color>";
                     }
-                    else if (d[8].INC_DEC == 0)
+                    else if (d[0, 8].INC_DEC == 0)
                     {
-                        StateText.GetComponent<Text>().text = d[8].GUBUN + " 〓 " + d[8].INC_DEC;
+                        StateText.GetComponent<Text>().text = d[0, 8].GUBUN + " 〓 " + d[0, 8].INC_DEC;
                     }
 
                 }
-                if (hit.collider.name == d[9].GUBUN)
+                if (hit.collider.name == d[0, 9].GUBUN)
                 {
 
-                    if (d[9].INC_DEC > 0)
+                    if (d[0, 9].INC_DEC > 0)
                     {
-                        StateText.GetComponent<Text>().text = d[9].GUBUN + " <color=red>▲ " + d[9].INC_DEC + "</color>";
+                        StateText.GetComponent<Text>().text = d[0, 9].GUBUN + " <color=red>▲ " + d[0, 9].INC_DEC + "</color>";
                     }
-                    else if (d[9].INC_DEC == 0)
+                    else if (d[0, 9].INC_DEC == 0)
                     {
-                        StateText.GetComponent<Text>().text = d[9].GUBUN + " 〓 " + d[9].INC_DEC;
+                        StateText.GetComponent<Text>().text = d[0, 9].GUBUN + " 〓 " + d[0, 9].INC_DEC;
                     }
 
                 }
-                if (hit.collider.name == d[10].GUBUN)
+                if (hit.collider.name == d[0, 10].GUBUN)
                 {
 
-                    if (d[10].INC_DEC > 0)
+                    if (d[0, 10].INC_DEC > 0)
                     {
-                        StateText.GetComponent<Text>().text = d[10].GUBUN + " <color=red>▲ " + d[10].INC_DEC + "</color>";
+                        StateText.GetComponent<Text>().text = d[0, 10].GUBUN + " <color=red>▲ " + d[0, 10].INC_DEC + "</color>";
                     }
-                    else if (d[10].INC_DEC == 0)
+                    else if (d[0, 10].INC_DEC == 0)
                     {
-                        StateText.GetComponent<Text>().text = d[10].GUBUN + " 〓 " + d[10].INC_DEC;
+                        StateText.GetComponent<Text>().text = d[0, 10].GUBUN + " 〓 " + d[0, 10].INC_DEC;
                     }
 
                 }
-                if (hit.collider.name == d[11].GUBUN)
+                if (hit.collider.name == d[0, 11].GUBUN)
                 {
 
-                    if (d[11].INC_DEC > 0)
+                    if (d[0, 11].INC_DEC > 0)
                     {
-                        StateText.GetComponent<Text>().text = d[11].GUBUN + " <color=red>▲ " + d[11].INC_DEC + "</color>";
+                        StateText.GetComponent<Text>().text = d[0, 11].GUBUN + " <color=red>▲ " + d[0, 11].INC_DEC + "</color>";
                     }
-                    else if (d[11].INC_DEC == 0)
+                    else if (d[0, 11].INC_DEC == 0)
                     {
-                        StateText.GetComponent<Text>().text = d[11].GUBUN + " 〓 " + d[11].INC_DEC;
+                        StateText.GetComponent<Text>().text = d[0, 11].GUBUN + " 〓 " + d[0, 11].INC_DEC;
                     }
 
                 }
-                if (hit.collider.name == d[12].GUBUN)
+                if (hit.collider.name == d[0, 12].GUBUN)
                 {
 
-                    if (d[12].INC_DEC > 0)
+                    if (d[0, 12].INC_DEC > 0)
                     {
-                        StateText.GetComponent<Text>().text = d[12].GUBUN + " <color=red>▲ " + d[12].INC_DEC + "</color>";
+                        StateText.GetComponent<Text>().text = d[0, 12].GUBUN + " <color=red>▲ " + d[0, 12].INC_DEC + "</color>";
                     }
-                    else if (d[12].INC_DEC == 0)
+                    else if (d[0, 12].INC_DEC == 0)
                     {
-                        StateText.GetComponent<Text>().text = d[12].GUBUN + " 〓 " + d[12].INC_DEC;
+                        StateText.GetComponent<Text>().text = d[0, 12].GUBUN + " 〓 " + d[0, 12].INC_DEC;
                     }
 
                 }
-                if (hit.collider.name == d[13].GUBUN)
+                if (hit.collider.name == d[0, 13].GUBUN)
                 {
 
-                    if (d[13].INC_DEC > 0)
+                    if (d[0, 13].INC_DEC > 0)
                     {
-                        StateText.GetComponent<Text>().text = d[13].GUBUN + " <color=red>▲ " + d[13].INC_DEC + "</color>";
+                        StateText.GetComponent<Text>().text = d[0, 13].GUBUN + " <color=red>▲ " + d[0, 13].INC_DEC + "</color>";
                     }
-                    else if (d[13].INC_DEC == 0)
+                    else if (d[0, 13].INC_DEC == 0)
                     {
-                        StateText.GetComponent<Text>().text = d[13].GUBUN + " 〓 " + d[13].INC_DEC;
+                        StateText.GetComponent<Text>().text = d[0, 13].GUBUN + " 〓 " + d[0, 13].INC_DEC;
                     }
 
                 }
-                if (hit.collider.name == d[14].GUBUN)
+                if (hit.collider.name == d[0, 14].GUBUN)
                 {
 
-                    if (d[14].INC_DEC > 0)
+                    if (d[0, 14].INC_DEC > 0)
                     {
-                        StateText.GetComponent<Text>().text = d[14].GUBUN + " <color=red>▲ " + d[14].INC_DEC + "</color>";
+                        StateText.GetComponent<Text>().text = d[0, 14].GUBUN + " <color=red>▲ " + d[0, 14].INC_DEC + "</color>";
                     }
-                    else if (d[14].INC_DEC == 0)
+                    else if (d[0, 14].INC_DEC == 0)
                     {
-                        StateText.GetComponent<Text>().text = d[14].GUBUN + " 〓 " + d[14].INC_DEC;
+                        StateText.GetComponent<Text>().text = d[0, 14].GUBUN + " 〓 " + d[0, 14].INC_DEC;
                     }
 
                 }
-                if (hit.collider.name == d[15].GUBUN)
+                if (hit.collider.name == d[0, 15].GUBUN)
                 {
 
-                    if (d[15].INC_DEC > 0)
+                    if (d[0, 15].INC_DEC > 0)
                     {
-                        StateText.GetComponent<Text>().text = d[15].GUBUN + " <color=red>▲ " + d[15].INC_DEC + "</color>";
+                        StateText.GetComponent<Text>().text = d[0, 15].GUBUN + " <color=red>▲ " + d[0, 15].INC_DEC + "</color>";
                     }
-                    else if (d[15].INC_DEC == 0)
+                    else if (d[0, 15].INC_DEC == 0)
                     {
-                        StateText.GetComponent<Text>().text = d[15].GUBUN + " 〓 " + d[15].INC_DEC;
+                        StateText.GetComponent<Text>().text = d[0, 15].GUBUN + " 〓 " + d[0, 15].INC_DEC;
                     }
 
                 }
-                if (hit.collider.name == d[16].GUBUN)
+                if (hit.collider.name == d[0, 16].GUBUN)
                 {
 
-                    if (d[16].INC_DEC > 0)
+                    if (d[0, 16].INC_DEC > 0)
                     {
-                        StateText.GetComponent<Text>().text = d[16].GUBUN + " <color=red>▲ " + d[16].INC_DEC + "</color>";
+                        StateText.GetComponent<Text>().text = d[0, 16].GUBUN + " <color=red>▲ " + d[0, 16].INC_DEC + "</color>";
                     }
-                    else if (d[16].INC_DEC == 0)
+                    else if (d[0, 16].INC_DEC == 0)
                     {
-                        StateText.GetComponent<Text>().text = d[16].GUBUN + " 〓 " + d[16].INC_DEC;
+                        StateText.GetComponent<Text>().text = d[0, 16].GUBUN + " 〓 " + d[0, 16].INC_DEC;
                     }
 
                 }
