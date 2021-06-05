@@ -1615,8 +1615,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.16, y: 14.21}
-  m_SizeDelta: {x: 454.417, y: 120}
+  m_AnchoredPosition: {x: -4.989, y: 14.21}
+  m_SizeDelta: {x: 629.971, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1032060273
 MonoBehaviour:
@@ -3083,6 +3083,7 @@ MonoBehaviour:
   GuidTxt: {fileID: 1386747268}
   TimeText: {fileID: 658296605}
   TotalText: {fileID: 1032060273}
+  loadingDate: 00000000000000000000000000000000000000000000000000000000
 --- !u!4 &1541236522
 Transform:
   m_ObjectHideFlags: 0

@@ -109,7 +109,7 @@ public class SidoStateAPI : MonoBehaviour
                         xmlData = new XmlDocument();
                         xmlData.LoadXml(getResult);
                         ProcessPlayer(xmlData, i);
-                        Debug.Log(d[i, 17].GUBUN + ", " + d[i, 17].INC_DEC + ", " + d[i, 17].STD_DAY);
+                       // Debug.Log(d[i, 17].GUBUN + ", " + d[i, 17].INC_DEC + ", " + d[i, 17].STD_DAY);
                     }
                 }
             }
