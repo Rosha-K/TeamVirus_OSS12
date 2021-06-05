@@ -34,7 +34,7 @@ public class apiData
 public class ImmunizationStatisticsAPI : MonoBehaviour
 {
     string getResult;
-    apiData d;
+    public apiData ImmuData;
 
     bool isOnLoading = true;
 
@@ -87,7 +87,7 @@ public class ImmunizationStatisticsAPI : MonoBehaviour
 
     private void ProcessPlayer(string getResult)
     {
-        d = JsonUtility.FromJson<apiData>(getResult);
+        ImmuData = JsonUtility.FromJson<apiData>(getResult);
        
 
     }

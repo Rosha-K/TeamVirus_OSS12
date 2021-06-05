@@ -7,15 +7,14 @@ using System; // 2.1 네임스페이스 Serializable
 using System.IO; // 2.1 네임스페이스 File
 using System.Xml;
 
-
 public struct LoadedData_Sido
 {
     
     public String GUBUN;//시도명
     public int INC_DEC;//전일대비 증감수
     public String STD_DAY;//구분일시
-    public int DEATH_CNT;//사망자수
-    public int DEF_CNT;//확진자수
+    public int DEATH_CNT;//사망자수*
+    public int DEF_CNT;//확진자수*
     public int OVER_FLOW_CNT;//해외유입 수
     public int LOCAL_OCC_CNT;//지역발생 수
 
@@ -31,7 +30,7 @@ public class SidoStateAPI : MonoBehaviour
     public Text TimeText;
     public Text TotalText;
     XmlDocument xmlData;
-    LoadedData_Sido[,] d = new LoadedData_Sido[7, 18];
+    public LoadedData_Sido[,] d = new LoadedData_Sido[7, 18];
     public int[] loadingDate = new int[7];//날짜 ****@@!!형식
 
 
@@ -54,7 +53,7 @@ public class SidoStateAPI : MonoBehaviour
                 loadingDate[i] = Int32.Parse(DateTime.Now.ToString("yyyyMMdd"));
                 
             }
-            StartCoroutine(LoadData(loadingDate));
+            StartCoroutine(LoadData(loadingDate,i));
         }
         
 
@@ -76,44 +75,43 @@ public class SidoStateAPI : MonoBehaviour
         
     }
 
-    IEnumerator LoadData(int[] loadingDate) //json 문자열 받아오기
+    IEnumerator LoadData(int[] loadingDate,int i) //json 문자열 받아오기
     {
-        for (int i = 0; i < 7; i++)
+        
+        string GetDataUrl = "http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19SidoInfStateJson?startCreateDt=" + loadingDate[i] + "&endCreateDt=" + loadingDate[i] + "&serviceKey=3S0m0YB0Gt%2BfX9GnAyZLZ9IZDwnhYKJkK2mBw8WNIJoUf1SGiQSKVOzb3wyH8sYlcbLmrk4rbPbpkAleRRQ8jQ%3D%3D&pageNo=1&_returnType=xml";
+        using (UnityWebRequest www = UnityWebRequest.Get(GetDataUrl))
         {
-            string GetDataUrl = "http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19SidoInfStateJson?startCreateDt=" + loadingDate[i] + "&endCreateDt=" + loadingDate[i] + "&serviceKey=MwUP%2BblvFPOSrJLoWUyH7o2w0o01f8KWn4sMeOl4hvG%2BM%2FZ00VD3X6QnbRdY3lfjz3EqrlnPuAybfF0qTmrv1g%3D%3D&pageNo=1&_returnType=xml";
-            using (UnityWebRequest www = UnityWebRequest.Get(GetDataUrl))
+
+            //www.chunkedTransfer = true;
+            yield return www.Send();
+            if (www.isNetworkError || www.isHttpError) //불러오기 실패 시
             {
-
-                //www.chunkedTransfer = true;
-                yield return www.Send();
-                if (www.isNetworkError || www.isHttpError) //불러오기 실패 시
+                Debug.Log(www.error);
+            }
+            else
+            {
+                if (www.isDone)
                 {
-                    Debug.Log(www.error);
-                }
-                else
-                {
-                    if (www.isDone)
-                    {
-                        isOnLoading = false;
+                    isOnLoading = false;
 
 
 
-                        getResult =
-                            System.Text.Encoding.UTF8.GetString(www.downloadHandler.data);
+                    getResult =
+                        System.Text.Encoding.UTF8.GetString(www.downloadHandler.data);
 
 
-                        // Debug.Log(getResult);
+                    // Debug.Log(getResult);
 
 
 
-                        xmlData = new XmlDocument();
-                        xmlData.LoadXml(getResult);
-                        ProcessPlayer(xmlData, i);
-                       // Debug.Log(d[i, 17].GUBUN + ", " + d[i, 17].INC_DEC + ", " + d[i, 17].STD_DAY);
-                    }
+                    xmlData = new XmlDocument();
+                    xmlData.LoadXml(getResult);
+                    ProcessPlayer(xmlData, i);
+                    // Debug.Log(d[i, 17].GUBUN + ", " + d[i, 17].INC_DEC + ", " + d[i, 17].STD_DAY);
                 }
             }
         }
+        
     }
 
     public void ProcessPlayer(XmlDocument xmlData, int x)

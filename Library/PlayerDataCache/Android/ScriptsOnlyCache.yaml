@@ -1,25 +1,36 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - CoronaStatistics
     - Graph
-    - ImmunizationStatisticsAPI
-    - Infectionstatus
+    - ImmunizationStatistics
+    - Infectionstatus2
     - Manager
     - SidoStateAPI
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
+    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.IK.Runtime.dll:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
+    - UnityEditor.Tilemaps.GridPaletteBrushes
+    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
+    Unity.Mobile.AndroidLogcat.Editor.dll:
+    - Unity.Android.Logcat.AndroidLogcatManager
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
+    Unity.TextMeshPro.dll:
+    - TMPro.TMP_FontAsset
+    - TMPro.TMP_Settings
+    - TMPro.TMP_SpriteAsset
+    - TMPro.TMP_StyleSheet
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -29,10 +40,15 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.ContentSizeFitter
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.HorizontalLayoutGroup
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Mask
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Text
+    - UnityEngine.UI.VerticalLayoutGroup
   sceneClasses:
     Assets/Scenes/CoronaCityState.unity:
     - Class: 1
@@ -54,23 +70,23 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1488}
+      Script: {instanceID: 1514}
     - Class: 114
-      Script: {instanceID: 2096}
+      Script: {instanceID: 2122}
     - Class: 114
-      Script: {instanceID: 2476}
+      Script: {instanceID: 2502}
     - Class: 114
-      Script: {instanceID: 2628}
+      Script: {instanceID: 2654}
     - Class: 114
-      Script: {instanceID: 2746}
+      Script: {instanceID: 2772}
     - Class: 114
-      Script: {instanceID: 2816}
+      Script: {instanceID: 2842}
     - Class: 114
-      Script: {instanceID: 3034}
+      Script: {instanceID: 3060}
     - Class: 114
-      Script: {instanceID: 3140}
+      Script: {instanceID: 3166}
     - Class: 114
-      Script: {instanceID: 4248}
+      Script: {instanceID: 4278}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -96,27 +112,65 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 20
       Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
     - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 2628}
+      Script: {instanceID: 1514}
     - Class: 114
-      Script: {instanceID: 2746}
+      Script: {instanceID: 1696}
     - Class: 114
-      Script: {instanceID: 3034}
+      Script: {instanceID: 2052}
     - Class: 114
-      Script: {instanceID: 3686}
+      Script: {instanceID: 2122}
     - Class: 114
-      Script: {instanceID: 3704}
+      Script: {instanceID: 2502}
+    - Class: 114
+      Script: {instanceID: 2654}
+    - Class: 114
+      Script: {instanceID: 2772}
+    - Class: 114
+      Script: {instanceID: 2842}
+    - Class: 114
+      Script: {instanceID: 3060}
+    - Class: 114
+      Script: {instanceID: 3068}
+    - Class: 114
+      Script: {instanceID: 3166}
+    - Class: 114
+      Script: {instanceID: 3364}
+    - Class: 114
+      Script: {instanceID: 3450}
+    - Class: 114
+      Script: {instanceID: 3510}
+    - Class: 114
+      Script: {instanceID: 4060}
+    - Class: 114
+      Script: {instanceID: 4244}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
     Assets/Scenes/CoronaStatistics.unity:
     - Class: 1
@@ -125,31 +179,55 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 20
       Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
     - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1488}
+      Script: {instanceID: 1514}
     - Class: 114
-      Script: {instanceID: 2476}
+      Script: {instanceID: 1696}
     - Class: 114
-      Script: {instanceID: 2628}
+      Script: {instanceID: 2122}
     - Class: 114
-      Script: {instanceID: 2746}
+      Script: {instanceID: 2502}
     - Class: 114
-      Script: {instanceID: 2816}
+      Script: {instanceID: 2654}
     - Class: 114
-      Script: {instanceID: 3034}
+      Script: {instanceID: 2772}
     - Class: 114
-      Script: {instanceID: 3140}
+      Script: {instanceID: 2842}
+    - Class: 114
+      Script: {instanceID: 3060}
+    - Class: 114
+      Script: {instanceID: 3068}
+    - Class: 114
+      Script: {instanceID: 3166}
+    - Class: 114
+      Script: {instanceID: 3364}
+    - Class: 114
+      Script: {instanceID: 3510}
+    - Class: 114
+      Script: {instanceID: 3586}
+    - Class: 114
+      Script: {instanceID: 4060}
+    - Class: 114
+      Script: {instanceID: 4244}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -172,30 +250,40 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1488}
+      Script: {instanceID: 1514}
     - Class: 114
-      Script: {instanceID: 1670}
+      Script: {instanceID: 1696}
     - Class: 114
-      Script: {instanceID: 2096}
+      Script: {instanceID: 1792}
     - Class: 114
-      Script: {instanceID: 2476}
+      Script: {instanceID: 2112}
     - Class: 114
-      Script: {instanceID: 2628}
+      Script: {instanceID: 2122}
     - Class: 114
-      Script: {instanceID: 2746}
+      Script: {instanceID: 2502}
     - Class: 114
-      Script: {instanceID: 2816}
+      Script: {instanceID: 2654}
     - Class: 114
-      Script: {instanceID: 3034}
+      Script: {instanceID: 2772}
     - Class: 114
-      Script: {instanceID: 3140}
+      Script: {instanceID: 2842}
     - Class: 114
-      Script: {instanceID: 3862}
+      Script: {instanceID: 3060}
+    - Class: 114
+      Script: {instanceID: 3166}
+    - Class: 114
+      Script: {instanceID: 3892}
+    - Class: 114
+      Script: {instanceID: 4348}
+    - Class: 114
+      Script: {instanceID: 4684}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -301,16 +389,16 @@ ScriptsOnlyBuild:
     className: TMP_FontAsset
   - hash:
       serializedVersion: 2
-      Hash: eb9d8d29ba387684d8c3fb8439baa24e
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Chart
-  - hash:
-      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: GroupTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 0b102bb57a964e61fca87dbf8a730806
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ImmunizationStatistics
   - hash:
       serializedVersion: 2
       Hash: 800c50acba124432abb4cf0d47202e06
@@ -511,6 +599,12 @@ ScriptsOnlyBuild:
     className: Outline
   - hash:
       serializedVersion: 2
+      Hash: 7762fb7062e75c0e0d6f1702d80e74c3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Infectionstatus2
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -533,6 +627,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: BaseInput
+  - hash:
+      serializedVersion: 2
+      Hash: 6b1f63e94cdea7435a9564a69c5f810d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CoronaStatistics
   - hash:
       serializedVersion: 2
       Hash: 18c222bef9ae745ce69ddde9b74337ca
@@ -565,13 +665,13 @@ ScriptsOnlyBuild:
     className: PositionAsUV1
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 26b004a481f4bbb5516f44a27993cfc2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ImmunizationStatisticsAPI
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: bf67e68376211b8c72ec84de8fc03b9e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Infectionstatus
@@ -607,7 +707,7 @@ ScriptsOnlyBuild:
     className: Dropdown
   - hash:
       serializedVersion: 2
-      Hash: 5172dffbe62022413deb7a487fb450c3
+      Hash: fe17f011817ac4c41e30feb88bb21cf7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Graph
@@ -733,6 +833,12 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAsset
   - hash:
       serializedVersion: 2
+      Hash: 27e410c4b70d5d2e9075dd4233878680
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LoadAPI
+  - hash:
+      serializedVersion: 2
       Hash: e7a73f5f78ba6445195ec23b74a1ce2d
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -771,6 +877,6 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/MainScene.unity
   - Assets/Scenes/CoronaCityState.unity
-  - Assets/Scenes/CoronaImmunizationStatistics.unity
   - Assets/Scenes/CoronaStatistics.unity
-  playerPath: C:/Users/mjyou/Desktop/LectureFile/OSS/TeamProject/Team_Virus/TestBuild/123.apk
+  - Assets/Scenes/CoronaImmunizationStatistics.unity
+  playerPath: C:/Users/mjyou/Desktop/LectureFile/OSS/TeamProject/Team_Virus/TestBuild/Team_Virus.apk

@@ -56,7 +56,13 @@ public class Manager : MonoBehaviour
 
     }
 
+    public void GotoStatistics2()
+    {
 
+        SceneManager.LoadScene("CoronaStatistics2");
+
+
+    }
 
 
 }

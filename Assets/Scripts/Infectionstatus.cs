@@ -6,7 +6,8 @@ using System; // 2.1 네임스페이스 Serializable
 using System.IO; // 2.1 네임스페이스 File
 using System.Xml;
 
-public struct LoadeddData_Infection
+[System.Serializable]
+public class LoadeddData_Infection
 {
 
     public int CLEAR_CNT;//격리해제 수

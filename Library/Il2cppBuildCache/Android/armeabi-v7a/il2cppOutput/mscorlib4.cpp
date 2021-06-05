@@ -23,17 +23,6 @@ struct VirtActionInvoker1
 		((Action)invokeData.methodPtr)(obj, p1, invokeData.method);
 	}
 };
-template <typename R, typename T1>
-struct VirtFuncInvoker1
-{
-	typedef R (*Func)(void*, T1, const RuntimeMethod*);
-
-	static inline R Invoke (Il2CppMethodSlot slot, RuntimeObject* obj, T1 p1)
-	{
-		const VirtualInvokeData& invokeData = il2cpp_codegen_get_virtual_invoke_data(slot, obj);
-		return ((Func)invokeData.methodPtr)(obj, p1, invokeData.method);
-	}
-};
 template <typename R>
 struct VirtFuncInvoker0
 {
@@ -43,6 +32,17 @@ struct VirtFuncInvoker0
 	{
 		const VirtualInvokeData& invokeData = il2cpp_codegen_get_virtual_invoke_data(slot, obj);
 		return ((Func)invokeData.methodPtr)(obj, invokeData.method);
+	}
+};
+template <typename R, typename T1>
+struct VirtFuncInvoker1
+{
+	typedef R (*Func)(void*, T1, const RuntimeMethod*);
+
+	static inline R Invoke (Il2CppMethodSlot slot, RuntimeObject* obj, T1 p1)
+	{
+		const VirtualInvokeData& invokeData = il2cpp_codegen_get_virtual_invoke_data(slot, obj);
+		return ((Func)invokeData.methodPtr)(obj, p1, invokeData.method);
 	}
 };
 template <typename R, typename T1, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7>
@@ -178,6 +178,8 @@ struct Calendar_t3D638AEAB45F029DF47138EDA4CF9A7CBBB1C32A;
 struct CompareInfo_t4AB62EC32E8AF1E469E315620C7E3FB8B0CAE0C9;
 // System.Security.Cryptography.CryptographicException
 struct CryptographicException_tFFE56EF733D1150A0F3738DDE2CC4DE1A61849D5;
+// System.Security.Cryptography.CspParameters
+struct CspParameters_t68AAF756CF69FC035037DF834453D0B8B7B503BC;
 // System.Globalization.CultureData
 struct CultureData_t53CDF1C5F789A28897415891667799420D3C5529;
 // System.Globalization.CultureInfo
@@ -186,6 +188,8 @@ struct CultureInfo_t1B787142231DB79ABDCE0659823F908A040E9A98;
 struct CultureNotFoundException_tF7A5916D7F7C5CC3780AF5C14DE18006B4DD161C;
 // System.Security.Cryptography.DSA
 struct DSA_t6AAE59FF3EEECD35DCA27FDF431D10323A2168B7;
+// System.Security.Cryptography.DSACryptoServiceProvider
+struct DSACryptoServiceProvider_tB11E530A0513CF3148380968B18CB547D1F0594A;
 // Mono.Security.Cryptography.DSAManaged
 struct DSAManaged_tBA59DC6B28356918D31C5401258B4766E36FD3FA;
 // System.Security.Cryptography.DSASignatureDeformatter
@@ -240,6 +244,8 @@ struct InternalThread_t12B78B27503AE19E9122E212419A66843BF746EB;
 struct InvalidCastException_tD99F9FF94C3859C78E90F68C2F77A1558BCAF463;
 // System.InvalidOperationException
 struct InvalidOperationException_t10D3EE59AD28EC641ACEE05BCA4271A527E5ECAB;
+// Mono.Security.Cryptography.KeyPairPersistence
+struct KeyPairPersistence_t7F7E8811D03A25C0251BF255AB94BAF57E965D9A;
 // System.Security.Cryptography.KeySizes
 struct KeySizes_t2F5C413E3DCD41211F03AF692B2633C8384E1FB3;
 // System.LocalDataStoreHolder
@@ -309,8 +315,11 @@ IL2CPP_EXTERN_C RuntimeClass* CharU5BU5D_t7B7FC5BC8091AA3B9CB0B29CDD80B5EE9254AA
 IL2CPP_EXTERN_C RuntimeClass* Char_tFF60D8E7E89A20BE2294A003734341BD1DF43E14_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Convert_tDA947A979C1DAB4F09C461FAFD94FE194743A671_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* CryptographicException_tFFE56EF733D1150A0F3738DDE2CC4DE1A61849D5_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* CspParameters_t68AAF756CF69FC035037DF834453D0B8B7B503BC_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* CultureInfo_t1B787142231DB79ABDCE0659823F908A040E9A98_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* CultureNotFoundException_tF7A5916D7F7C5CC3780AF5C14DE18006B4DD161C_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* DSACryptoServiceProvider_tB11E530A0513CF3148380968B18CB547D1F0594A_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* DSAManaged_tBA59DC6B28356918D31C5401258B4766E36FD3FA_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* DSU5BU5DU5BU5D_t3E2ABAFEF3615342342FE8B4E783873194FA16BE_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* DSU5BU5D_t32963C9C25EDB277BA1CEC1D5A074D2BBF45715C_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* DateTimeFormatInfoScanner_t8CD1ED645792B1F173DD15B84109A377C7B68CB8_il2cpp_TypeInfo_var;
@@ -333,6 +342,7 @@ IL2CPP_EXTERN_C RuntimeClass* InvalidCastException_tD99F9FF94C3859C78E90F68C2F77
 IL2CPP_EXTERN_C RuntimeClass* InvalidOperationException_t10D3EE59AD28EC641ACEE05BCA4271A527E5ECAB_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* JapaneseCalendar_t9B3E6C121CD0B742AC6413D33DE394DE3E3C6360_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* KeyGeneratedEventHandler_t54176E7D7463F3C1F98C09B8ABD5E980A460BEDC_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* KeyPairPersistence_t7F7E8811D03A25C0251BF255AB94BAF57E965D9A_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* KeySizesU5BU5D_tA093382691AAF32E84D3063E83C59472F9714499_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* KeySizes_t2F5C413E3DCD41211F03AF692B2633C8384E1FB3_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* List_1_t6C9F81EDBF0F4A31A9B0DA372D2EF34BDA3A1AF3_il2cpp_TypeInfo_var;
@@ -504,6 +514,7 @@ IL2CPP_EXTERN_C String_t* _stringLiteralD83041E889BDAEB8F029AF50549D1347BD7FC949
 IL2CPP_EXTERN_C String_t* _stringLiteralDAF2BD03270A51BF9C135F3694DCAD2D3E66F465;
 IL2CPP_EXTERN_C String_t* _stringLiteralDB47297909F3BD6EDB8AD67A8511975233214355;
 IL2CPP_EXTERN_C String_t* _stringLiteralDE278963373E67E56D430AA6BB86F447EB47A525;
+IL2CPP_EXTERN_C String_t* _stringLiteralDE2AC8D6634EF01C5320B1776D599A713E9AB555;
 IL2CPP_EXTERN_C String_t* _stringLiteralE5C37D372367C69DCD30FE688631A1B0CE49EA73;
 IL2CPP_EXTERN_C String_t* _stringLiteralE75F4F4A9D67BC98BA7DB8DBE3C519516572DA4E;
 IL2CPP_EXTERN_C String_t* _stringLiteralE895F499BC653C0CA36FB31C5936FC768CAD263E;
@@ -521,6 +532,8 @@ IL2CPP_EXTERN_C String_t* _stringLiteralFA6AD0FB1130BFA5AD9F54E775FBEB781B424CF5
 IL2CPP_EXTERN_C String_t* _stringLiteralFAE2329D6E15DBA161C93E78324E39B842CF47E4;
 IL2CPP_EXTERN_C String_t* _stringLiteralFB85981E7C53A24172DFC95E321424E70B53E272;
 IL2CPP_EXTERN_C String_t* _stringLiteralFE1BD923A38183BB075782CF896AC8553ECE93A5;
+IL2CPP_EXTERN_C const RuntimeMethod* DSACryptoServiceProvider_ExportParameters_mC3F73B8D6C6F77475C40D76A60479D28DE8D4296_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* DSACryptoServiceProvider_OnKeyGenerated_m9DC9881F05072962C696024853AE0E7357F34E8C_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* DSAManaged_ExportParameters_mC4DEE3ABF2B68073872B54B5056965132BE03DE4_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* DSAManaged_ImportParameters_m536C09415014DDBCFC8D12004F16D1A5F975D6BF_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* DateTimeFormatInfo_GetAbbreviatedDayName_mF683E0F302406ED2C5DFC8C42BAA9C73E77961CE_RuntimeMethod_var;
@@ -1076,6 +1089,66 @@ struct CriticalFinalizerObject_tA3367C832FFE7434EB3C15C7136AF25524150997  : publ
 public:
 
 public:
+};
+
+
+// System.Security.Cryptography.CspParameters
+struct CspParameters_t68AAF756CF69FC035037DF834453D0B8B7B503BC  : public RuntimeObject
+{
+public:
+	// System.Int32 System.Security.Cryptography.CspParameters::ProviderType
+	int32_t ___ProviderType_0;
+	// System.String System.Security.Cryptography.CspParameters::ProviderName
+	String_t* ___ProviderName_1;
+	// System.String System.Security.Cryptography.CspParameters::KeyContainerName
+	String_t* ___KeyContainerName_2;
+	// System.Int32 System.Security.Cryptography.CspParameters::KeyNumber
+	int32_t ___KeyNumber_3;
+	// System.Int32 System.Security.Cryptography.CspParameters::m_flags
+	int32_t ___m_flags_4;
+
+public:
+	inline static int32_t get_offset_of_ProviderType_0() { return static_cast<int32_t>(offsetof(CspParameters_t68AAF756CF69FC035037DF834453D0B8B7B503BC, ___ProviderType_0)); }
+	inline int32_t get_ProviderType_0() const { return ___ProviderType_0; }
+	inline int32_t* get_address_of_ProviderType_0() { return &___ProviderType_0; }
+	inline void set_ProviderType_0(int32_t value)
+	{
+		___ProviderType_0 = value;
+	}
+
+	inline static int32_t get_offset_of_ProviderName_1() { return static_cast<int32_t>(offsetof(CspParameters_t68AAF756CF69FC035037DF834453D0B8B7B503BC, ___ProviderName_1)); }
+	inline String_t* get_ProviderName_1() const { return ___ProviderName_1; }
+	inline String_t** get_address_of_ProviderName_1() { return &___ProviderName_1; }
+	inline void set_ProviderName_1(String_t* value)
+	{
+		___ProviderName_1 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___ProviderName_1), (void*)value);
+	}
+
+	inline static int32_t get_offset_of_KeyContainerName_2() { return static_cast<int32_t>(offsetof(CspParameters_t68AAF756CF69FC035037DF834453D0B8B7B503BC, ___KeyContainerName_2)); }
+	inline String_t* get_KeyContainerName_2() const { return ___KeyContainerName_2; }
+	inline String_t** get_address_of_KeyContainerName_2() { return &___KeyContainerName_2; }
+	inline void set_KeyContainerName_2(String_t* value)
+	{
+		___KeyContainerName_2 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___KeyContainerName_2), (void*)value);
+	}
+
+	inline static int32_t get_offset_of_KeyNumber_3() { return static_cast<int32_t>(offsetof(CspParameters_t68AAF756CF69FC035037DF834453D0B8B7B503BC, ___KeyNumber_3)); }
+	inline int32_t get_KeyNumber_3() const { return ___KeyNumber_3; }
+	inline int32_t* get_address_of_KeyNumber_3() { return &___KeyNumber_3; }
+	inline void set_KeyNumber_3(int32_t value)
+	{
+		___KeyNumber_3 = value;
+	}
+
+	inline static int32_t get_offset_of_m_flags_4() { return static_cast<int32_t>(offsetof(CspParameters_t68AAF756CF69FC035037DF834453D0B8B7B503BC, ___m_flags_4)); }
+	inline int32_t get_m_flags_4() const { return ___m_flags_4; }
+	inline int32_t* get_address_of_m_flags_4() { return &___m_flags_4; }
+	inline void set_m_flags_4(int32_t value)
+	{
+		___m_flags_4 = value;
+	}
 };
 
 
@@ -1919,6 +1992,117 @@ public:
 	inline void set_m_bDisposed_3(bool value)
 	{
 		___m_bDisposed_3 = value;
+	}
+};
+
+
+// Mono.Security.Cryptography.KeyPairPersistence
+struct KeyPairPersistence_t7F7E8811D03A25C0251BF255AB94BAF57E965D9A  : public RuntimeObject
+{
+public:
+	// System.Security.Cryptography.CspParameters Mono.Security.Cryptography.KeyPairPersistence::_params
+	CspParameters_t68AAF756CF69FC035037DF834453D0B8B7B503BC * ____params_4;
+	// System.String Mono.Security.Cryptography.KeyPairPersistence::_keyvalue
+	String_t* ____keyvalue_5;
+	// System.String Mono.Security.Cryptography.KeyPairPersistence::_filename
+	String_t* ____filename_6;
+	// System.String Mono.Security.Cryptography.KeyPairPersistence::_container
+	String_t* ____container_7;
+
+public:
+	inline static int32_t get_offset_of__params_4() { return static_cast<int32_t>(offsetof(KeyPairPersistence_t7F7E8811D03A25C0251BF255AB94BAF57E965D9A, ____params_4)); }
+	inline CspParameters_t68AAF756CF69FC035037DF834453D0B8B7B503BC * get__params_4() const { return ____params_4; }
+	inline CspParameters_t68AAF756CF69FC035037DF834453D0B8B7B503BC ** get_address_of__params_4() { return &____params_4; }
+	inline void set__params_4(CspParameters_t68AAF756CF69FC035037DF834453D0B8B7B503BC * value)
+	{
+		____params_4 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&____params_4), (void*)value);
+	}
+
+	inline static int32_t get_offset_of__keyvalue_5() { return static_cast<int32_t>(offsetof(KeyPairPersistence_t7F7E8811D03A25C0251BF255AB94BAF57E965D9A, ____keyvalue_5)); }
+	inline String_t* get__keyvalue_5() const { return ____keyvalue_5; }
+	inline String_t** get_address_of__keyvalue_5() { return &____keyvalue_5; }
+	inline void set__keyvalue_5(String_t* value)
+	{
+		____keyvalue_5 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&____keyvalue_5), (void*)value);
+	}
+
+	inline static int32_t get_offset_of__filename_6() { return static_cast<int32_t>(offsetof(KeyPairPersistence_t7F7E8811D03A25C0251BF255AB94BAF57E965D9A, ____filename_6)); }
+	inline String_t* get__filename_6() const { return ____filename_6; }
+	inline String_t** get_address_of__filename_6() { return &____filename_6; }
+	inline void set__filename_6(String_t* value)
+	{
+		____filename_6 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&____filename_6), (void*)value);
+	}
+
+	inline static int32_t get_offset_of__container_7() { return static_cast<int32_t>(offsetof(KeyPairPersistence_t7F7E8811D03A25C0251BF255AB94BAF57E965D9A, ____container_7)); }
+	inline String_t* get__container_7() const { return ____container_7; }
+	inline String_t** get_address_of__container_7() { return &____container_7; }
+	inline void set__container_7(String_t* value)
+	{
+		____container_7 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&____container_7), (void*)value);
+	}
+};
+
+struct KeyPairPersistence_t7F7E8811D03A25C0251BF255AB94BAF57E965D9A_StaticFields
+{
+public:
+	// System.Boolean Mono.Security.Cryptography.KeyPairPersistence::_userPathExists
+	bool ____userPathExists_0;
+	// System.String Mono.Security.Cryptography.KeyPairPersistence::_userPath
+	String_t* ____userPath_1;
+	// System.Boolean Mono.Security.Cryptography.KeyPairPersistence::_machinePathExists
+	bool ____machinePathExists_2;
+	// System.String Mono.Security.Cryptography.KeyPairPersistence::_machinePath
+	String_t* ____machinePath_3;
+	// System.Object Mono.Security.Cryptography.KeyPairPersistence::lockobj
+	RuntimeObject * ___lockobj_8;
+
+public:
+	inline static int32_t get_offset_of__userPathExists_0() { return static_cast<int32_t>(offsetof(KeyPairPersistence_t7F7E8811D03A25C0251BF255AB94BAF57E965D9A_StaticFields, ____userPathExists_0)); }
+	inline bool get__userPathExists_0() const { return ____userPathExists_0; }
+	inline bool* get_address_of__userPathExists_0() { return &____userPathExists_0; }
+	inline void set__userPathExists_0(bool value)
+	{
+		____userPathExists_0 = value;
+	}
+
+	inline static int32_t get_offset_of__userPath_1() { return static_cast<int32_t>(offsetof(KeyPairPersistence_t7F7E8811D03A25C0251BF255AB94BAF57E965D9A_StaticFields, ____userPath_1)); }
+	inline String_t* get__userPath_1() const { return ____userPath_1; }
+	inline String_t** get_address_of__userPath_1() { return &____userPath_1; }
+	inline void set__userPath_1(String_t* value)
+	{
+		____userPath_1 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&____userPath_1), (void*)value);
+	}
+
+	inline static int32_t get_offset_of__machinePathExists_2() { return static_cast<int32_t>(offsetof(KeyPairPersistence_t7F7E8811D03A25C0251BF255AB94BAF57E965D9A_StaticFields, ____machinePathExists_2)); }
+	inline bool get__machinePathExists_2() const { return ____machinePathExists_2; }
+	inline bool* get_address_of__machinePathExists_2() { return &____machinePathExists_2; }
+	inline void set__machinePathExists_2(bool value)
+	{
+		____machinePathExists_2 = value;
+	}
+
+	inline static int32_t get_offset_of__machinePath_3() { return static_cast<int32_t>(offsetof(KeyPairPersistence_t7F7E8811D03A25C0251BF255AB94BAF57E965D9A_StaticFields, ____machinePath_3)); }
+	inline String_t* get__machinePath_3() const { return ____machinePath_3; }
+	inline String_t** get_address_of__machinePath_3() { return &____machinePath_3; }
+	inline void set__machinePath_3(String_t* value)
+	{
+		____machinePath_3 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&____machinePath_3), (void*)value);
+	}
+
+	inline static int32_t get_offset_of_lockobj_8() { return static_cast<int32_t>(offsetof(KeyPairPersistence_t7F7E8811D03A25C0251BF255AB94BAF57E965D9A_StaticFields, ___lockobj_8)); }
+	inline RuntimeObject * get_lockobj_8() const { return ___lockobj_8; }
+	inline RuntimeObject ** get_address_of_lockobj_8() { return &___lockobj_8; }
+	inline void set_lockobj_8(RuntimeObject * value)
+	{
+		___lockobj_8 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___lockobj_8), (void*)value);
 	}
 };
 
@@ -5850,6 +6034,110 @@ public:
 	inline void set_value___2(int32_t value)
 	{
 		___value___2 = value;
+	}
+};
+
+
+// System.Security.Cryptography.CspProviderFlags
+struct CspProviderFlags_t8981EF4CA441D46FBF242ABAA443608B474586D1 
+{
+public:
+	// System.Int32 System.Security.Cryptography.CspProviderFlags::value__
+	int32_t ___value___2;
+
+public:
+	inline static int32_t get_offset_of_value___2() { return static_cast<int32_t>(offsetof(CspProviderFlags_t8981EF4CA441D46FBF242ABAA443608B474586D1, ___value___2)); }
+	inline int32_t get_value___2() const { return ___value___2; }
+	inline int32_t* get_address_of_value___2() { return &___value___2; }
+	inline void set_value___2(int32_t value)
+	{
+		___value___2 = value;
+	}
+};
+
+
+// System.Security.Cryptography.DSACryptoServiceProvider
+struct DSACryptoServiceProvider_tB11E530A0513CF3148380968B18CB547D1F0594A  : public DSA_t6AAE59FF3EEECD35DCA27FDF431D10323A2168B7
+{
+public:
+	// Mono.Security.Cryptography.KeyPairPersistence System.Security.Cryptography.DSACryptoServiceProvider::store
+	KeyPairPersistence_t7F7E8811D03A25C0251BF255AB94BAF57E965D9A * ___store_2;
+	// System.Boolean System.Security.Cryptography.DSACryptoServiceProvider::persistKey
+	bool ___persistKey_3;
+	// System.Boolean System.Security.Cryptography.DSACryptoServiceProvider::persisted
+	bool ___persisted_4;
+	// System.Boolean System.Security.Cryptography.DSACryptoServiceProvider::privateKeyExportable
+	bool ___privateKeyExportable_5;
+	// System.Boolean System.Security.Cryptography.DSACryptoServiceProvider::m_disposed
+	bool ___m_disposed_6;
+	// Mono.Security.Cryptography.DSAManaged System.Security.Cryptography.DSACryptoServiceProvider::dsa
+	DSAManaged_tBA59DC6B28356918D31C5401258B4766E36FD3FA * ___dsa_7;
+
+public:
+	inline static int32_t get_offset_of_store_2() { return static_cast<int32_t>(offsetof(DSACryptoServiceProvider_tB11E530A0513CF3148380968B18CB547D1F0594A, ___store_2)); }
+	inline KeyPairPersistence_t7F7E8811D03A25C0251BF255AB94BAF57E965D9A * get_store_2() const { return ___store_2; }
+	inline KeyPairPersistence_t7F7E8811D03A25C0251BF255AB94BAF57E965D9A ** get_address_of_store_2() { return &___store_2; }
+	inline void set_store_2(KeyPairPersistence_t7F7E8811D03A25C0251BF255AB94BAF57E965D9A * value)
+	{
+		___store_2 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___store_2), (void*)value);
+	}
+
+	inline static int32_t get_offset_of_persistKey_3() { return static_cast<int32_t>(offsetof(DSACryptoServiceProvider_tB11E530A0513CF3148380968B18CB547D1F0594A, ___persistKey_3)); }
+	inline bool get_persistKey_3() const { return ___persistKey_3; }
+	inline bool* get_address_of_persistKey_3() { return &___persistKey_3; }
+	inline void set_persistKey_3(bool value)
+	{
+		___persistKey_3 = value;
+	}
+
+	inline static int32_t get_offset_of_persisted_4() { return static_cast<int32_t>(offsetof(DSACryptoServiceProvider_tB11E530A0513CF3148380968B18CB547D1F0594A, ___persisted_4)); }
+	inline bool get_persisted_4() const { return ___persisted_4; }
+	inline bool* get_address_of_persisted_4() { return &___persisted_4; }
+	inline void set_persisted_4(bool value)
+	{
+		___persisted_4 = value;
+	}
+
+	inline static int32_t get_offset_of_privateKeyExportable_5() { return static_cast<int32_t>(offsetof(DSACryptoServiceProvider_tB11E530A0513CF3148380968B18CB547D1F0594A, ___privateKeyExportable_5)); }
+	inline bool get_privateKeyExportable_5() const { return ___privateKeyExportable_5; }
+	inline bool* get_address_of_privateKeyExportable_5() { return &___privateKeyExportable_5; }
+	inline void set_privateKeyExportable_5(bool value)
+	{
+		___privateKeyExportable_5 = value;
+	}
+
+	inline static int32_t get_offset_of_m_disposed_6() { return static_cast<int32_t>(offsetof(DSACryptoServiceProvider_tB11E530A0513CF3148380968B18CB547D1F0594A, ___m_disposed_6)); }
+	inline bool get_m_disposed_6() const { return ___m_disposed_6; }
+	inline bool* get_address_of_m_disposed_6() { return &___m_disposed_6; }
+	inline void set_m_disposed_6(bool value)
+	{
+		___m_disposed_6 = value;
+	}
+
+	inline static int32_t get_offset_of_dsa_7() { return static_cast<int32_t>(offsetof(DSACryptoServiceProvider_tB11E530A0513CF3148380968B18CB547D1F0594A, ___dsa_7)); }
+	inline DSAManaged_tBA59DC6B28356918D31C5401258B4766E36FD3FA * get_dsa_7() const { return ___dsa_7; }
+	inline DSAManaged_tBA59DC6B28356918D31C5401258B4766E36FD3FA ** get_address_of_dsa_7() { return &___dsa_7; }
+	inline void set_dsa_7(DSAManaged_tBA59DC6B28356918D31C5401258B4766E36FD3FA * value)
+	{
+		___dsa_7 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___dsa_7), (void*)value);
+	}
+};
+
+struct DSACryptoServiceProvider_tB11E530A0513CF3148380968B18CB547D1F0594A_StaticFields
+{
+public:
+	// System.Boolean System.Security.Cryptography.DSACryptoServiceProvider::useMachineKeyStore
+	bool ___useMachineKeyStore_8;
+
+public:
+	inline static int32_t get_offset_of_useMachineKeyStore_8() { return static_cast<int32_t>(offsetof(DSACryptoServiceProvider_tB11E530A0513CF3148380968B18CB547D1F0594A_StaticFields, ___useMachineKeyStore_8)); }
+	inline bool get_useMachineKeyStore_8() const { return ___useMachineKeyStore_8; }
+	inline bool* get_address_of_useMachineKeyStore_8() { return &___useMachineKeyStore_8; }
+	inline void set_useMachineKeyStore_8(bool value)
+	{
+		___useMachineKeyStore_8 = value;
 	}
 };
 
@@ -9842,12 +10130,44 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t List_1_get_Count_m5D84793
 // T System.Collections.Generic.List`1<System.Object>::get_Item(System.Int32)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject * List_1_get_Item_mF00B574E58FB078BB753B05A3B86DD0A7A266B63_gshared_inline (List_1_t3F94120C77410A62EAE48421CF166B83AB95A2F5 * __this, int32_t ___index0, const RuntimeMethod* method);
 
+// System.Void System.Security.Cryptography.DSACryptoServiceProvider::.ctor(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DSACryptoServiceProvider__ctor_m176DE0EB8A9F7FE1FD891B5DF91E05D3646A6F1E (DSACryptoServiceProvider_tB11E530A0513CF3148380968B18CB547D1F0594A * __this, int32_t ___dwKeySize0, const RuntimeMethod* method);
 // System.Void System.Security.Cryptography.DSA::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DSA__ctor_m48F313EC9550B4E303B8992D9485545D2962C5B5 (DSA_t6AAE59FF3EEECD35DCA27FDF431D10323A2168B7 * __this, const RuntimeMethod* method);
+// System.Void System.Security.Cryptography.DSACryptoServiceProvider::Common(System.Int32,System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DSACryptoServiceProvider_Common_m921885248206C29F17527B585989E0901D367038 (DSACryptoServiceProvider_tB11E530A0513CF3148380968B18CB547D1F0594A * __this, int32_t ___dwKeySize0, bool ___parameters1, const RuntimeMethod* method);
 // System.Void System.Security.Cryptography.KeySizes::.ctor(System.Int32,System.Int32,System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void KeySizes__ctor_m3E926AE5EB6EE3A75028118474262765CC767F5A (KeySizes_t2F5C413E3DCD41211F03AF692B2633C8384E1FB3 * __this, int32_t ___minSize0, int32_t ___maxSize1, int32_t ___skipSize2, const RuntimeMethod* method);
+// System.Void Mono.Security.Cryptography.DSAManaged::.ctor(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DSAManaged__ctor_m6C479D6B67DFCB3BC6A213C2B772E7B78DE1207E (DSAManaged_tBA59DC6B28356918D31C5401258B4766E36FD3FA * __this, int32_t ___dwKeySize0, const RuntimeMethod* method);
+// System.Void Mono.Security.Cryptography.DSAManaged/KeyGeneratedEventHandler::.ctor(System.Object,System.IntPtr)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void KeyGeneratedEventHandler__ctor_m2A11914E3B14BB6A06C0A0590A9E71AF34ED9C08 (KeyGeneratedEventHandler_t54176E7D7463F3C1F98C09B8ABD5E980A460BEDC * __this, RuntimeObject * ___object0, intptr_t ___method1, const RuntimeMethod* method);
+// System.Void Mono.Security.Cryptography.DSAManaged::add_KeyGenerated(Mono.Security.Cryptography.DSAManaged/KeyGeneratedEventHandler)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DSAManaged_add_KeyGenerated_m38F2EC95ADF32AAF4E7E0EB753B2B0EF2DD1A96B (DSAManaged_tBA59DC6B28356918D31C5401258B4766E36FD3FA * __this, KeyGeneratedEventHandler_t54176E7D7463F3C1F98C09B8ABD5E980A460BEDC * ___value0, const RuntimeMethod* method);
+// System.Void System.Security.Cryptography.CspParameters::.ctor(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CspParameters__ctor_mB5671B337990F6D2FA7158D13E47EE5866186861 (CspParameters_t68AAF756CF69FC035037DF834453D0B8B7B503BC * __this, int32_t ___dwTypeIn0, const RuntimeMethod* method);
+// System.Security.Cryptography.CspProviderFlags System.Security.Cryptography.CspParameters::get_Flags()
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t CspParameters_get_Flags_m1AA89C7EAC0FFD2854D3952C3277FF2A580E86BE_inline (CspParameters_t68AAF756CF69FC035037DF834453D0B8B7B503BC * __this, const RuntimeMethod* method);
+// System.Void System.Security.Cryptography.CspParameters::set_Flags(System.Security.Cryptography.CspProviderFlags)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CspParameters_set_Flags_m73AF2CE4BA5726935B70AD6242491B14C7294A55 (CspParameters_t68AAF756CF69FC035037DF834453D0B8B7B503BC * __this, int32_t ___value0, const RuntimeMethod* method);
+// System.Void Mono.Security.Cryptography.KeyPairPersistence::.ctor(System.Security.Cryptography.CspParameters)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void KeyPairPersistence__ctor_m698E7F44C46A4B426C6668D1836B275BA3890F20 (KeyPairPersistence_t7F7E8811D03A25C0251BF255AB94BAF57E965D9A * __this, CspParameters_t68AAF756CF69FC035037DF834453D0B8B7B503BC * ___parameters0, const RuntimeMethod* method);
 // System.Void System.Object::Finalize()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Object_Finalize_mC59C83CF4F7707E425FFA6362931C25D4C36676A (RuntimeObject * __this, const RuntimeMethod* method);
+// System.Boolean Mono.Security.Cryptography.DSAManaged::get_PublicOnly()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool DSAManaged_get_PublicOnly_mF02F0668D73C76E63A4FE802D85B0026AAD3D265 (DSAManaged_tBA59DC6B28356918D31C5401258B4766E36FD3FA * __this, const RuntimeMethod* method);
+// System.String Locale::GetText(System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Locale_GetText_mF8FE147379A36330B41A5D5E2CAD23C18931E66E (String_t* ___msg0, const RuntimeMethod* method);
+// System.Void System.Security.Cryptography.CryptographicException::.ctor(System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CryptographicException__ctor_mE6D40FE819914DA1C6600907D160AD4231B46C31 (CryptographicException_tFFE56EF733D1150A0F3738DDE2CC4DE1A61849D5 * __this, String_t* ___message0, const RuntimeMethod* method);
+// System.Void Mono.Security.Cryptography.KeyPairPersistence::Remove()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void KeyPairPersistence_Remove_mEE185661D6F438BAC5E2753BF6C2FC8493516D6A (KeyPairPersistence_t7F7E8811D03A25C0251BF255AB94BAF57E965D9A * __this, const RuntimeMethod* method);
+// System.Void System.Security.Cryptography.AsymmetricAlgorithm::Clear()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AsymmetricAlgorithm_Clear_m21EC47F8DA34193EE0E99CBCA2D4DF4FD8F5166C (AsymmetricAlgorithm_t3519DD47C199C0F5A666E99931C22F84487EE51F * __this, const RuntimeMethod* method);
+// System.Void Mono.Security.Cryptography.KeyPairPersistence::set_KeyValue(System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void KeyPairPersistence_set_KeyValue_mD464B02252176B2B843DAA86709B96FCD525B7FD (KeyPairPersistence_t7F7E8811D03A25C0251BF255AB94BAF57E965D9A * __this, String_t* ___value0, const RuntimeMethod* method);
+// System.Void Mono.Security.Cryptography.KeyPairPersistence::Save()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void KeyPairPersistence_Save_m83770193D8C4AFC0691AB2DE5689A3D70003600F (KeyPairPersistence_t7F7E8811D03A25C0251BF255AB94BAF57E965D9A * __this, const RuntimeMethod* method);
 // System.Int32 System.Security.Cryptography.AsymmetricAlgorithm::get_KeySize()
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t AsymmetricAlgorithm_get_KeySize_mCCBF5EA049DD33844506A434B31CC21A1BADA003_inline (AsymmetricAlgorithm_t3519DD47C199C0F5A666E99931C22F84487EE51F * __this, const RuntimeMethod* method);
 // System.Void Mono.Security.Cryptography.DSAManaged::GenerateParams(System.Int32)
@@ -9900,14 +10220,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RandomNumberGenerator_t2CB5440F189986116A2FA9
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t BigInteger_BitCount_m7702CF0C094EC84ADA0AE35FC86C7A4C3742267C (BigInteger_tEBE1926757E30C0CDC1375751529943D3441FF00 * __this, const RuntimeMethod* method);
 // System.Boolean Mono.Math.BigInteger::op_Equality(Mono.Math.BigInteger,Mono.Math.BigInteger)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool BigInteger_op_Equality_mEC40AC8B3A0841CD873CDD19B5BD8B612550C45E (BigInteger_tEBE1926757E30C0CDC1375751529943D3441FF00 * ___bi10, BigInteger_tEBE1926757E30C0CDC1375751529943D3441FF00 * ___bi21, const RuntimeMethod* method);
-// System.String Locale::GetText(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Locale_GetText_mF8FE147379A36330B41A5D5E2CAD23C18931E66E (String_t* ___msg0, const RuntimeMethod* method);
 // System.Void System.ObjectDisposedException::.ctor(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ObjectDisposedException__ctor_mE57C6A61713668708F9B3CEF060A8D006B1FE880 (ObjectDisposedException_t29EF6F519F16BA477EC682F23E8344BB1E9A958A * __this, String_t* ___objectName0, const RuntimeMethod* method);
 // System.Void Mono.Security.Cryptography.DSAManaged::Generate()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DSAManaged_Generate_mC22DC4FA17491BDB2CB73A75CD5E9230AA429698 (DSAManaged_tBA59DC6B28356918D31C5401258B4766E36FD3FA * __this, const RuntimeMethod* method);
-// System.Void System.Security.Cryptography.CryptographicException::.ctor(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CryptographicException__ctor_mE6D40FE819914DA1C6600907D160AD4231B46C31 (CryptographicException_tFFE56EF733D1150A0F3738DDE2CC4DE1A61849D5 * __this, String_t* ___message0, const RuntimeMethod* method);
 // System.Byte[] Mono.Math.BigInteger::GetBytes()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ByteU5BU5D_tDBBEB0E8362242FA7223000D978B0DD19D4B0726* BigInteger_GetBytes_mF2B46D5A258E774CB3A7B2C8832C5F7A09647056 (BigInteger_tEBE1926757E30C0CDC1375751529943D3441FF00 * __this, const RuntimeMethod* method);
 // System.Byte[] Mono.Security.Cryptography.DSAManaged::NormalizeArray(System.Byte[])
@@ -10886,6 +11202,306 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool DateTimeFormatInfo_get_HasYearMonthAdjus
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MatchNumberDelegate__ctor_m0E2AE677ED4E5754C30BC2DDE8B7DC8C4F46C5A7 (MatchNumberDelegate_t4EB7A242D7C0B4570F59DD93F38AB3422672B199 * __this, RuntimeObject * ___object0, intptr_t ___method1, const RuntimeMethod* method);
 // System.Void System.ThrowHelper::ThrowArgumentOutOfRangeException()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ThrowHelper_ThrowArgumentOutOfRangeException_m4841366ABC2B2AFA37C10900551D7E07522C0929 (const RuntimeMethod* method);
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Void System.Security.Cryptography.DSACryptoServiceProvider::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DSACryptoServiceProvider__ctor_mE00A5C5770962238946F49C4525F094D33A61F6A (DSACryptoServiceProvider_tB11E530A0513CF3148380968B18CB547D1F0594A * __this, const RuntimeMethod* method)
+{
+	{
+		DSACryptoServiceProvider__ctor_m176DE0EB8A9F7FE1FD891B5DF91E05D3646A6F1E(__this, ((int32_t)1024), /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Void System.Security.Cryptography.DSACryptoServiceProvider::.ctor(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DSACryptoServiceProvider__ctor_m176DE0EB8A9F7FE1FD891B5DF91E05D3646A6F1E (DSACryptoServiceProvider_tB11E530A0513CF3148380968B18CB547D1F0594A * __this, int32_t ___dwKeySize0, const RuntimeMethod* method)
+{
+	{
+		__this->set_privateKeyExportable_5((bool)1);
+		DSA__ctor_m48F313EC9550B4E303B8992D9485545D2962C5B5(__this, /*hidden argument*/NULL);
+		int32_t L_0 = ___dwKeySize0;
+		DSACryptoServiceProvider_Common_m921885248206C29F17527B585989E0901D367038(__this, L_0, (bool)0, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Void System.Security.Cryptography.DSACryptoServiceProvider::Common(System.Int32,System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DSACryptoServiceProvider_Common_m921885248206C29F17527B585989E0901D367038 (DSACryptoServiceProvider_tB11E530A0513CF3148380968B18CB547D1F0594A * __this, int32_t ___dwKeySize0, bool ___parameters1, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&CspParameters_t68AAF756CF69FC035037DF834453D0B8B7B503BC_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&DSACryptoServiceProvider_OnKeyGenerated_m9DC9881F05072962C696024853AE0E7357F34E8C_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&DSACryptoServiceProvider_tB11E530A0513CF3148380968B18CB547D1F0594A_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&DSAManaged_tBA59DC6B28356918D31C5401258B4766E36FD3FA_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&KeyGeneratedEventHandler_t54176E7D7463F3C1F98C09B8ABD5E980A460BEDC_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&KeyPairPersistence_t7F7E8811D03A25C0251BF255AB94BAF57E965D9A_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&KeySizesU5BU5D_tA093382691AAF32E84D3063E83C59472F9714499_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&KeySizes_t2F5C413E3DCD41211F03AF692B2633C8384E1FB3_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	CspParameters_t68AAF756CF69FC035037DF834453D0B8B7B503BC * V_0 = NULL;
+	{
+		KeySizesU5BU5D_tA093382691AAF32E84D3063E83C59472F9714499* L_0 = (KeySizesU5BU5D_tA093382691AAF32E84D3063E83C59472F9714499*)(KeySizesU5BU5D_tA093382691AAF32E84D3063E83C59472F9714499*)SZArrayNew(KeySizesU5BU5D_tA093382691AAF32E84D3063E83C59472F9714499_il2cpp_TypeInfo_var, (uint32_t)1);
+		((AsymmetricAlgorithm_t3519DD47C199C0F5A666E99931C22F84487EE51F *)__this)->set_LegalKeySizesValue_1(L_0);
+		KeySizesU5BU5D_tA093382691AAF32E84D3063E83C59472F9714499* L_1 = ((AsymmetricAlgorithm_t3519DD47C199C0F5A666E99931C22F84487EE51F *)__this)->get_LegalKeySizesValue_1();
+		KeySizes_t2F5C413E3DCD41211F03AF692B2633C8384E1FB3 * L_2 = (KeySizes_t2F5C413E3DCD41211F03AF692B2633C8384E1FB3 *)il2cpp_codegen_object_new(KeySizes_t2F5C413E3DCD41211F03AF692B2633C8384E1FB3_il2cpp_TypeInfo_var);
+		KeySizes__ctor_m3E926AE5EB6EE3A75028118474262765CC767F5A(L_2, ((int32_t)512), ((int32_t)1024), ((int32_t)64), /*hidden argument*/NULL);
+		NullCheck(L_1);
+		ArrayElementTypeCheck (L_1, L_2);
+		(L_1)->SetAt(static_cast<il2cpp_array_size_t>(0), (KeySizes_t2F5C413E3DCD41211F03AF692B2633C8384E1FB3 *)L_2);
+		int32_t L_3 = ___dwKeySize0;
+		VirtActionInvoker1< int32_t >::Invoke(7 /* System.Void System.Security.Cryptography.AsymmetricAlgorithm::set_KeySize(System.Int32) */, __this, L_3);
+		int32_t L_4 = ___dwKeySize0;
+		DSAManaged_tBA59DC6B28356918D31C5401258B4766E36FD3FA * L_5 = (DSAManaged_tBA59DC6B28356918D31C5401258B4766E36FD3FA *)il2cpp_codegen_object_new(DSAManaged_tBA59DC6B28356918D31C5401258B4766E36FD3FA_il2cpp_TypeInfo_var);
+		DSAManaged__ctor_m6C479D6B67DFCB3BC6A213C2B772E7B78DE1207E(L_5, L_4, /*hidden argument*/NULL);
+		__this->set_dsa_7(L_5);
+		DSAManaged_tBA59DC6B28356918D31C5401258B4766E36FD3FA * L_6 = __this->get_dsa_7();
+		KeyGeneratedEventHandler_t54176E7D7463F3C1F98C09B8ABD5E980A460BEDC * L_7 = (KeyGeneratedEventHandler_t54176E7D7463F3C1F98C09B8ABD5E980A460BEDC *)il2cpp_codegen_object_new(KeyGeneratedEventHandler_t54176E7D7463F3C1F98C09B8ABD5E980A460BEDC_il2cpp_TypeInfo_var);
+		KeyGeneratedEventHandler__ctor_m2A11914E3B14BB6A06C0A0590A9E71AF34ED9C08(L_7, __this, (intptr_t)((intptr_t)DSACryptoServiceProvider_OnKeyGenerated_m9DC9881F05072962C696024853AE0E7357F34E8C_RuntimeMethod_var), /*hidden argument*/NULL);
+		NullCheck(L_6);
+		DSAManaged_add_KeyGenerated_m38F2EC95ADF32AAF4E7E0EB753B2B0EF2DD1A96B(L_6, L_7, /*hidden argument*/NULL);
+		bool L_8 = ___parameters1;
+		__this->set_persistKey_3(L_8);
+		bool L_9 = ___parameters1;
+		if (!L_9)
+		{
+			goto IL_005a;
+		}
+	}
+	{
+		return;
+	}
+
+IL_005a:
+	{
+		CspParameters_t68AAF756CF69FC035037DF834453D0B8B7B503BC * L_10 = (CspParameters_t68AAF756CF69FC035037DF834453D0B8B7B503BC *)il2cpp_codegen_object_new(CspParameters_t68AAF756CF69FC035037DF834453D0B8B7B503BC_il2cpp_TypeInfo_var);
+		CspParameters__ctor_mB5671B337990F6D2FA7158D13E47EE5866186861(L_10, ((int32_t)13), /*hidden argument*/NULL);
+		V_0 = L_10;
+		bool L_11 = ((DSACryptoServiceProvider_tB11E530A0513CF3148380968B18CB547D1F0594A_StaticFields*)il2cpp_codegen_static_fields_for(DSACryptoServiceProvider_tB11E530A0513CF3148380968B18CB547D1F0594A_il2cpp_TypeInfo_var))->get_useMachineKeyStore_8();
+		if (!L_11)
+		{
+			goto IL_0077;
+		}
+	}
+	{
+		CspParameters_t68AAF756CF69FC035037DF834453D0B8B7B503BC * L_12 = V_0;
+		CspParameters_t68AAF756CF69FC035037DF834453D0B8B7B503BC * L_13 = L_12;
+		NullCheck(L_13);
+		int32_t L_14;
+		L_14 = CspParameters_get_Flags_m1AA89C7EAC0FFD2854D3952C3277FF2A580E86BE_inline(L_13, /*hidden argument*/NULL);
+		NullCheck(L_13);
+		CspParameters_set_Flags_m73AF2CE4BA5726935B70AD6242491B14C7294A55(L_13, ((int32_t)((int32_t)L_14|(int32_t)1)), /*hidden argument*/NULL);
+	}
+
+IL_0077:
+	{
+		CspParameters_t68AAF756CF69FC035037DF834453D0B8B7B503BC * L_15 = V_0;
+		KeyPairPersistence_t7F7E8811D03A25C0251BF255AB94BAF57E965D9A * L_16 = (KeyPairPersistence_t7F7E8811D03A25C0251BF255AB94BAF57E965D9A *)il2cpp_codegen_object_new(KeyPairPersistence_t7F7E8811D03A25C0251BF255AB94BAF57E965D9A_il2cpp_TypeInfo_var);
+		KeyPairPersistence__ctor_m698E7F44C46A4B426C6668D1836B275BA3890F20(L_16, L_15, /*hidden argument*/NULL);
+		__this->set_store_2(L_16);
+		return;
+	}
+}
+// System.Void System.Security.Cryptography.DSACryptoServiceProvider::Finalize()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DSACryptoServiceProvider_Finalize_mCC2C6DDC26CE3C4C3969D81939B01A00A11FCAAC (DSACryptoServiceProvider_tB11E530A0513CF3148380968B18CB547D1F0594A * __this, const RuntimeMethod* method)
+{
+	Exception_t * __last_unhandled_exception = 0;
+	il2cpp::utils::ExceptionSupportStack<int32_t, 1> __leave_targets;
+
+IL_0000:
+	try
+	{ // begin try (depth: 1)
+		VirtActionInvoker1< bool >::Invoke(5 /* System.Void System.Security.Cryptography.AsymmetricAlgorithm::Dispose(System.Boolean) */, __this, (bool)0);
+		IL2CPP_LEAVE(0x10, FINALLY_0009);
+	} // end try (depth: 1)
+	catch(Il2CppExceptionWrapper& e)
+	{
+		__last_unhandled_exception = (Exception_t *)e.ex;
+		goto FINALLY_0009;
+	}
+
+FINALLY_0009:
+	{ // begin finally (depth: 1)
+		Object_Finalize_mC59C83CF4F7707E425FFA6362931C25D4C36676A(__this, /*hidden argument*/NULL);
+		IL2CPP_END_FINALLY(9)
+	} // end finally (depth: 1)
+	IL2CPP_CLEANUP(9)
+	{
+		IL2CPP_RETHROW_IF_UNHANDLED(Exception_t *)
+		IL2CPP_JUMP_TBL(0x10, IL_0010)
+	}
+
+IL_0010:
+	{
+		return;
+	}
+}
+// System.Int32 System.Security.Cryptography.DSACryptoServiceProvider::get_KeySize()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t DSACryptoServiceProvider_get_KeySize_m13C86F7E703290AF2D6063018788CCD8C9F59615 (DSACryptoServiceProvider_tB11E530A0513CF3148380968B18CB547D1F0594A * __this, const RuntimeMethod* method)
+{
+	{
+		DSAManaged_tBA59DC6B28356918D31C5401258B4766E36FD3FA * L_0 = __this->get_dsa_7();
+		NullCheck(L_0);
+		int32_t L_1;
+		L_1 = VirtFuncInvoker0< int32_t >::Invoke(6 /* System.Int32 System.Security.Cryptography.AsymmetricAlgorithm::get_KeySize() */, L_0);
+		return L_1;
+	}
+}
+// System.Boolean System.Security.Cryptography.DSACryptoServiceProvider::get_PublicOnly()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool DSACryptoServiceProvider_get_PublicOnly_m3F1FEE073C9C4A8803CD6A77FC2B34F5628CC182 (DSACryptoServiceProvider_tB11E530A0513CF3148380968B18CB547D1F0594A * __this, const RuntimeMethod* method)
+{
+	{
+		DSAManaged_tBA59DC6B28356918D31C5401258B4766E36FD3FA * L_0 = __this->get_dsa_7();
+		NullCheck(L_0);
+		bool L_1;
+		L_1 = DSAManaged_get_PublicOnly_mF02F0668D73C76E63A4FE802D85B0026AAD3D265(L_0, /*hidden argument*/NULL);
+		return L_1;
+	}
+}
+// System.Security.Cryptography.DSAParameters System.Security.Cryptography.DSACryptoServiceProvider::ExportParameters(System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR DSAParameters_t37819E6A78CC8B484233CBCA9245DC39151018A1  DSACryptoServiceProvider_ExportParameters_mC3F73B8D6C6F77475C40D76A60479D28DE8D4296 (DSACryptoServiceProvider_tB11E530A0513CF3148380968B18CB547D1F0594A * __this, bool ___includePrivateParameters0, const RuntimeMethod* method)
+{
+	{
+		bool L_0 = ___includePrivateParameters0;
+		if (!L_0)
+		{
+			goto IL_001b;
+		}
+	}
+	{
+		bool L_1 = __this->get_privateKeyExportable_5();
+		if (L_1)
+		{
+			goto IL_001b;
+		}
+	}
+	{
+		String_t* L_2;
+		L_2 = Locale_GetText_mF8FE147379A36330B41A5D5E2CAD23C18931E66E(((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralDE2AC8D6634EF01C5320B1776D599A713E9AB555)), /*hidden argument*/NULL);
+		CryptographicException_tFFE56EF733D1150A0F3738DDE2CC4DE1A61849D5 * L_3 = (CryptographicException_tFFE56EF733D1150A0F3738DDE2CC4DE1A61849D5 *)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&CryptographicException_tFFE56EF733D1150A0F3738DDE2CC4DE1A61849D5_il2cpp_TypeInfo_var)));
+		CryptographicException__ctor_mE6D40FE819914DA1C6600907D160AD4231B46C31(L_3, L_2, /*hidden argument*/NULL);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_3, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&DSACryptoServiceProvider_ExportParameters_mC3F73B8D6C6F77475C40D76A60479D28DE8D4296_RuntimeMethod_var)));
+	}
+
+IL_001b:
+	{
+		DSAManaged_tBA59DC6B28356918D31C5401258B4766E36FD3FA * L_4 = __this->get_dsa_7();
+		bool L_5 = ___includePrivateParameters0;
+		NullCheck(L_4);
+		DSAParameters_t37819E6A78CC8B484233CBCA9245DC39151018A1  L_6;
+		L_6 = VirtFuncInvoker1< DSAParameters_t37819E6A78CC8B484233CBCA9245DC39151018A1 , bool >::Invoke(10 /* System.Security.Cryptography.DSAParameters System.Security.Cryptography.DSA::ExportParameters(System.Boolean) */, L_4, L_5);
+		return L_6;
+	}
+}
+// System.Void System.Security.Cryptography.DSACryptoServiceProvider::ImportParameters(System.Security.Cryptography.DSAParameters)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DSACryptoServiceProvider_ImportParameters_m16FDF6D416AB7E8206BC4269FD63D489CF457931 (DSACryptoServiceProvider_tB11E530A0513CF3148380968B18CB547D1F0594A * __this, DSAParameters_t37819E6A78CC8B484233CBCA9245DC39151018A1  ___parameters0, const RuntimeMethod* method)
+{
+	{
+		DSAManaged_tBA59DC6B28356918D31C5401258B4766E36FD3FA * L_0 = __this->get_dsa_7();
+		DSAParameters_t37819E6A78CC8B484233CBCA9245DC39151018A1  L_1 = ___parameters0;
+		NullCheck(L_0);
+		VirtActionInvoker1< DSAParameters_t37819E6A78CC8B484233CBCA9245DC39151018A1  >::Invoke(11 /* System.Void System.Security.Cryptography.DSA::ImportParameters(System.Security.Cryptography.DSAParameters) */, L_0, L_1);
+		return;
+	}
+}
+// System.Void System.Security.Cryptography.DSACryptoServiceProvider::Dispose(System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DSACryptoServiceProvider_Dispose_m7E47F9EFA28B570E8281226F7865447DC033312D (DSACryptoServiceProvider_tB11E530A0513CF3148380968B18CB547D1F0594A * __this, bool ___disposing0, const RuntimeMethod* method)
+{
+	{
+		bool L_0 = __this->get_m_disposed_6();
+		if (L_0)
+		{
+			goto IL_003d;
+		}
+	}
+	{
+		bool L_1 = __this->get_persisted_4();
+		if (!L_1)
+		{
+			goto IL_0023;
+		}
+	}
+	{
+		bool L_2 = __this->get_persistKey_3();
+		if (L_2)
+		{
+			goto IL_0023;
+		}
+	}
+	{
+		KeyPairPersistence_t7F7E8811D03A25C0251BF255AB94BAF57E965D9A * L_3 = __this->get_store_2();
+		NullCheck(L_3);
+		KeyPairPersistence_Remove_mEE185661D6F438BAC5E2753BF6C2FC8493516D6A(L_3, /*hidden argument*/NULL);
+	}
+
+IL_0023:
+	{
+		DSAManaged_tBA59DC6B28356918D31C5401258B4766E36FD3FA * L_4 = __this->get_dsa_7();
+		if (!L_4)
+		{
+			goto IL_0036;
+		}
+	}
+	{
+		DSAManaged_tBA59DC6B28356918D31C5401258B4766E36FD3FA * L_5 = __this->get_dsa_7();
+		NullCheck(L_5);
+		AsymmetricAlgorithm_Clear_m21EC47F8DA34193EE0E99CBCA2D4DF4FD8F5166C(L_5, /*hidden argument*/NULL);
+	}
+
+IL_0036:
+	{
+		__this->set_m_disposed_6((bool)1);
+	}
+
+IL_003d:
+	{
+		return;
+	}
+}
+// System.Void System.Security.Cryptography.DSACryptoServiceProvider::OnKeyGenerated(System.Object,System.EventArgs)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DSACryptoServiceProvider_OnKeyGenerated_m9DC9881F05072962C696024853AE0E7357F34E8C (DSACryptoServiceProvider_tB11E530A0513CF3148380968B18CB547D1F0594A * __this, RuntimeObject * ___sender0, EventArgs_tBCAACA538A5195B6D6C8DFCC3524A2A4A67FD8BA * ___e1, const RuntimeMethod* method)
+{
+	{
+		bool L_0 = __this->get_persistKey_3();
+		if (!L_0)
+		{
+			goto IL_0041;
+		}
+	}
+	{
+		bool L_1 = __this->get_persisted_4();
+		if (L_1)
+		{
+			goto IL_0041;
+		}
+	}
+	{
+		KeyPairPersistence_t7F7E8811D03A25C0251BF255AB94BAF57E965D9A * L_2 = __this->get_store_2();
+		DSAManaged_tBA59DC6B28356918D31C5401258B4766E36FD3FA * L_3 = __this->get_dsa_7();
+		NullCheck(L_3);
+		bool L_4;
+		L_4 = DSAManaged_get_PublicOnly_mF02F0668D73C76E63A4FE802D85B0026AAD3D265(L_3, /*hidden argument*/NULL);
+		String_t* L_5;
+		L_5 = VirtFuncInvoker1< String_t*, bool >::Invoke(9 /* System.String System.Security.Cryptography.AsymmetricAlgorithm::ToXmlString(System.Boolean) */, __this, (bool)((((int32_t)L_4) == ((int32_t)0))? 1 : 0));
+		NullCheck(L_2);
+		KeyPairPersistence_set_KeyValue_mD464B02252176B2B843DAA86709B96FCD525B7FD(L_2, L_5, /*hidden argument*/NULL);
+		KeyPairPersistence_t7F7E8811D03A25C0251BF255AB94BAF57E965D9A * L_6 = __this->get_store_2();
+		NullCheck(L_6);
+		KeyPairPersistence_Save_m83770193D8C4AFC0691AB2DE5689A3D70003600F(L_6, /*hidden argument*/NULL);
+		__this->set_persisted_4((bool)1);
+	}
+
+IL_0041:
+	{
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -41977,6 +42593,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DateTimeParse__cctor_m6A22F53BBDC98EAB53
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t CspParameters_get_Flags_m1AA89C7EAC0FFD2854D3952C3277FF2A580E86BE_inline (CspParameters_t68AAF756CF69FC035037DF834453D0B8B7B503BC * __this, const RuntimeMethod* method)
+{
+	{
+		int32_t L_0 = __this->get_m_flags_4();
+		return (int32_t)(L_0);
+	}
+}
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t AsymmetricAlgorithm_get_KeySize_mCCBF5EA049DD33844506A434B31CC21A1BADA003_inline (AsymmetricAlgorithm_t3519DD47C199C0F5A666E99931C22F84487EE51F * __this, const RuntimeMethod* method)
 {
 	{
