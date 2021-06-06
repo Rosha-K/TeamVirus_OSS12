@@ -340,6 +340,7 @@ IL2CPP_EXTERN_C String_t* _stringLiteral5CC69CB8F98F8668F5406BF22BB57468763FF72C
 IL2CPP_EXTERN_C String_t* _stringLiteral68826404A744EFF27269C708DC760B5829BDDC44;
 IL2CPP_EXTERN_C String_t* _stringLiteral6B45842FD003904F5AB19B96BF5F95979795629C;
 IL2CPP_EXTERN_C String_t* _stringLiteral6C0E22880CD7C8850769C0F99F3F1AB2B183FC39;
+IL2CPP_EXTERN_C String_t* _stringLiteral758733BDBED83CBFF4F635AC26CA92AAE477F75D;
 IL2CPP_EXTERN_C String_t* _stringLiteral7988BB32B1D89B98310B2836869D1BF813F85BE9;
 IL2CPP_EXTERN_C String_t* _stringLiteral7D5D6BBF8281151C9F5F57DE5D5BABB7140A651D;
 IL2CPP_EXTERN_C String_t* _stringLiteral83BC53AFD9108A47F3E542E10734E5479C7B2D94;
@@ -11175,6 +11176,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Graph_setGraph_m16C8D14D78E36AC093EBBEB6
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GameObject_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_mD98876EFC776CB8D02A1394AE6A72DC47F271C65_RuntimeMethod_var);
 		s_Il2CppMethodInitialized = true;
 	}
+	int32_t V_0 = 0;
 	{
 		// date[i].GetComponent<Text>().text = graphDate[i];
 		GameObjectU5BU5D_tA88FC1A1FC9D4D73D0B3984D4B0ECE88F4C47642* L_0 = __this->get_date_7();
@@ -11192,7 +11194,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Graph_setGraph_m16C8D14D78E36AC093EBBEB6
 		String_t* L_8 = (L_5)->GetAt(static_cast<il2cpp_array_size_t>(L_7));
 		NullCheck(L_4);
 		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_4, L_8);
-		// bar[i].transform.localScale = new Vector3(bar[i].transform.localScale.x, (G_sidoData[i, 17].INC_DEC) / 4, bar[i].transform.localScale.z);
+		// bar[i].transform.localScale = new Vector3(bar[i].transform.localScale.x, (G_sidoData[i, 17].OVER_FLOW_CNT+ G_sidoData[i, 17].LOCAL_OCC_CNT) / 4, bar[i].transform.localScale.z);
 		GameObjectU5BU5D_tA88FC1A1FC9D4D73D0B3984D4B0ECE88F4C47642* L_9 = __this->get_bar_5();
 		int32_t L_10 = ___i0;
 		NullCheck(L_9);
@@ -11218,99 +11220,118 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Graph_setGraph_m16C8D14D78E36AC093EBBEB6
 		NullCheck(L_21);
 		Loaded_Sido_Graph_t96C3111F9518654961ADA42798AFA9B44BCC010C * L_23;
 		L_23 = (L_21)->GetAddressAt(L_22, ((int32_t)17));
-		int32_t L_24 = L_23->get_INC_DEC_1();
-		GameObjectU5BU5D_tA88FC1A1FC9D4D73D0B3984D4B0ECE88F4C47642* L_25 = __this->get_bar_5();
+		int32_t L_24 = L_23->get_OVER_FLOW_CNT_5();
+		Loaded_Sido_GraphU5BU2CU5D_t5F73BA1DBE15C6E85C206A0480D97FA12E70898D* L_25 = __this->get_G_sidoData_4();
 		int32_t L_26 = ___i0;
 		NullCheck(L_25);
-		int32_t L_27 = L_26;
-		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_28 = (L_25)->GetAt(static_cast<il2cpp_array_size_t>(L_27));
-		NullCheck(L_28);
-		Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * L_29;
-		L_29 = GameObject_get_transform_m16A80BB92B6C8C5AB696E447014D45EDF1E4DE34(L_28, /*hidden argument*/NULL);
+		Loaded_Sido_Graph_t96C3111F9518654961ADA42798AFA9B44BCC010C * L_27;
+		L_27 = (L_25)->GetAddressAt(L_26, ((int32_t)17));
+		int32_t L_28 = L_27->get_LOCAL_OCC_CNT_6();
+		GameObjectU5BU5D_tA88FC1A1FC9D4D73D0B3984D4B0ECE88F4C47642* L_29 = __this->get_bar_5();
+		int32_t L_30 = ___i0;
 		NullCheck(L_29);
-		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_30;
-		L_30 = Transform_get_localScale_mD9DF6CA81108C2A6002B5EA2BE25A6CD2723D046(L_29, /*hidden argument*/NULL);
-		float L_31 = L_30.get_z_4();
-		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_32;
-		memset((&L_32), 0, sizeof(L_32));
-		Vector3__ctor_m57495F692C6CE1CEF278CAD9A98221165D37E636_inline((&L_32), L_20, ((float)((float)((int32_t)((int32_t)L_24/(int32_t)4)))), L_31, /*hidden argument*/NULL);
-		NullCheck(L_13);
-		Transform_set_localScale_mF4D1611E48D1BA7566A1E166DC2DACF3ADD8BA3A(L_13, L_32, /*hidden argument*/NULL);
-		// value[i].GetComponent<Text>().text = G_sidoData[i, 17].INC_DEC.ToString();
-		GameObjectU5BU5D_tA88FC1A1FC9D4D73D0B3984D4B0ECE88F4C47642* L_33 = __this->get_value_6();
-		int32_t L_34 = ___i0;
+		int32_t L_31 = L_30;
+		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_32 = (L_29)->GetAt(static_cast<il2cpp_array_size_t>(L_31));
+		NullCheck(L_32);
+		Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * L_33;
+		L_33 = GameObject_get_transform_m16A80BB92B6C8C5AB696E447014D45EDF1E4DE34(L_32, /*hidden argument*/NULL);
 		NullCheck(L_33);
-		int32_t L_35 = L_34;
-		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_36 = (L_33)->GetAt(static_cast<il2cpp_array_size_t>(L_35));
-		NullCheck(L_36);
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_37;
-		L_37 = GameObject_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_mD98876EFC776CB8D02A1394AE6A72DC47F271C65(L_36, /*hidden argument*/GameObject_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_mD98876EFC776CB8D02A1394AE6A72DC47F271C65_RuntimeMethod_var);
-		Loaded_Sido_GraphU5BU2CU5D_t5F73BA1DBE15C6E85C206A0480D97FA12E70898D* L_38 = __this->get_G_sidoData_4();
-		int32_t L_39 = ___i0;
-		NullCheck(L_38);
-		Loaded_Sido_Graph_t96C3111F9518654961ADA42798AFA9B44BCC010C * L_40;
-		L_40 = (L_38)->GetAddressAt(L_39, ((int32_t)17));
-		int32_t* L_41 = L_40->get_address_of_INC_DEC_1();
-		String_t* L_42;
-		L_42 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_41, /*hidden argument*/NULL);
+		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_34;
+		L_34 = Transform_get_localScale_mD9DF6CA81108C2A6002B5EA2BE25A6CD2723D046(L_33, /*hidden argument*/NULL);
+		float L_35 = L_34.get_z_4();
+		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_36;
+		memset((&L_36), 0, sizeof(L_36));
+		Vector3__ctor_m57495F692C6CE1CEF278CAD9A98221165D37E636_inline((&L_36), L_20, ((float)((float)((int32_t)((int32_t)((int32_t)il2cpp_codegen_add((int32_t)L_24, (int32_t)L_28))/(int32_t)4)))), L_35, /*hidden argument*/NULL);
+		NullCheck(L_13);
+		Transform_set_localScale_mF4D1611E48D1BA7566A1E166DC2DACF3ADD8BA3A(L_13, L_36, /*hidden argument*/NULL);
+		// value[i].GetComponent<Text>().text = (G_sidoData[i, 17].OVER_FLOW_CNT + G_sidoData[i, 17].LOCAL_OCC_CNT).ToString();
+		GameObjectU5BU5D_tA88FC1A1FC9D4D73D0B3984D4B0ECE88F4C47642* L_37 = __this->get_value_6();
+		int32_t L_38 = ___i0;
 		NullCheck(L_37);
-		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_37, L_42);
-		// value[i].transform.position = new Vector3(value[i].transform.position.x, value[i].transform.position.y+ (G_sidoData[i, 17].INC_DEC), value[i].transform.position.z);
-		GameObjectU5BU5D_tA88FC1A1FC9D4D73D0B3984D4B0ECE88F4C47642* L_43 = __this->get_value_6();
-		int32_t L_44 = ___i0;
-		NullCheck(L_43);
-		int32_t L_45 = L_44;
-		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_46 = (L_43)->GetAt(static_cast<il2cpp_array_size_t>(L_45));
+		int32_t L_39 = L_38;
+		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_40 = (L_37)->GetAt(static_cast<il2cpp_array_size_t>(L_39));
+		NullCheck(L_40);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_41;
+		L_41 = GameObject_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_mD98876EFC776CB8D02A1394AE6A72DC47F271C65(L_40, /*hidden argument*/GameObject_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_mD98876EFC776CB8D02A1394AE6A72DC47F271C65_RuntimeMethod_var);
+		Loaded_Sido_GraphU5BU2CU5D_t5F73BA1DBE15C6E85C206A0480D97FA12E70898D* L_42 = __this->get_G_sidoData_4();
+		int32_t L_43 = ___i0;
+		NullCheck(L_42);
+		Loaded_Sido_Graph_t96C3111F9518654961ADA42798AFA9B44BCC010C * L_44;
+		L_44 = (L_42)->GetAddressAt(L_43, ((int32_t)17));
+		int32_t L_45 = L_44->get_OVER_FLOW_CNT_5();
+		Loaded_Sido_GraphU5BU2CU5D_t5F73BA1DBE15C6E85C206A0480D97FA12E70898D* L_46 = __this->get_G_sidoData_4();
+		int32_t L_47 = ___i0;
 		NullCheck(L_46);
-		Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * L_47;
-		L_47 = GameObject_get_transform_m16A80BB92B6C8C5AB696E447014D45EDF1E4DE34(L_46, /*hidden argument*/NULL);
-		GameObjectU5BU5D_tA88FC1A1FC9D4D73D0B3984D4B0ECE88F4C47642* L_48 = __this->get_value_6();
-		int32_t L_49 = ___i0;
-		NullCheck(L_48);
-		int32_t L_50 = L_49;
-		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_51 = (L_48)->GetAt(static_cast<il2cpp_array_size_t>(L_50));
+		Loaded_Sido_Graph_t96C3111F9518654961ADA42798AFA9B44BCC010C * L_48;
+		L_48 = (L_46)->GetAddressAt(L_47, ((int32_t)17));
+		int32_t L_49 = L_48->get_LOCAL_OCC_CNT_6();
+		V_0 = ((int32_t)il2cpp_codegen_add((int32_t)L_45, (int32_t)L_49));
+		String_t* L_50;
+		L_50 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&V_0), /*hidden argument*/NULL);
+		NullCheck(L_41);
+		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_41, L_50);
+		// value[i].transform.position = new Vector3(value[i].transform.position.x, value[i].transform.position.y+ (G_sidoData[i, 17].OVER_FLOW_CNT + G_sidoData[i, 17].LOCAL_OCC_CNT), value[i].transform.position.z);
+		GameObjectU5BU5D_tA88FC1A1FC9D4D73D0B3984D4B0ECE88F4C47642* L_51 = __this->get_value_6();
+		int32_t L_52 = ___i0;
 		NullCheck(L_51);
-		Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * L_52;
-		L_52 = GameObject_get_transform_m16A80BB92B6C8C5AB696E447014D45EDF1E4DE34(L_51, /*hidden argument*/NULL);
-		NullCheck(L_52);
-		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_53;
-		L_53 = Transform_get_position_m40A8A9895568D56FFC687B57F30E8D53CB5EA341(L_52, /*hidden argument*/NULL);
-		float L_54 = L_53.get_x_2();
-		GameObjectU5BU5D_tA88FC1A1FC9D4D73D0B3984D4B0ECE88F4C47642* L_55 = __this->get_value_6();
-		int32_t L_56 = ___i0;
-		NullCheck(L_55);
-		int32_t L_57 = L_56;
-		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_58 = (L_55)->GetAt(static_cast<il2cpp_array_size_t>(L_57));
-		NullCheck(L_58);
-		Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * L_59;
-		L_59 = GameObject_get_transform_m16A80BB92B6C8C5AB696E447014D45EDF1E4DE34(L_58, /*hidden argument*/NULL);
+		int32_t L_53 = L_52;
+		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_54 = (L_51)->GetAt(static_cast<il2cpp_array_size_t>(L_53));
+		NullCheck(L_54);
+		Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * L_55;
+		L_55 = GameObject_get_transform_m16A80BB92B6C8C5AB696E447014D45EDF1E4DE34(L_54, /*hidden argument*/NULL);
+		GameObjectU5BU5D_tA88FC1A1FC9D4D73D0B3984D4B0ECE88F4C47642* L_56 = __this->get_value_6();
+		int32_t L_57 = ___i0;
+		NullCheck(L_56);
+		int32_t L_58 = L_57;
+		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_59 = (L_56)->GetAt(static_cast<il2cpp_array_size_t>(L_58));
 		NullCheck(L_59);
-		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_60;
-		L_60 = Transform_get_position_m40A8A9895568D56FFC687B57F30E8D53CB5EA341(L_59, /*hidden argument*/NULL);
-		float L_61 = L_60.get_y_3();
-		Loaded_Sido_GraphU5BU2CU5D_t5F73BA1DBE15C6E85C206A0480D97FA12E70898D* L_62 = __this->get_G_sidoData_4();
-		int32_t L_63 = ___i0;
-		NullCheck(L_62);
-		Loaded_Sido_Graph_t96C3111F9518654961ADA42798AFA9B44BCC010C * L_64;
-		L_64 = (L_62)->GetAddressAt(L_63, ((int32_t)17));
-		int32_t L_65 = L_64->get_INC_DEC_1();
-		GameObjectU5BU5D_tA88FC1A1FC9D4D73D0B3984D4B0ECE88F4C47642* L_66 = __this->get_value_6();
-		int32_t L_67 = ___i0;
+		Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * L_60;
+		L_60 = GameObject_get_transform_m16A80BB92B6C8C5AB696E447014D45EDF1E4DE34(L_59, /*hidden argument*/NULL);
+		NullCheck(L_60);
+		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_61;
+		L_61 = Transform_get_position_m40A8A9895568D56FFC687B57F30E8D53CB5EA341(L_60, /*hidden argument*/NULL);
+		float L_62 = L_61.get_x_2();
+		GameObjectU5BU5D_tA88FC1A1FC9D4D73D0B3984D4B0ECE88F4C47642* L_63 = __this->get_value_6();
+		int32_t L_64 = ___i0;
+		NullCheck(L_63);
+		int32_t L_65 = L_64;
+		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_66 = (L_63)->GetAt(static_cast<il2cpp_array_size_t>(L_65));
 		NullCheck(L_66);
-		int32_t L_68 = L_67;
-		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_69 = (L_66)->GetAt(static_cast<il2cpp_array_size_t>(L_68));
-		NullCheck(L_69);
-		Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * L_70;
-		L_70 = GameObject_get_transform_m16A80BB92B6C8C5AB696E447014D45EDF1E4DE34(L_69, /*hidden argument*/NULL);
+		Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * L_67;
+		L_67 = GameObject_get_transform_m16A80BB92B6C8C5AB696E447014D45EDF1E4DE34(L_66, /*hidden argument*/NULL);
+		NullCheck(L_67);
+		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_68;
+		L_68 = Transform_get_position_m40A8A9895568D56FFC687B57F30E8D53CB5EA341(L_67, /*hidden argument*/NULL);
+		float L_69 = L_68.get_y_3();
+		Loaded_Sido_GraphU5BU2CU5D_t5F73BA1DBE15C6E85C206A0480D97FA12E70898D* L_70 = __this->get_G_sidoData_4();
+		int32_t L_71 = ___i0;
 		NullCheck(L_70);
-		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_71;
-		L_71 = Transform_get_position_m40A8A9895568D56FFC687B57F30E8D53CB5EA341(L_70, /*hidden argument*/NULL);
-		float L_72 = L_71.get_z_4();
-		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_73;
-		memset((&L_73), 0, sizeof(L_73));
-		Vector3__ctor_m57495F692C6CE1CEF278CAD9A98221165D37E636_inline((&L_73), L_54, ((float)il2cpp_codegen_add((float)L_61, (float)((float)((float)L_65)))), L_72, /*hidden argument*/NULL);
-		NullCheck(L_47);
-		Transform_set_position_mB169E52D57EEAC1E3F22C5395968714E4F00AC91(L_47, L_73, /*hidden argument*/NULL);
+		Loaded_Sido_Graph_t96C3111F9518654961ADA42798AFA9B44BCC010C * L_72;
+		L_72 = (L_70)->GetAddressAt(L_71, ((int32_t)17));
+		int32_t L_73 = L_72->get_OVER_FLOW_CNT_5();
+		Loaded_Sido_GraphU5BU2CU5D_t5F73BA1DBE15C6E85C206A0480D97FA12E70898D* L_74 = __this->get_G_sidoData_4();
+		int32_t L_75 = ___i0;
+		NullCheck(L_74);
+		Loaded_Sido_Graph_t96C3111F9518654961ADA42798AFA9B44BCC010C * L_76;
+		L_76 = (L_74)->GetAddressAt(L_75, ((int32_t)17));
+		int32_t L_77 = L_76->get_LOCAL_OCC_CNT_6();
+		GameObjectU5BU5D_tA88FC1A1FC9D4D73D0B3984D4B0ECE88F4C47642* L_78 = __this->get_value_6();
+		int32_t L_79 = ___i0;
+		NullCheck(L_78);
+		int32_t L_80 = L_79;
+		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_81 = (L_78)->GetAt(static_cast<il2cpp_array_size_t>(L_80));
+		NullCheck(L_81);
+		Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * L_82;
+		L_82 = GameObject_get_transform_m16A80BB92B6C8C5AB696E447014D45EDF1E4DE34(L_81, /*hidden argument*/NULL);
+		NullCheck(L_82);
+		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_83;
+		L_83 = Transform_get_position_m40A8A9895568D56FFC687B57F30E8D53CB5EA341(L_82, /*hidden argument*/NULL);
+		float L_84 = L_83.get_z_4();
+		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_85;
+		memset((&L_85), 0, sizeof(L_85));
+		Vector3__ctor_m57495F692C6CE1CEF278CAD9A98221165D37E636_inline((&L_85), L_62, ((float)il2cpp_codegen_add((float)L_69, (float)((float)((float)((int32_t)il2cpp_codegen_add((int32_t)L_73, (int32_t)L_77)))))), L_84, /*hidden argument*/NULL);
+		NullCheck(L_55);
+		Transform_set_position_mB169E52D57EEAC1E3F22C5395968714E4F00AC91(L_55, L_85, /*hidden argument*/NULL);
 		// }
 		return;
 	}
@@ -17619,6 +17640,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SidoStateAPI_Update_m668E9AC1BFA8CC96029
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralE7E444A5FB6ED031B8EC0D2A3D5056E6031378E6);
 		s_Il2CppMethodInitialized = true;
 	}
+	int32_t V_0 = 0;
 	{
 		// showState();
 		SidoStateAPI_showState_m94F02018D0E954D38615227514320E554B6F65BE(__this, /*hidden argument*/NULL);
@@ -17636,56 +17658,73 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SidoStateAPI_Update_m668E9AC1BFA8CC96029
 		L_5 = String_Concat_m4B4AB72618348C5DFBFBA8DED84B9E2EBDB55E1B(_stringLiteral83BC53AFD9108A47F3E542E10734E5479C7B2D94, L_4, /*hidden argument*/NULL);
 		NullCheck(L_1);
 		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_1, L_5);
-		// if (d[0,17].INC_DEC > 0)
+		// if ((d[0, 17].OVER_FLOW_CNT + d[0, 17].LOCAL_OCC_CNT) > 0)
 		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_6 = __this->get_d_10();
 		NullCheck(L_6);
 		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_7;
 		L_7 = (L_6)->GetAddressAt(0, ((int32_t)17));
-		int32_t L_8 = L_7->get_INC_DEC_1();
-		if ((((int32_t)L_8) <= ((int32_t)0)))
+		int32_t L_8 = L_7->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_9 = __this->get_d_10();
+		NullCheck(L_9);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_10;
+		L_10 = (L_9)->GetAddressAt(0, ((int32_t)17));
+		int32_t L_11 = L_10->get_LOCAL_OCC_CNT_6();
+		if ((((int32_t)((int32_t)il2cpp_codegen_add((int32_t)L_8, (int32_t)L_11))) <= ((int32_t)0)))
 		{
-			goto IL_0080;
+			goto IL_00ab;
 		}
 	}
 	{
-		// TotalText.GetComponent<Text>().text = "�հ� : <color=red>�� " + d[0, 17].INC_DEC + "</color>";
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_9 = __this->get_TotalText_8();
-		NullCheck(L_9);
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_10;
-		L_10 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_9, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_11 = __this->get_d_10();
-		NullCheck(L_11);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_12;
-		L_12 = (L_11)->GetAddressAt(0, ((int32_t)17));
-		int32_t* L_13 = L_12->get_address_of_INC_DEC_1();
-		String_t* L_14;
-		L_14 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_13, /*hidden argument*/NULL);
-		String_t* L_15;
-		L_15 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(_stringLiteralE7E444A5FB6ED031B8EC0D2A3D5056E6031378E6, L_14, _stringLiteralCBE844AF922BC0AC1AB4CA94466DC7FD7038D0E2, /*hidden argument*/NULL);
-		NullCheck(L_10);
-		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_10, L_15);
+		// TotalText.GetComponent<Text>().text = "�հ� : <color=red>�� " + (d[0, 17].OVER_FLOW_CNT + d[0, 17].LOCAL_OCC_CNT) + "</color>";
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_12 = __this->get_TotalText_8();
+		NullCheck(L_12);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_13;
+		L_13 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_12, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_14 = __this->get_d_10();
+		NullCheck(L_14);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_15;
+		L_15 = (L_14)->GetAddressAt(0, ((int32_t)17));
+		int32_t L_16 = L_15->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_17 = __this->get_d_10();
+		NullCheck(L_17);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_18;
+		L_18 = (L_17)->GetAddressAt(0, ((int32_t)17));
+		int32_t L_19 = L_18->get_LOCAL_OCC_CNT_6();
+		V_0 = ((int32_t)il2cpp_codegen_add((int32_t)L_16, (int32_t)L_19));
+		String_t* L_20;
+		L_20 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&V_0), /*hidden argument*/NULL);
+		String_t* L_21;
+		L_21 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(_stringLiteralE7E444A5FB6ED031B8EC0D2A3D5056E6031378E6, L_20, _stringLiteralCBE844AF922BC0AC1AB4CA94466DC7FD7038D0E2, /*hidden argument*/NULL);
+		NullCheck(L_13);
+		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_13, L_21);
 		// }
 		return;
 	}
 
-IL_0080:
+IL_00ab:
 	{
-		// TotalText.GetComponent<Text>().text = "�հ� : " + d[0, 17].INC_DEC;
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_16 = __this->get_TotalText_8();
-		NullCheck(L_16);
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_17;
-		L_17 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_16, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_18 = __this->get_d_10();
-		NullCheck(L_18);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_19;
-		L_19 = (L_18)->GetAddressAt(0, ((int32_t)17));
-		int32_t* L_20 = L_19->get_address_of_INC_DEC_1();
-		String_t* L_21;
-		L_21 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_20, /*hidden argument*/NULL);
-		String_t* L_22;
-		L_22 = String_Concat_m4B4AB72618348C5DFBFBA8DED84B9E2EBDB55E1B(_stringLiteral68826404A744EFF27269C708DC760B5829BDDC44, L_21, /*hidden argument*/NULL);
-		NullCheck(L_17);
-		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_17, L_22);
+		// TotalText.GetComponent<Text>().text = "�հ� : " + (d[0, 17].OVER_FLOW_CNT + d[0, 17].LOCAL_OCC_CNT);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_22 = __this->get_TotalText_8();
+		NullCheck(L_22);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_23;
+		L_23 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_22, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_24 = __this->get_d_10();
+		NullCheck(L_24);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_25;
+		L_25 = (L_24)->GetAddressAt(0, ((int32_t)17));
+		int32_t L_26 = L_25->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_27 = __this->get_d_10();
+		NullCheck(L_27);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_28;
+		L_28 = (L_27)->GetAddressAt(0, ((int32_t)17));
+		int32_t L_29 = L_28->get_LOCAL_OCC_CNT_6();
+		V_0 = ((int32_t)il2cpp_codegen_add((int32_t)L_26, (int32_t)L_29));
+		String_t* L_30;
+		L_30 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&V_0), /*hidden argument*/NULL);
+		String_t* L_31;
+		L_31 = String_Concat_m4B4AB72618348C5DFBFBA8DED84B9E2EBDB55E1B(_stringLiteral68826404A744EFF27269C708DC760B5829BDDC44, L_30, /*hidden argument*/NULL);
+		NullCheck(L_23);
+		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_23, L_31);
 		// }
 		return;
 	}
@@ -18647,13 +18686,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SidoStateAPI_showState_m94F02018D0E954D3
 	}
 	RaycastHit2D_t210878DAEBC96C1F69DF9883C454758724A106A4  V_0;
 	memset((&V_0), 0, sizeof(V_0));
+	int32_t V_1 = 0;
 	{
 		// if (Input.GetMouseButton(0))
 		bool L_0;
 		L_0 = Input_GetMouseButton_m27BF2DDBF38A38787B83A13D3E6F0F88F7C834C1(0, /*hidden argument*/NULL);
 		if (!L_0)
 		{
-			goto IL_0f41;
+			goto IL_1503;
 		}
 	}
 	{
@@ -18678,7 +18718,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SidoStateAPI_showState_m94F02018D0E954D3
 		L_6 = Object_op_Inequality_mE1F187520BD83FB7D86A6D850710C4D42B864E90(L_5, (Object_tF2F3778131EFF286AF62B7B013A170F95A91571A *)NULL, /*hidden argument*/NULL);
 		if (!L_6)
 		{
-			goto IL_0f41;
+			goto IL_1503;
 		}
 	}
 	{
@@ -18704,1037 +18744,928 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SidoStateAPI_showState_m94F02018D0E954D3
 		L_14 = String_op_Equality_m2B91EE68355F142F67095973D32EB5828B7B73CB(L_10, L_13, /*hidden argument*/NULL);
 		if (!L_14)
 		{
-			goto IL_012a;
+			goto IL_017f;
 		}
 	}
 	{
-		// if (d[0,0].INC_DEC > 0)
+		// if ((d[0, 0].OVER_FLOW_CNT + d[0, 0].LOCAL_OCC_CNT) > 0)
 		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_15 = __this->get_d_10();
 		NullCheck(L_15);
 		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_16;
 		L_16 = (L_15)->GetAddressAt(0, 0);
-		int32_t L_17 = L_16->get_INC_DEC_1();
-		if ((((int32_t)L_17) <= ((int32_t)0)))
+		int32_t L_17 = L_16->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_18 = __this->get_d_10();
+		NullCheck(L_18);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_19;
+		L_19 = (L_18)->GetAddressAt(0, 0);
+		int32_t L_20 = L_19->get_LOCAL_OCC_CNT_6();
+		if ((((int32_t)((int32_t)il2cpp_codegen_add((int32_t)L_17, (int32_t)L_20))) <= ((int32_t)0)))
 		{
-			goto IL_00d3;
+			goto IL_00ff;
 		}
 	}
 	{
-		// StateText.GetComponent<Text>().text = d[0, 0].GUBUN+ " <color=red>�� "+ d[0, 0].INC_DEC+"</color>";
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_18 = __this->get_StateText_5();
-		NullCheck(L_18);
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_19;
-		L_19 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_18, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_20 = __this->get_d_10();
-		NullCheck(L_20);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_21;
-		L_21 = (L_20)->GetAddressAt(0, 0);
-		String_t* L_22 = L_21->get_GUBUN_0();
+		// StateText.GetComponent<Text>().text = d[0, 0].GUBUN+ " <color=red>�� "+ (d[0, 0].OVER_FLOW_CNT + d[0, 0].LOCAL_OCC_CNT) + "</color>";
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_21 = __this->get_StateText_5();
+		NullCheck(L_21);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_22;
+		L_22 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_21, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
 		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_23 = __this->get_d_10();
 		NullCheck(L_23);
 		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_24;
 		L_24 = (L_23)->GetAddressAt(0, 0);
-		int32_t* L_25 = L_24->get_address_of_INC_DEC_1();
-		String_t* L_26;
-		L_26 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_25, /*hidden argument*/NULL);
-		String_t* L_27;
-		L_27 = String_Concat_m37A5BF26F8F8F1892D60D727303B23FB604FEE78(L_22, _stringLiteral9A87B7E4C3A2F03D42C57F164C1F043F70553A1C, L_26, _stringLiteralCBE844AF922BC0AC1AB4CA94466DC7FD7038D0E2, /*hidden argument*/NULL);
-		NullCheck(L_19);
-		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_19, L_27);
+		String_t* L_25 = L_24->get_GUBUN_0();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_26 = __this->get_d_10();
+		NullCheck(L_26);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_27;
+		L_27 = (L_26)->GetAddressAt(0, 0);
+		int32_t L_28 = L_27->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_29 = __this->get_d_10();
+		NullCheck(L_29);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_30;
+		L_30 = (L_29)->GetAddressAt(0, 0);
+		int32_t L_31 = L_30->get_LOCAL_OCC_CNT_6();
+		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_28, (int32_t)L_31));
+		String_t* L_32;
+		L_32 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&V_1), /*hidden argument*/NULL);
+		String_t* L_33;
+		L_33 = String_Concat_m37A5BF26F8F8F1892D60D727303B23FB604FEE78(L_25, _stringLiteral9A87B7E4C3A2F03D42C57F164C1F043F70553A1C, L_32, _stringLiteralCBE844AF922BC0AC1AB4CA94466DC7FD7038D0E2, /*hidden argument*/NULL);
+		NullCheck(L_22);
+		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_22, L_33);
 		// }
-		goto IL_012a;
+		goto IL_017f;
 	}
 
-IL_00d3:
+IL_00ff:
 	{
-		// else if(d[0, 0].INC_DEC == 0)
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_28 = __this->get_d_10();
-		NullCheck(L_28);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_29;
-		L_29 = (L_28)->GetAddressAt(0, 0);
-		int32_t L_30 = L_29->get_INC_DEC_1();
-		if (L_30)
+		// else if((d[0, 0].OVER_FLOW_CNT + d[0, 0].LOCAL_OCC_CNT) == 0)
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_34 = __this->get_d_10();
+		NullCheck(L_34);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_35;
+		L_35 = (L_34)->GetAddressAt(0, 0);
+		int32_t L_36 = L_35->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_37 = __this->get_d_10();
+		NullCheck(L_37);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_38;
+		L_38 = (L_37)->GetAddressAt(0, 0);
+		int32_t L_39 = L_38->get_LOCAL_OCC_CNT_6();
+		if (((int32_t)il2cpp_codegen_add((int32_t)L_36, (int32_t)L_39)))
 		{
-			goto IL_012a;
+			goto IL_017f;
 		}
 	}
 	{
-		// StateText.GetComponent<Text>().text = d[0, 0].GUBUN + " �� "+ d[0, 0].INC_DEC;
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_31 = __this->get_StateText_5();
-		NullCheck(L_31);
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_32;
-		L_32 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_31, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_33 = __this->get_d_10();
-		NullCheck(L_33);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_34;
-		L_34 = (L_33)->GetAddressAt(0, 0);
-		String_t* L_35 = L_34->get_GUBUN_0();
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_36 = __this->get_d_10();
-		NullCheck(L_36);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_37;
-		L_37 = (L_36)->GetAddressAt(0, 0);
-		int32_t* L_38 = L_37->get_address_of_INC_DEC_1();
-		String_t* L_39;
-		L_39 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_38, /*hidden argument*/NULL);
-		String_t* L_40;
-		L_40 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_35, _stringLiteralE183B10A2438D1A5505D894E0452DCED85BDAE08, L_39, /*hidden argument*/NULL);
-		NullCheck(L_32);
-		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_32, L_40);
+		// StateText.GetComponent<Text>().text = d[0, 0].GUBUN + " �� "+ (d[0, 0].OVER_FLOW_CNT + d[0, 0].LOCAL_OCC_CNT);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_40 = __this->get_StateText_5();
+		NullCheck(L_40);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_41;
+		L_41 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_40, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_42 = __this->get_d_10();
+		NullCheck(L_42);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_43;
+		L_43 = (L_42)->GetAddressAt(0, 0);
+		String_t* L_44 = L_43->get_GUBUN_0();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_45 = __this->get_d_10();
+		NullCheck(L_45);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_46;
+		L_46 = (L_45)->GetAddressAt(0, 0);
+		int32_t L_47 = L_46->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_48 = __this->get_d_10();
+		NullCheck(L_48);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_49;
+		L_49 = (L_48)->GetAddressAt(0, 0);
+		int32_t L_50 = L_49->get_LOCAL_OCC_CNT_6();
+		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_47, (int32_t)L_50));
+		String_t* L_51;
+		L_51 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&V_1), /*hidden argument*/NULL);
+		String_t* L_52;
+		L_52 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_44, _stringLiteralE183B10A2438D1A5505D894E0452DCED85BDAE08, L_51, /*hidden argument*/NULL);
+		NullCheck(L_41);
+		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_41, L_52);
 	}
 
-IL_012a:
+IL_017f:
 	{
 		// if (hit.collider.name == d[0, 1].GUBUN)
-		Collider2D_tDDBF081328B83D21D0BA3B5036D77B32528BA722 * L_41;
-		L_41 = RaycastHit2D_get_collider_m00F7EC55C36F39E2ED64B31354FB4D9C8938D563((RaycastHit2D_t210878DAEBC96C1F69DF9883C454758724A106A4 *)(&V_0), /*hidden argument*/NULL);
-		NullCheck(L_41);
-		String_t* L_42;
-		L_42 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_41, /*hidden argument*/NULL);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_43 = __this->get_d_10();
-		NullCheck(L_43);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_44;
-		L_44 = (L_43)->GetAddressAt(0, 1);
-		String_t* L_45 = L_44->get_GUBUN_0();
-		bool L_46;
-		L_46 = String_op_Equality_m2B91EE68355F142F67095973D32EB5828B7B73CB(L_42, L_45, /*hidden argument*/NULL);
-		if (!L_46)
-		{
-			goto IL_0208;
-		}
-	}
-	{
-		// if (d[0, 1].INC_DEC > 0)
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_47 = __this->get_d_10();
-		NullCheck(L_47);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_48;
-		L_48 = (L_47)->GetAddressAt(0, 1);
-		int32_t L_49 = L_48->get_INC_DEC_1();
-		if ((((int32_t)L_49) <= ((int32_t)0)))
-		{
-			goto IL_01b1;
-		}
-	}
-	{
-		// StateText.GetComponent<Text>().text = d[0, 1].GUBUN + " <color=red>�� " + d[0, 1].INC_DEC + "</color>";
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_50 = __this->get_StateText_5();
-		NullCheck(L_50);
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_51;
-		L_51 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_50, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_52 = __this->get_d_10();
-		NullCheck(L_52);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_53;
-		L_53 = (L_52)->GetAddressAt(0, 1);
-		String_t* L_54 = L_53->get_GUBUN_0();
+		Collider2D_tDDBF081328B83D21D0BA3B5036D77B32528BA722 * L_53;
+		L_53 = RaycastHit2D_get_collider_m00F7EC55C36F39E2ED64B31354FB4D9C8938D563((RaycastHit2D_t210878DAEBC96C1F69DF9883C454758724A106A4 *)(&V_0), /*hidden argument*/NULL);
+		NullCheck(L_53);
+		String_t* L_54;
+		L_54 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_53, /*hidden argument*/NULL);
 		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_55 = __this->get_d_10();
 		NullCheck(L_55);
 		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_56;
 		L_56 = (L_55)->GetAddressAt(0, 1);
-		int32_t* L_57 = L_56->get_address_of_INC_DEC_1();
-		String_t* L_58;
-		L_58 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_57, /*hidden argument*/NULL);
-		String_t* L_59;
-		L_59 = String_Concat_m37A5BF26F8F8F1892D60D727303B23FB604FEE78(L_54, _stringLiteral9A87B7E4C3A2F03D42C57F164C1F043F70553A1C, L_58, _stringLiteralCBE844AF922BC0AC1AB4CA94466DC7FD7038D0E2, /*hidden argument*/NULL);
-		NullCheck(L_51);
-		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_51, L_59);
-		// }
-		goto IL_0208;
-	}
-
-IL_01b1:
-	{
-		// else if (d[0, 1].INC_DEC == 0)
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_60 = __this->get_d_10();
-		NullCheck(L_60);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_61;
-		L_61 = (L_60)->GetAddressAt(0, 1);
-		int32_t L_62 = L_61->get_INC_DEC_1();
-		if (L_62)
+		String_t* L_57 = L_56->get_GUBUN_0();
+		bool L_58;
+		L_58 = String_op_Equality_m2B91EE68355F142F67095973D32EB5828B7B73CB(L_54, L_57, /*hidden argument*/NULL);
+		if (!L_58)
 		{
-			goto IL_0208;
+			goto IL_02b2;
 		}
 	}
 	{
-		// StateText.GetComponent<Text>().text = d[0, 1].GUBUN + " �� " + d[0, 1].INC_DEC;
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_63 = __this->get_StateText_5();
-		NullCheck(L_63);
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_64;
-		L_64 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_63, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_65 = __this->get_d_10();
+		// if ((d[0, 1].OVER_FLOW_CNT + d[0, 1].LOCAL_OCC_CNT) > 0)
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_59 = __this->get_d_10();
+		NullCheck(L_59);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_60;
+		L_60 = (L_59)->GetAddressAt(0, 1);
+		int32_t L_61 = L_60->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_62 = __this->get_d_10();
+		NullCheck(L_62);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_63;
+		L_63 = (L_62)->GetAddressAt(0, 1);
+		int32_t L_64 = L_63->get_LOCAL_OCC_CNT_6();
+		if ((((int32_t)((int32_t)il2cpp_codegen_add((int32_t)L_61, (int32_t)L_64))) <= ((int32_t)0)))
+		{
+			goto IL_0232;
+		}
+	}
+	{
+		// StateText.GetComponent<Text>().text = d[0, 1].GUBUN + " <color=red>�� " + (d[0, 1].OVER_FLOW_CNT + d[0, 1].LOCAL_OCC_CNT) + "</color>";
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_65 = __this->get_StateText_5();
 		NullCheck(L_65);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_66;
-		L_66 = (L_65)->GetAddressAt(0, 1);
-		String_t* L_67 = L_66->get_GUBUN_0();
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_68 = __this->get_d_10();
-		NullCheck(L_68);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_69;
-		L_69 = (L_68)->GetAddressAt(0, 1);
-		int32_t* L_70 = L_69->get_address_of_INC_DEC_1();
-		String_t* L_71;
-		L_71 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_70, /*hidden argument*/NULL);
-		String_t* L_72;
-		L_72 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_67, _stringLiteralE183B10A2438D1A5505D894E0452DCED85BDAE08, L_71, /*hidden argument*/NULL);
-		NullCheck(L_64);
-		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_64, L_72);
-	}
-
-IL_0208:
-	{
-		// if (hit.collider.name == d[0, 2].GUBUN)
-		Collider2D_tDDBF081328B83D21D0BA3B5036D77B32528BA722 * L_73;
-		L_73 = RaycastHit2D_get_collider_m00F7EC55C36F39E2ED64B31354FB4D9C8938D563((RaycastHit2D_t210878DAEBC96C1F69DF9883C454758724A106A4 *)(&V_0), /*hidden argument*/NULL);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_66;
+		L_66 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_65, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_67 = __this->get_d_10();
+		NullCheck(L_67);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_68;
+		L_68 = (L_67)->GetAddressAt(0, 1);
+		String_t* L_69 = L_68->get_GUBUN_0();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_70 = __this->get_d_10();
+		NullCheck(L_70);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_71;
+		L_71 = (L_70)->GetAddressAt(0, 1);
+		int32_t L_72 = L_71->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_73 = __this->get_d_10();
 		NullCheck(L_73);
-		String_t* L_74;
-		L_74 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_73, /*hidden argument*/NULL);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_75 = __this->get_d_10();
-		NullCheck(L_75);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_76;
-		L_76 = (L_75)->GetAddressAt(0, 2);
-		String_t* L_77 = L_76->get_GUBUN_0();
-		bool L_78;
-		L_78 = String_op_Equality_m2B91EE68355F142F67095973D32EB5828B7B73CB(L_74, L_77, /*hidden argument*/NULL);
-		if (!L_78)
-		{
-			goto IL_02e6;
-		}
-	}
-	{
-		// if (d[0, 2].INC_DEC > 0)
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_79 = __this->get_d_10();
-		NullCheck(L_79);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_80;
-		L_80 = (L_79)->GetAddressAt(0, 2);
-		int32_t L_81 = L_80->get_INC_DEC_1();
-		if ((((int32_t)L_81) <= ((int32_t)0)))
-		{
-			goto IL_028f;
-		}
-	}
-	{
-		// StateText.GetComponent<Text>().text = d[0, 2].GUBUN + " <color=red>�� " + d[0, 2].INC_DEC + "</color>";
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_82 = __this->get_StateText_5();
-		NullCheck(L_82);
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_83;
-		L_83 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_82, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_84 = __this->get_d_10();
-		NullCheck(L_84);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_85;
-		L_85 = (L_84)->GetAddressAt(0, 2);
-		String_t* L_86 = L_85->get_GUBUN_0();
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_87 = __this->get_d_10();
-		NullCheck(L_87);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_88;
-		L_88 = (L_87)->GetAddressAt(0, 2);
-		int32_t* L_89 = L_88->get_address_of_INC_DEC_1();
-		String_t* L_90;
-		L_90 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_89, /*hidden argument*/NULL);
-		String_t* L_91;
-		L_91 = String_Concat_m37A5BF26F8F8F1892D60D727303B23FB604FEE78(L_86, _stringLiteral9A87B7E4C3A2F03D42C57F164C1F043F70553A1C, L_90, _stringLiteralCBE844AF922BC0AC1AB4CA94466DC7FD7038D0E2, /*hidden argument*/NULL);
-		NullCheck(L_83);
-		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_83, L_91);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_74;
+		L_74 = (L_73)->GetAddressAt(0, 1);
+		int32_t L_75 = L_74->get_LOCAL_OCC_CNT_6();
+		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_72, (int32_t)L_75));
+		String_t* L_76;
+		L_76 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&V_1), /*hidden argument*/NULL);
+		String_t* L_77;
+		L_77 = String_Concat_m37A5BF26F8F8F1892D60D727303B23FB604FEE78(L_69, _stringLiteral9A87B7E4C3A2F03D42C57F164C1F043F70553A1C, L_76, _stringLiteralCBE844AF922BC0AC1AB4CA94466DC7FD7038D0E2, /*hidden argument*/NULL);
+		NullCheck(L_66);
+		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_66, L_77);
 		// }
-		goto IL_02e6;
+		goto IL_02b2;
 	}
 
-IL_028f:
+IL_0232:
 	{
-		// else if (d[0, 2].INC_DEC == 0)
+		// else if ((d[0, 1].OVER_FLOW_CNT + d[0, 1].LOCAL_OCC_CNT) == 0)
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_78 = __this->get_d_10();
+		NullCheck(L_78);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_79;
+		L_79 = (L_78)->GetAddressAt(0, 1);
+		int32_t L_80 = L_79->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_81 = __this->get_d_10();
+		NullCheck(L_81);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_82;
+		L_82 = (L_81)->GetAddressAt(0, 1);
+		int32_t L_83 = L_82->get_LOCAL_OCC_CNT_6();
+		if (((int32_t)il2cpp_codegen_add((int32_t)L_80, (int32_t)L_83)))
+		{
+			goto IL_02b2;
+		}
+	}
+	{
+		// StateText.GetComponent<Text>().text = d[0, 1].GUBUN + " �� " + (d[0, 1].OVER_FLOW_CNT + d[0, 1].LOCAL_OCC_CNT);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_84 = __this->get_StateText_5();
+		NullCheck(L_84);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_85;
+		L_85 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_84, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_86 = __this->get_d_10();
+		NullCheck(L_86);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_87;
+		L_87 = (L_86)->GetAddressAt(0, 1);
+		String_t* L_88 = L_87->get_GUBUN_0();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_89 = __this->get_d_10();
+		NullCheck(L_89);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_90;
+		L_90 = (L_89)->GetAddressAt(0, 1);
+		int32_t L_91 = L_90->get_OVER_FLOW_CNT_5();
 		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_92 = __this->get_d_10();
 		NullCheck(L_92);
 		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_93;
-		L_93 = (L_92)->GetAddressAt(0, 2);
-		int32_t L_94 = L_93->get_INC_DEC_1();
-		if (L_94)
-		{
-			goto IL_02e6;
-		}
-	}
-	{
-		// StateText.GetComponent<Text>().text = d[0, 2].GUBUN + " �� " + d[0, 2].INC_DEC;
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_95 = __this->get_StateText_5();
-		NullCheck(L_95);
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_96;
-		L_96 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_95, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_97 = __this->get_d_10();
-		NullCheck(L_97);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_98;
-		L_98 = (L_97)->GetAddressAt(0, 2);
-		String_t* L_99 = L_98->get_GUBUN_0();
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_100 = __this->get_d_10();
-		NullCheck(L_100);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_101;
-		L_101 = (L_100)->GetAddressAt(0, 2);
-		int32_t* L_102 = L_101->get_address_of_INC_DEC_1();
-		String_t* L_103;
-		L_103 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_102, /*hidden argument*/NULL);
-		String_t* L_104;
-		L_104 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_99, _stringLiteralE183B10A2438D1A5505D894E0452DCED85BDAE08, L_103, /*hidden argument*/NULL);
-		NullCheck(L_96);
-		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_96, L_104);
+		L_93 = (L_92)->GetAddressAt(0, 1);
+		int32_t L_94 = L_93->get_LOCAL_OCC_CNT_6();
+		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_91, (int32_t)L_94));
+		String_t* L_95;
+		L_95 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&V_1), /*hidden argument*/NULL);
+		String_t* L_96;
+		L_96 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_88, _stringLiteralE183B10A2438D1A5505D894E0452DCED85BDAE08, L_95, /*hidden argument*/NULL);
+		NullCheck(L_85);
+		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_85, L_96);
 	}
 
-IL_02e6:
+IL_02b2:
 	{
-		// if (hit.collider.name == d[0, 3].GUBUN)
-		Collider2D_tDDBF081328B83D21D0BA3B5036D77B32528BA722 * L_105;
-		L_105 = RaycastHit2D_get_collider_m00F7EC55C36F39E2ED64B31354FB4D9C8938D563((RaycastHit2D_t210878DAEBC96C1F69DF9883C454758724A106A4 *)(&V_0), /*hidden argument*/NULL);
-		NullCheck(L_105);
-		String_t* L_106;
-		L_106 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_105, /*hidden argument*/NULL);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_107 = __this->get_d_10();
-		NullCheck(L_107);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_108;
-		L_108 = (L_107)->GetAddressAt(0, 3);
-		String_t* L_109 = L_108->get_GUBUN_0();
-		bool L_110;
-		L_110 = String_op_Equality_m2B91EE68355F142F67095973D32EB5828B7B73CB(L_106, L_109, /*hidden argument*/NULL);
-		if (!L_110)
+		// if (hit.collider.name == d[0, 2].GUBUN)
+		Collider2D_tDDBF081328B83D21D0BA3B5036D77B32528BA722 * L_97;
+		L_97 = RaycastHit2D_get_collider_m00F7EC55C36F39E2ED64B31354FB4D9C8938D563((RaycastHit2D_t210878DAEBC96C1F69DF9883C454758724A106A4 *)(&V_0), /*hidden argument*/NULL);
+		NullCheck(L_97);
+		String_t* L_98;
+		L_98 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_97, /*hidden argument*/NULL);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_99 = __this->get_d_10();
+		NullCheck(L_99);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_100;
+		L_100 = (L_99)->GetAddressAt(0, 2);
+		String_t* L_101 = L_100->get_GUBUN_0();
+		bool L_102;
+		L_102 = String_op_Equality_m2B91EE68355F142F67095973D32EB5828B7B73CB(L_98, L_101, /*hidden argument*/NULL);
+		if (!L_102)
 		{
-			goto IL_03c4;
+			goto IL_03e5;
 		}
 	}
 	{
-		// if (d[0, 3].INC_DEC > 0)
+		// if ((d[0, 2].OVER_FLOW_CNT + d[0, 2].LOCAL_OCC_CNT) > 0)
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_103 = __this->get_d_10();
+		NullCheck(L_103);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_104;
+		L_104 = (L_103)->GetAddressAt(0, 2);
+		int32_t L_105 = L_104->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_106 = __this->get_d_10();
+		NullCheck(L_106);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_107;
+		L_107 = (L_106)->GetAddressAt(0, 2);
+		int32_t L_108 = L_107->get_LOCAL_OCC_CNT_6();
+		if ((((int32_t)((int32_t)il2cpp_codegen_add((int32_t)L_105, (int32_t)L_108))) <= ((int32_t)0)))
+		{
+			goto IL_0365;
+		}
+	}
+	{
+		// StateText.GetComponent<Text>().text = d[0, 2].GUBUN + " <color=red>�� " + (d[0, 2].OVER_FLOW_CNT + d[0, 2].LOCAL_OCC_CNT) + "</color>";
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_109 = __this->get_StateText_5();
+		NullCheck(L_109);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_110;
+		L_110 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_109, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
 		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_111 = __this->get_d_10();
 		NullCheck(L_111);
 		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_112;
-		L_112 = (L_111)->GetAddressAt(0, 3);
-		int32_t L_113 = L_112->get_INC_DEC_1();
-		if ((((int32_t)L_113) <= ((int32_t)0)))
-		{
-			goto IL_036d;
-		}
-	}
-	{
-		// StateText.GetComponent<Text>().text = d[0, 3].GUBUN + " <color=red>�� " + d[0, 3].INC_DEC + "</color>";
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_114 = __this->get_StateText_5();
+		L_112 = (L_111)->GetAddressAt(0, 2);
+		String_t* L_113 = L_112->get_GUBUN_0();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_114 = __this->get_d_10();
 		NullCheck(L_114);
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_115;
-		L_115 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_114, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_116 = __this->get_d_10();
-		NullCheck(L_116);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_117;
-		L_117 = (L_116)->GetAddressAt(0, 3);
-		String_t* L_118 = L_117->get_GUBUN_0();
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_119 = __this->get_d_10();
-		NullCheck(L_119);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_120;
-		L_120 = (L_119)->GetAddressAt(0, 3);
-		int32_t* L_121 = L_120->get_address_of_INC_DEC_1();
-		String_t* L_122;
-		L_122 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_121, /*hidden argument*/NULL);
-		String_t* L_123;
-		L_123 = String_Concat_m37A5BF26F8F8F1892D60D727303B23FB604FEE78(L_118, _stringLiteral9A87B7E4C3A2F03D42C57F164C1F043F70553A1C, L_122, _stringLiteralCBE844AF922BC0AC1AB4CA94466DC7FD7038D0E2, /*hidden argument*/NULL);
-		NullCheck(L_115);
-		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_115, L_123);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_115;
+		L_115 = (L_114)->GetAddressAt(0, 2);
+		int32_t L_116 = L_115->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_117 = __this->get_d_10();
+		NullCheck(L_117);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_118;
+		L_118 = (L_117)->GetAddressAt(0, 2);
+		int32_t L_119 = L_118->get_LOCAL_OCC_CNT_6();
+		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_116, (int32_t)L_119));
+		String_t* L_120;
+		L_120 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&V_1), /*hidden argument*/NULL);
+		String_t* L_121;
+		L_121 = String_Concat_m37A5BF26F8F8F1892D60D727303B23FB604FEE78(L_113, _stringLiteral9A87B7E4C3A2F03D42C57F164C1F043F70553A1C, L_120, _stringLiteralCBE844AF922BC0AC1AB4CA94466DC7FD7038D0E2, /*hidden argument*/NULL);
+		NullCheck(L_110);
+		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_110, L_121);
 		// }
-		goto IL_03c4;
+		goto IL_03e5;
 	}
 
-IL_036d:
+IL_0365:
 	{
-		// else if (d[0, 3].INC_DEC == 0)
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_124 = __this->get_d_10();
-		NullCheck(L_124);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_125;
-		L_125 = (L_124)->GetAddressAt(0, 3);
-		int32_t L_126 = L_125->get_INC_DEC_1();
-		if (L_126)
+		// else if ((d[0, 2].OVER_FLOW_CNT + d[0, 2].LOCAL_OCC_CNT) == 0)
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_122 = __this->get_d_10();
+		NullCheck(L_122);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_123;
+		L_123 = (L_122)->GetAddressAt(0, 2);
+		int32_t L_124 = L_123->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_125 = __this->get_d_10();
+		NullCheck(L_125);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_126;
+		L_126 = (L_125)->GetAddressAt(0, 2);
+		int32_t L_127 = L_126->get_LOCAL_OCC_CNT_6();
+		if (((int32_t)il2cpp_codegen_add((int32_t)L_124, (int32_t)L_127)))
 		{
-			goto IL_03c4;
+			goto IL_03e5;
 		}
 	}
 	{
-		// StateText.GetComponent<Text>().text = d[0, 3].GUBUN + " �� " + d[0, 3].INC_DEC;
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_127 = __this->get_StateText_5();
-		NullCheck(L_127);
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_128;
-		L_128 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_127, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_129 = __this->get_d_10();
-		NullCheck(L_129);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_130;
-		L_130 = (L_129)->GetAddressAt(0, 3);
-		String_t* L_131 = L_130->get_GUBUN_0();
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_132 = __this->get_d_10();
-		NullCheck(L_132);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_133;
-		L_133 = (L_132)->GetAddressAt(0, 3);
-		int32_t* L_134 = L_133->get_address_of_INC_DEC_1();
-		String_t* L_135;
-		L_135 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_134, /*hidden argument*/NULL);
-		String_t* L_136;
-		L_136 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_131, _stringLiteralE183B10A2438D1A5505D894E0452DCED85BDAE08, L_135, /*hidden argument*/NULL);
+		// StateText.GetComponent<Text>().text = d[0, 2].GUBUN + " �� " + (d[0, 2].OVER_FLOW_CNT + d[0, 2].LOCAL_OCC_CNT);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_128 = __this->get_StateText_5();
 		NullCheck(L_128);
-		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_128, L_136);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_129;
+		L_129 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_128, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_130 = __this->get_d_10();
+		NullCheck(L_130);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_131;
+		L_131 = (L_130)->GetAddressAt(0, 2);
+		String_t* L_132 = L_131->get_GUBUN_0();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_133 = __this->get_d_10();
+		NullCheck(L_133);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_134;
+		L_134 = (L_133)->GetAddressAt(0, 2);
+		int32_t L_135 = L_134->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_136 = __this->get_d_10();
+		NullCheck(L_136);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_137;
+		L_137 = (L_136)->GetAddressAt(0, 2);
+		int32_t L_138 = L_137->get_LOCAL_OCC_CNT_6();
+		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_135, (int32_t)L_138));
+		String_t* L_139;
+		L_139 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&V_1), /*hidden argument*/NULL);
+		String_t* L_140;
+		L_140 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_132, _stringLiteralE183B10A2438D1A5505D894E0452DCED85BDAE08, L_139, /*hidden argument*/NULL);
+		NullCheck(L_129);
+		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_129, L_140);
 	}
 
-IL_03c4:
+IL_03e5:
 	{
-		// if (hit.collider.name == d[0, 4].GUBUN)
-		Collider2D_tDDBF081328B83D21D0BA3B5036D77B32528BA722 * L_137;
-		L_137 = RaycastHit2D_get_collider_m00F7EC55C36F39E2ED64B31354FB4D9C8938D563((RaycastHit2D_t210878DAEBC96C1F69DF9883C454758724A106A4 *)(&V_0), /*hidden argument*/NULL);
-		NullCheck(L_137);
-		String_t* L_138;
-		L_138 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_137, /*hidden argument*/NULL);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_139 = __this->get_d_10();
-		NullCheck(L_139);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_140;
-		L_140 = (L_139)->GetAddressAt(0, 4);
-		String_t* L_141 = L_140->get_GUBUN_0();
-		bool L_142;
-		L_142 = String_op_Equality_m2B91EE68355F142F67095973D32EB5828B7B73CB(L_138, L_141, /*hidden argument*/NULL);
-		if (!L_142)
-		{
-			goto IL_04a2;
-		}
-	}
-	{
-		// if (d[0, 4].INC_DEC > 0)
+		// if (hit.collider.name == d[0, 3].GUBUN)
+		Collider2D_tDDBF081328B83D21D0BA3B5036D77B32528BA722 * L_141;
+		L_141 = RaycastHit2D_get_collider_m00F7EC55C36F39E2ED64B31354FB4D9C8938D563((RaycastHit2D_t210878DAEBC96C1F69DF9883C454758724A106A4 *)(&V_0), /*hidden argument*/NULL);
+		NullCheck(L_141);
+		String_t* L_142;
+		L_142 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_141, /*hidden argument*/NULL);
 		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_143 = __this->get_d_10();
 		NullCheck(L_143);
 		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_144;
-		L_144 = (L_143)->GetAddressAt(0, 4);
-		int32_t L_145 = L_144->get_INC_DEC_1();
-		if ((((int32_t)L_145) <= ((int32_t)0)))
+		L_144 = (L_143)->GetAddressAt(0, 3);
+		String_t* L_145 = L_144->get_GUBUN_0();
+		bool L_146;
+		L_146 = String_op_Equality_m2B91EE68355F142F67095973D32EB5828B7B73CB(L_142, L_145, /*hidden argument*/NULL);
+		if (!L_146)
 		{
-			goto IL_044b;
+			goto IL_0518;
 		}
 	}
 	{
-		// StateText.GetComponent<Text>().text = d[0, 4].GUBUN + " <color=red>�� " + d[0, 4].INC_DEC + "</color>";
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_146 = __this->get_StateText_5();
-		NullCheck(L_146);
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_147;
-		L_147 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_146, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_148 = __this->get_d_10();
-		NullCheck(L_148);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_149;
-		L_149 = (L_148)->GetAddressAt(0, 4);
-		String_t* L_150 = L_149->get_GUBUN_0();
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_151 = __this->get_d_10();
-		NullCheck(L_151);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_152;
-		L_152 = (L_151)->GetAddressAt(0, 4);
-		int32_t* L_153 = L_152->get_address_of_INC_DEC_1();
-		String_t* L_154;
-		L_154 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_153, /*hidden argument*/NULL);
-		String_t* L_155;
-		L_155 = String_Concat_m37A5BF26F8F8F1892D60D727303B23FB604FEE78(L_150, _stringLiteral9A87B7E4C3A2F03D42C57F164C1F043F70553A1C, L_154, _stringLiteralCBE844AF922BC0AC1AB4CA94466DC7FD7038D0E2, /*hidden argument*/NULL);
+		// if ((d[0, 3].OVER_FLOW_CNT + d[0, 3].LOCAL_OCC_CNT) > 0)
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_147 = __this->get_d_10();
 		NullCheck(L_147);
-		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_147, L_155);
-		// }
-		goto IL_04a2;
-	}
-
-IL_044b:
-	{
-		// else if (d[0, 4].INC_DEC == 0)
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_156 = __this->get_d_10();
-		NullCheck(L_156);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_157;
-		L_157 = (L_156)->GetAddressAt(0, 4);
-		int32_t L_158 = L_157->get_INC_DEC_1();
-		if (L_158)
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_148;
+		L_148 = (L_147)->GetAddressAt(0, 3);
+		int32_t L_149 = L_148->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_150 = __this->get_d_10();
+		NullCheck(L_150);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_151;
+		L_151 = (L_150)->GetAddressAt(0, 3);
+		int32_t L_152 = L_151->get_LOCAL_OCC_CNT_6();
+		if ((((int32_t)((int32_t)il2cpp_codegen_add((int32_t)L_149, (int32_t)L_152))) <= ((int32_t)0)))
 		{
-			goto IL_04a2;
+			goto IL_0498;
 		}
 	}
 	{
-		// StateText.GetComponent<Text>().text = d[0, 4].GUBUN + " �� " + d[0, 4].INC_DEC;
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_159 = __this->get_StateText_5();
-		NullCheck(L_159);
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_160;
-		L_160 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_159, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
+		// StateText.GetComponent<Text>().text = d[0, 3].GUBUN + " <color=red>�� " + (d[0, 3].OVER_FLOW_CNT + d[0, 3].LOCAL_OCC_CNT) + "</color>";
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_153 = __this->get_StateText_5();
+		NullCheck(L_153);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_154;
+		L_154 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_153, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_155 = __this->get_d_10();
+		NullCheck(L_155);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_156;
+		L_156 = (L_155)->GetAddressAt(0, 3);
+		String_t* L_157 = L_156->get_GUBUN_0();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_158 = __this->get_d_10();
+		NullCheck(L_158);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_159;
+		L_159 = (L_158)->GetAddressAt(0, 3);
+		int32_t L_160 = L_159->get_OVER_FLOW_CNT_5();
 		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_161 = __this->get_d_10();
 		NullCheck(L_161);
 		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_162;
-		L_162 = (L_161)->GetAddressAt(0, 4);
-		String_t* L_163 = L_162->get_GUBUN_0();
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_164 = __this->get_d_10();
-		NullCheck(L_164);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_165;
-		L_165 = (L_164)->GetAddressAt(0, 4);
-		int32_t* L_166 = L_165->get_address_of_INC_DEC_1();
-		String_t* L_167;
-		L_167 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_166, /*hidden argument*/NULL);
-		String_t* L_168;
-		L_168 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_163, _stringLiteralE183B10A2438D1A5505D894E0452DCED85BDAE08, L_167, /*hidden argument*/NULL);
-		NullCheck(L_160);
-		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_160, L_168);
+		L_162 = (L_161)->GetAddressAt(0, 3);
+		int32_t L_163 = L_162->get_LOCAL_OCC_CNT_6();
+		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_160, (int32_t)L_163));
+		String_t* L_164;
+		L_164 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&V_1), /*hidden argument*/NULL);
+		String_t* L_165;
+		L_165 = String_Concat_m37A5BF26F8F8F1892D60D727303B23FB604FEE78(L_157, _stringLiteral9A87B7E4C3A2F03D42C57F164C1F043F70553A1C, L_164, _stringLiteralCBE844AF922BC0AC1AB4CA94466DC7FD7038D0E2, /*hidden argument*/NULL);
+		NullCheck(L_154);
+		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_154, L_165);
+		// }
+		goto IL_0518;
 	}
 
-IL_04a2:
+IL_0498:
 	{
-		// if (hit.collider.name == d[0, 5].GUBUN)
-		Collider2D_tDDBF081328B83D21D0BA3B5036D77B32528BA722 * L_169;
-		L_169 = RaycastHit2D_get_collider_m00F7EC55C36F39E2ED64B31354FB4D9C8938D563((RaycastHit2D_t210878DAEBC96C1F69DF9883C454758724A106A4 *)(&V_0), /*hidden argument*/NULL);
+		// else if ((d[0, 3].OVER_FLOW_CNT + d[0, 3].LOCAL_OCC_CNT) == 0)
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_166 = __this->get_d_10();
+		NullCheck(L_166);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_167;
+		L_167 = (L_166)->GetAddressAt(0, 3);
+		int32_t L_168 = L_167->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_169 = __this->get_d_10();
 		NullCheck(L_169);
-		String_t* L_170;
-		L_170 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_169, /*hidden argument*/NULL);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_171 = __this->get_d_10();
-		NullCheck(L_171);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_172;
-		L_172 = (L_171)->GetAddressAt(0, 5);
-		String_t* L_173 = L_172->get_GUBUN_0();
-		bool L_174;
-		L_174 = String_op_Equality_m2B91EE68355F142F67095973D32EB5828B7B73CB(L_170, L_173, /*hidden argument*/NULL);
-		if (!L_174)
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_170;
+		L_170 = (L_169)->GetAddressAt(0, 3);
+		int32_t L_171 = L_170->get_LOCAL_OCC_CNT_6();
+		if (((int32_t)il2cpp_codegen_add((int32_t)L_168, (int32_t)L_171)))
 		{
-			goto IL_0580;
+			goto IL_0518;
 		}
 	}
 	{
-		// if (d[0, 5].INC_DEC > 0)
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_175 = __this->get_d_10();
-		NullCheck(L_175);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_176;
-		L_176 = (L_175)->GetAddressAt(0, 5);
-		int32_t L_177 = L_176->get_INC_DEC_1();
-		if ((((int32_t)L_177) <= ((int32_t)0)))
-		{
-			goto IL_0529;
-		}
-	}
-	{
-		// StateText.GetComponent<Text>().text = d[0, 5].GUBUN + " <color=red>�� " + d[0, 5].INC_DEC + "</color>";
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_178 = __this->get_StateText_5();
-		NullCheck(L_178);
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_179;
-		L_179 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_178, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
+		// StateText.GetComponent<Text>().text = d[0, 3].GUBUN + " �� " + (d[0, 3].OVER_FLOW_CNT + d[0, 3].LOCAL_OCC_CNT);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_172 = __this->get_StateText_5();
+		NullCheck(L_172);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_173;
+		L_173 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_172, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_174 = __this->get_d_10();
+		NullCheck(L_174);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_175;
+		L_175 = (L_174)->GetAddressAt(0, 3);
+		String_t* L_176 = L_175->get_GUBUN_0();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_177 = __this->get_d_10();
+		NullCheck(L_177);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_178;
+		L_178 = (L_177)->GetAddressAt(0, 3);
+		int32_t L_179 = L_178->get_OVER_FLOW_CNT_5();
 		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_180 = __this->get_d_10();
 		NullCheck(L_180);
 		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_181;
-		L_181 = (L_180)->GetAddressAt(0, 5);
-		String_t* L_182 = L_181->get_GUBUN_0();
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_183 = __this->get_d_10();
-		NullCheck(L_183);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_184;
-		L_184 = (L_183)->GetAddressAt(0, 5);
-		int32_t* L_185 = L_184->get_address_of_INC_DEC_1();
+		L_181 = (L_180)->GetAddressAt(0, 3);
+		int32_t L_182 = L_181->get_LOCAL_OCC_CNT_6();
+		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_179, (int32_t)L_182));
+		String_t* L_183;
+		L_183 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&V_1), /*hidden argument*/NULL);
+		String_t* L_184;
+		L_184 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_176, _stringLiteralE183B10A2438D1A5505D894E0452DCED85BDAE08, L_183, /*hidden argument*/NULL);
+		NullCheck(L_173);
+		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_173, L_184);
+	}
+
+IL_0518:
+	{
+		// if (hit.collider.name == d[0, 4].GUBUN)
+		Collider2D_tDDBF081328B83D21D0BA3B5036D77B32528BA722 * L_185;
+		L_185 = RaycastHit2D_get_collider_m00F7EC55C36F39E2ED64B31354FB4D9C8938D563((RaycastHit2D_t210878DAEBC96C1F69DF9883C454758724A106A4 *)(&V_0), /*hidden argument*/NULL);
+		NullCheck(L_185);
 		String_t* L_186;
-		L_186 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_185, /*hidden argument*/NULL);
-		String_t* L_187;
-		L_187 = String_Concat_m37A5BF26F8F8F1892D60D727303B23FB604FEE78(L_182, _stringLiteral9A87B7E4C3A2F03D42C57F164C1F043F70553A1C, L_186, _stringLiteralCBE844AF922BC0AC1AB4CA94466DC7FD7038D0E2, /*hidden argument*/NULL);
-		NullCheck(L_179);
-		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_179, L_187);
-		// }
-		goto IL_0580;
-	}
-
-IL_0529:
-	{
-		// else if (d[0, 5].INC_DEC == 0)
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_188 = __this->get_d_10();
-		NullCheck(L_188);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_189;
-		L_189 = (L_188)->GetAddressAt(0, 5);
-		int32_t L_190 = L_189->get_INC_DEC_1();
-		if (L_190)
+		L_186 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_185, /*hidden argument*/NULL);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_187 = __this->get_d_10();
+		NullCheck(L_187);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_188;
+		L_188 = (L_187)->GetAddressAt(0, 4);
+		String_t* L_189 = L_188->get_GUBUN_0();
+		bool L_190;
+		L_190 = String_op_Equality_m2B91EE68355F142F67095973D32EB5828B7B73CB(L_186, L_189, /*hidden argument*/NULL);
+		if (!L_190)
 		{
-			goto IL_0580;
+			goto IL_064b;
 		}
 	}
 	{
-		// StateText.GetComponent<Text>().text = d[0, 5].GUBUN + " �� " + d[0, 5].INC_DEC;
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_191 = __this->get_StateText_5();
+		// if ((d[0, 4].OVER_FLOW_CNT + d[0, 4].LOCAL_OCC_CNT) > 0)
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_191 = __this->get_d_10();
 		NullCheck(L_191);
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_192;
-		L_192 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_191, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_193 = __this->get_d_10();
-		NullCheck(L_193);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_194;
-		L_194 = (L_193)->GetAddressAt(0, 5);
-		String_t* L_195 = L_194->get_GUBUN_0();
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_196 = __this->get_d_10();
-		NullCheck(L_196);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_197;
-		L_197 = (L_196)->GetAddressAt(0, 5);
-		int32_t* L_198 = L_197->get_address_of_INC_DEC_1();
-		String_t* L_199;
-		L_199 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_198, /*hidden argument*/NULL);
-		String_t* L_200;
-		L_200 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_195, _stringLiteralE183B10A2438D1A5505D894E0452DCED85BDAE08, L_199, /*hidden argument*/NULL);
-		NullCheck(L_192);
-		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_192, L_200);
-	}
-
-IL_0580:
-	{
-		// if (hit.collider.name == d[0, 6].GUBUN)
-		Collider2D_tDDBF081328B83D21D0BA3B5036D77B32528BA722 * L_201;
-		L_201 = RaycastHit2D_get_collider_m00F7EC55C36F39E2ED64B31354FB4D9C8938D563((RaycastHit2D_t210878DAEBC96C1F69DF9883C454758724A106A4 *)(&V_0), /*hidden argument*/NULL);
-		NullCheck(L_201);
-		String_t* L_202;
-		L_202 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_201, /*hidden argument*/NULL);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_203 = __this->get_d_10();
-		NullCheck(L_203);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_204;
-		L_204 = (L_203)->GetAddressAt(0, 6);
-		String_t* L_205 = L_204->get_GUBUN_0();
-		bool L_206;
-		L_206 = String_op_Equality_m2B91EE68355F142F67095973D32EB5828B7B73CB(L_202, L_205, /*hidden argument*/NULL);
-		if (!L_206)
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_192;
+		L_192 = (L_191)->GetAddressAt(0, 4);
+		int32_t L_193 = L_192->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_194 = __this->get_d_10();
+		NullCheck(L_194);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_195;
+		L_195 = (L_194)->GetAddressAt(0, 4);
+		int32_t L_196 = L_195->get_LOCAL_OCC_CNT_6();
+		if ((((int32_t)((int32_t)il2cpp_codegen_add((int32_t)L_193, (int32_t)L_196))) <= ((int32_t)0)))
 		{
-			goto IL_065e;
+			goto IL_05cb;
 		}
 	}
 	{
-		// if (d[0, 6].INC_DEC > 0)
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_207 = __this->get_d_10();
-		NullCheck(L_207);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_208;
-		L_208 = (L_207)->GetAddressAt(0, 6);
-		int32_t L_209 = L_208->get_INC_DEC_1();
-		if ((((int32_t)L_209) <= ((int32_t)0)))
-		{
-			goto IL_0607;
-		}
-	}
-	{
-		// StateText.GetComponent<Text>().text = d[0, 6].GUBUN + " <color=red>�� " + d[0, 6].INC_DEC + "</color>";
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_210 = __this->get_StateText_5();
-		NullCheck(L_210);
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_211;
-		L_211 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_210, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_212 = __this->get_d_10();
-		NullCheck(L_212);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_213;
-		L_213 = (L_212)->GetAddressAt(0, 6);
-		String_t* L_214 = L_213->get_GUBUN_0();
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_215 = __this->get_d_10();
-		NullCheck(L_215);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_216;
-		L_216 = (L_215)->GetAddressAt(0, 6);
-		int32_t* L_217 = L_216->get_address_of_INC_DEC_1();
-		String_t* L_218;
-		L_218 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_217, /*hidden argument*/NULL);
-		String_t* L_219;
-		L_219 = String_Concat_m37A5BF26F8F8F1892D60D727303B23FB604FEE78(L_214, _stringLiteral9A87B7E4C3A2F03D42C57F164C1F043F70553A1C, L_218, _stringLiteralCBE844AF922BC0AC1AB4CA94466DC7FD7038D0E2, /*hidden argument*/NULL);
-		NullCheck(L_211);
-		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_211, L_219);
+		// StateText.GetComponent<Text>().text = d[0, 4].GUBUN + " <color=red>�� " + (d[0, 4].OVER_FLOW_CNT + d[0, 4].LOCAL_OCC_CNT) + "</color>";
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_197 = __this->get_StateText_5();
+		NullCheck(L_197);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_198;
+		L_198 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_197, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_199 = __this->get_d_10();
+		NullCheck(L_199);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_200;
+		L_200 = (L_199)->GetAddressAt(0, 4);
+		String_t* L_201 = L_200->get_GUBUN_0();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_202 = __this->get_d_10();
+		NullCheck(L_202);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_203;
+		L_203 = (L_202)->GetAddressAt(0, 4);
+		int32_t L_204 = L_203->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_205 = __this->get_d_10();
+		NullCheck(L_205);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_206;
+		L_206 = (L_205)->GetAddressAt(0, 4);
+		int32_t L_207 = L_206->get_LOCAL_OCC_CNT_6();
+		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_204, (int32_t)L_207));
+		String_t* L_208;
+		L_208 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&V_1), /*hidden argument*/NULL);
+		String_t* L_209;
+		L_209 = String_Concat_m37A5BF26F8F8F1892D60D727303B23FB604FEE78(L_201, _stringLiteral9A87B7E4C3A2F03D42C57F164C1F043F70553A1C, L_208, _stringLiteralCBE844AF922BC0AC1AB4CA94466DC7FD7038D0E2, /*hidden argument*/NULL);
+		NullCheck(L_198);
+		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_198, L_209);
 		// }
-		goto IL_065e;
+		goto IL_064b;
 	}
 
-IL_0607:
+IL_05cb:
 	{
-		// else if (d[0, 6].INC_DEC == 0)
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_220 = __this->get_d_10();
-		NullCheck(L_220);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_221;
-		L_221 = (L_220)->GetAddressAt(0, 6);
-		int32_t L_222 = L_221->get_INC_DEC_1();
-		if (L_222)
+		// else if ((d[0, 4].OVER_FLOW_CNT + d[0, 4].LOCAL_OCC_CNT) == 0)
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_210 = __this->get_d_10();
+		NullCheck(L_210);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_211;
+		L_211 = (L_210)->GetAddressAt(0, 4);
+		int32_t L_212 = L_211->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_213 = __this->get_d_10();
+		NullCheck(L_213);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_214;
+		L_214 = (L_213)->GetAddressAt(0, 4);
+		int32_t L_215 = L_214->get_LOCAL_OCC_CNT_6();
+		if (((int32_t)il2cpp_codegen_add((int32_t)L_212, (int32_t)L_215)))
 		{
-			goto IL_065e;
+			goto IL_064b;
 		}
 	}
 	{
-		// StateText.GetComponent<Text>().text = d[0, 6].GUBUN + " �� " + d[0, 6].INC_DEC;
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_223 = __this->get_StateText_5();
-		NullCheck(L_223);
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_224;
-		L_224 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_223, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_225 = __this->get_d_10();
-		NullCheck(L_225);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_226;
-		L_226 = (L_225)->GetAddressAt(0, 6);
-		String_t* L_227 = L_226->get_GUBUN_0();
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_228 = __this->get_d_10();
-		NullCheck(L_228);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_229;
-		L_229 = (L_228)->GetAddressAt(0, 6);
-		int32_t* L_230 = L_229->get_address_of_INC_DEC_1();
-		String_t* L_231;
-		L_231 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_230, /*hidden argument*/NULL);
-		String_t* L_232;
-		L_232 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_227, _stringLiteralE183B10A2438D1A5505D894E0452DCED85BDAE08, L_231, /*hidden argument*/NULL);
+		// StateText.GetComponent<Text>().text = d[0, 4].GUBUN + " �� " + (d[0, 4].OVER_FLOW_CNT + d[0, 4].LOCAL_OCC_CNT);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_216 = __this->get_StateText_5();
+		NullCheck(L_216);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_217;
+		L_217 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_216, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_218 = __this->get_d_10();
+		NullCheck(L_218);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_219;
+		L_219 = (L_218)->GetAddressAt(0, 4);
+		String_t* L_220 = L_219->get_GUBUN_0();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_221 = __this->get_d_10();
+		NullCheck(L_221);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_222;
+		L_222 = (L_221)->GetAddressAt(0, 4);
+		int32_t L_223 = L_222->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_224 = __this->get_d_10();
 		NullCheck(L_224);
-		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_224, L_232);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_225;
+		L_225 = (L_224)->GetAddressAt(0, 4);
+		int32_t L_226 = L_225->get_LOCAL_OCC_CNT_6();
+		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_223, (int32_t)L_226));
+		String_t* L_227;
+		L_227 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&V_1), /*hidden argument*/NULL);
+		String_t* L_228;
+		L_228 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_220, _stringLiteralE183B10A2438D1A5505D894E0452DCED85BDAE08, L_227, /*hidden argument*/NULL);
+		NullCheck(L_217);
+		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_217, L_228);
 	}
 
-IL_065e:
+IL_064b:
 	{
-		// if (hit.collider.name == d[0, 7].GUBUN)
-		Collider2D_tDDBF081328B83D21D0BA3B5036D77B32528BA722 * L_233;
-		L_233 = RaycastHit2D_get_collider_m00F7EC55C36F39E2ED64B31354FB4D9C8938D563((RaycastHit2D_t210878DAEBC96C1F69DF9883C454758724A106A4 *)(&V_0), /*hidden argument*/NULL);
-		NullCheck(L_233);
-		String_t* L_234;
-		L_234 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_233, /*hidden argument*/NULL);
+		// if (hit.collider.name == d[0, 5].GUBUN)
+		Collider2D_tDDBF081328B83D21D0BA3B5036D77B32528BA722 * L_229;
+		L_229 = RaycastHit2D_get_collider_m00F7EC55C36F39E2ED64B31354FB4D9C8938D563((RaycastHit2D_t210878DAEBC96C1F69DF9883C454758724A106A4 *)(&V_0), /*hidden argument*/NULL);
+		NullCheck(L_229);
+		String_t* L_230;
+		L_230 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_229, /*hidden argument*/NULL);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_231 = __this->get_d_10();
+		NullCheck(L_231);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_232;
+		L_232 = (L_231)->GetAddressAt(0, 5);
+		String_t* L_233 = L_232->get_GUBUN_0();
+		bool L_234;
+		L_234 = String_op_Equality_m2B91EE68355F142F67095973D32EB5828B7B73CB(L_230, L_233, /*hidden argument*/NULL);
+		if (!L_234)
+		{
+			goto IL_077e;
+		}
+	}
+	{
+		// if ((d[0, 5].OVER_FLOW_CNT + d[0, 5].LOCAL_OCC_CNT) > 0)
 		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_235 = __this->get_d_10();
 		NullCheck(L_235);
 		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_236;
-		L_236 = (L_235)->GetAddressAt(0, 7);
-		String_t* L_237 = L_236->get_GUBUN_0();
-		bool L_238;
-		L_238 = String_op_Equality_m2B91EE68355F142F67095973D32EB5828B7B73CB(L_234, L_237, /*hidden argument*/NULL);
-		if (!L_238)
+		L_236 = (L_235)->GetAddressAt(0, 5);
+		int32_t L_237 = L_236->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_238 = __this->get_d_10();
+		NullCheck(L_238);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_239;
+		L_239 = (L_238)->GetAddressAt(0, 5);
+		int32_t L_240 = L_239->get_LOCAL_OCC_CNT_6();
+		if ((((int32_t)((int32_t)il2cpp_codegen_add((int32_t)L_237, (int32_t)L_240))) <= ((int32_t)0)))
 		{
-			goto IL_073c;
+			goto IL_06fe;
 		}
 	}
 	{
-		// if (d[0, 7].INC_DEC > 0)
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_239 = __this->get_d_10();
-		NullCheck(L_239);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_240;
-		L_240 = (L_239)->GetAddressAt(0, 7);
-		int32_t L_241 = L_240->get_INC_DEC_1();
-		if ((((int32_t)L_241) <= ((int32_t)0)))
-		{
-			goto IL_06e5;
-		}
-	}
-	{
-		// StateText.GetComponent<Text>().text = d[0, 7].GUBUN + " <color=red>�� " + d[0, 7].INC_DEC + "</color>";
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_242 = __this->get_StateText_5();
-		NullCheck(L_242);
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_243;
-		L_243 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_242, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_244 = __this->get_d_10();
-		NullCheck(L_244);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_245;
-		L_245 = (L_244)->GetAddressAt(0, 7);
-		String_t* L_246 = L_245->get_GUBUN_0();
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_247 = __this->get_d_10();
-		NullCheck(L_247);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_248;
-		L_248 = (L_247)->GetAddressAt(0, 7);
-		int32_t* L_249 = L_248->get_address_of_INC_DEC_1();
-		String_t* L_250;
-		L_250 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_249, /*hidden argument*/NULL);
-		String_t* L_251;
-		L_251 = String_Concat_m37A5BF26F8F8F1892D60D727303B23FB604FEE78(L_246, _stringLiteral9A87B7E4C3A2F03D42C57F164C1F043F70553A1C, L_250, _stringLiteralCBE844AF922BC0AC1AB4CA94466DC7FD7038D0E2, /*hidden argument*/NULL);
+		// StateText.GetComponent<Text>().text = d[0, 5].GUBUN + " <color=red>�� " + (d[0, 5].OVER_FLOW_CNT + d[0, 5].LOCAL_OCC_CNT) + "</color>";
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_241 = __this->get_StateText_5();
+		NullCheck(L_241);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_242;
+		L_242 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_241, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_243 = __this->get_d_10();
 		NullCheck(L_243);
-		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_243, L_251);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_244;
+		L_244 = (L_243)->GetAddressAt(0, 5);
+		String_t* L_245 = L_244->get_GUBUN_0();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_246 = __this->get_d_10();
+		NullCheck(L_246);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_247;
+		L_247 = (L_246)->GetAddressAt(0, 5);
+		int32_t L_248 = L_247->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_249 = __this->get_d_10();
+		NullCheck(L_249);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_250;
+		L_250 = (L_249)->GetAddressAt(0, 5);
+		int32_t L_251 = L_250->get_LOCAL_OCC_CNT_6();
+		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_248, (int32_t)L_251));
+		String_t* L_252;
+		L_252 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&V_1), /*hidden argument*/NULL);
+		String_t* L_253;
+		L_253 = String_Concat_m37A5BF26F8F8F1892D60D727303B23FB604FEE78(L_245, _stringLiteral9A87B7E4C3A2F03D42C57F164C1F043F70553A1C, L_252, _stringLiteralCBE844AF922BC0AC1AB4CA94466DC7FD7038D0E2, /*hidden argument*/NULL);
+		NullCheck(L_242);
+		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_242, L_253);
 		// }
-		goto IL_073c;
+		goto IL_077e;
 	}
 
-IL_06e5:
+IL_06fe:
 	{
-		// else if (d[0, 7].INC_DEC == 0)
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_252 = __this->get_d_10();
-		NullCheck(L_252);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_253;
-		L_253 = (L_252)->GetAddressAt(0, 7);
-		int32_t L_254 = L_253->get_INC_DEC_1();
-		if (L_254)
-		{
-			goto IL_073c;
-		}
-	}
-	{
-		// StateText.GetComponent<Text>().text = d[0, 7].GUBUN + " �� " + d[0, 7].INC_DEC;
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_255 = __this->get_StateText_5();
-		NullCheck(L_255);
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_256;
-		L_256 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_255, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
+		// else if ((d[0, 5].OVER_FLOW_CNT + d[0, 5].LOCAL_OCC_CNT) == 0)
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_254 = __this->get_d_10();
+		NullCheck(L_254);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_255;
+		L_255 = (L_254)->GetAddressAt(0, 5);
+		int32_t L_256 = L_255->get_OVER_FLOW_CNT_5();
 		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_257 = __this->get_d_10();
 		NullCheck(L_257);
 		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_258;
-		L_258 = (L_257)->GetAddressAt(0, 7);
-		String_t* L_259 = L_258->get_GUBUN_0();
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_260 = __this->get_d_10();
+		L_258 = (L_257)->GetAddressAt(0, 5);
+		int32_t L_259 = L_258->get_LOCAL_OCC_CNT_6();
+		if (((int32_t)il2cpp_codegen_add((int32_t)L_256, (int32_t)L_259)))
+		{
+			goto IL_077e;
+		}
+	}
+	{
+		// StateText.GetComponent<Text>().text = d[0, 5].GUBUN + " �� " + (d[0, 5].OVER_FLOW_CNT + d[0, 5].LOCAL_OCC_CNT);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_260 = __this->get_StateText_5();
 		NullCheck(L_260);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_261;
-		L_261 = (L_260)->GetAddressAt(0, 7);
-		int32_t* L_262 = L_261->get_address_of_INC_DEC_1();
-		String_t* L_263;
-		L_263 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_262, /*hidden argument*/NULL);
-		String_t* L_264;
-		L_264 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_259, _stringLiteralE183B10A2438D1A5505D894E0452DCED85BDAE08, L_263, /*hidden argument*/NULL);
-		NullCheck(L_256);
-		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_256, L_264);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_261;
+		L_261 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_260, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_262 = __this->get_d_10();
+		NullCheck(L_262);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_263;
+		L_263 = (L_262)->GetAddressAt(0, 5);
+		String_t* L_264 = L_263->get_GUBUN_0();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_265 = __this->get_d_10();
+		NullCheck(L_265);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_266;
+		L_266 = (L_265)->GetAddressAt(0, 5);
+		int32_t L_267 = L_266->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_268 = __this->get_d_10();
+		NullCheck(L_268);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_269;
+		L_269 = (L_268)->GetAddressAt(0, 5);
+		int32_t L_270 = L_269->get_LOCAL_OCC_CNT_6();
+		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_267, (int32_t)L_270));
+		String_t* L_271;
+		L_271 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&V_1), /*hidden argument*/NULL);
+		String_t* L_272;
+		L_272 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_264, _stringLiteralE183B10A2438D1A5505D894E0452DCED85BDAE08, L_271, /*hidden argument*/NULL);
+		NullCheck(L_261);
+		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_261, L_272);
 	}
 
-IL_073c:
+IL_077e:
 	{
-		// if (hit.collider.name == d[0, 8].GUBUN)
-		Collider2D_tDDBF081328B83D21D0BA3B5036D77B32528BA722 * L_265;
-		L_265 = RaycastHit2D_get_collider_m00F7EC55C36F39E2ED64B31354FB4D9C8938D563((RaycastHit2D_t210878DAEBC96C1F69DF9883C454758724A106A4 *)(&V_0), /*hidden argument*/NULL);
-		NullCheck(L_265);
-		String_t* L_266;
-		L_266 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_265, /*hidden argument*/NULL);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_267 = __this->get_d_10();
-		NullCheck(L_267);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_268;
-		L_268 = (L_267)->GetAddressAt(0, 8);
-		String_t* L_269 = L_268->get_GUBUN_0();
-		bool L_270;
-		L_270 = String_op_Equality_m2B91EE68355F142F67095973D32EB5828B7B73CB(L_266, L_269, /*hidden argument*/NULL);
-		if (!L_270)
+		// if (hit.collider.name == d[0, 6].GUBUN)
+		Collider2D_tDDBF081328B83D21D0BA3B5036D77B32528BA722 * L_273;
+		L_273 = RaycastHit2D_get_collider_m00F7EC55C36F39E2ED64B31354FB4D9C8938D563((RaycastHit2D_t210878DAEBC96C1F69DF9883C454758724A106A4 *)(&V_0), /*hidden argument*/NULL);
+		NullCheck(L_273);
+		String_t* L_274;
+		L_274 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_273, /*hidden argument*/NULL);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_275 = __this->get_d_10();
+		NullCheck(L_275);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_276;
+		L_276 = (L_275)->GetAddressAt(0, 6);
+		String_t* L_277 = L_276->get_GUBUN_0();
+		bool L_278;
+		L_278 = String_op_Equality_m2B91EE68355F142F67095973D32EB5828B7B73CB(L_274, L_277, /*hidden argument*/NULL);
+		if (!L_278)
 		{
-			goto IL_081a;
+			goto IL_08b1;
 		}
 	}
 	{
-		// if (d[0, 8].INC_DEC > 0)
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_271 = __this->get_d_10();
-		NullCheck(L_271);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_272;
-		L_272 = (L_271)->GetAddressAt(0, 8);
-		int32_t L_273 = L_272->get_INC_DEC_1();
-		if ((((int32_t)L_273) <= ((int32_t)0)))
-		{
-			goto IL_07c3;
-		}
-	}
-	{
-		// StateText.GetComponent<Text>().text = d[0, 8].GUBUN + " <color=red>�� " + d[0, 8].INC_DEC + "</color>";
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_274 = __this->get_StateText_5();
-		NullCheck(L_274);
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_275;
-		L_275 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_274, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_276 = __this->get_d_10();
-		NullCheck(L_276);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_277;
-		L_277 = (L_276)->GetAddressAt(0, 8);
-		String_t* L_278 = L_277->get_GUBUN_0();
+		// if ((d[0, 6].OVER_FLOW_CNT + d[0, 6].LOCAL_OCC_CNT) > 0)
 		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_279 = __this->get_d_10();
 		NullCheck(L_279);
 		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_280;
-		L_280 = (L_279)->GetAddressAt(0, 8);
-		int32_t* L_281 = L_280->get_address_of_INC_DEC_1();
-		String_t* L_282;
-		L_282 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_281, /*hidden argument*/NULL);
-		String_t* L_283;
-		L_283 = String_Concat_m37A5BF26F8F8F1892D60D727303B23FB604FEE78(L_278, _stringLiteral9A87B7E4C3A2F03D42C57F164C1F043F70553A1C, L_282, _stringLiteralCBE844AF922BC0AC1AB4CA94466DC7FD7038D0E2, /*hidden argument*/NULL);
-		NullCheck(L_275);
-		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_275, L_283);
-		// }
-		goto IL_081a;
-	}
-
-IL_07c3:
-	{
-		// else if (d[0, 8].INC_DEC == 0)
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_284 = __this->get_d_10();
-		NullCheck(L_284);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_285;
-		L_285 = (L_284)->GetAddressAt(0, 8);
-		int32_t L_286 = L_285->get_INC_DEC_1();
-		if (L_286)
+		L_280 = (L_279)->GetAddressAt(0, 6);
+		int32_t L_281 = L_280->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_282 = __this->get_d_10();
+		NullCheck(L_282);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_283;
+		L_283 = (L_282)->GetAddressAt(0, 6);
+		int32_t L_284 = L_283->get_LOCAL_OCC_CNT_6();
+		if ((((int32_t)((int32_t)il2cpp_codegen_add((int32_t)L_281, (int32_t)L_284))) <= ((int32_t)0)))
 		{
-			goto IL_081a;
+			goto IL_0831;
 		}
 	}
 	{
-		// StateText.GetComponent<Text>().text = d[0, 8].GUBUN + " �� " + d[0, 8].INC_DEC;
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_287 = __this->get_StateText_5();
+		// StateText.GetComponent<Text>().text = d[0, 6].GUBUN + " <color=red>�� " + (d[0, 6].OVER_FLOW_CNT + d[0, 6].LOCAL_OCC_CNT) + "</color>";
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_285 = __this->get_StateText_5();
+		NullCheck(L_285);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_286;
+		L_286 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_285, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_287 = __this->get_d_10();
 		NullCheck(L_287);
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_288;
-		L_288 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_287, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_289 = __this->get_d_10();
-		NullCheck(L_289);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_290;
-		L_290 = (L_289)->GetAddressAt(0, 8);
-		String_t* L_291 = L_290->get_GUBUN_0();
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_292 = __this->get_d_10();
-		NullCheck(L_292);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_293;
-		L_293 = (L_292)->GetAddressAt(0, 8);
-		int32_t* L_294 = L_293->get_address_of_INC_DEC_1();
-		String_t* L_295;
-		L_295 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_294, /*hidden argument*/NULL);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_288;
+		L_288 = (L_287)->GetAddressAt(0, 6);
+		String_t* L_289 = L_288->get_GUBUN_0();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_290 = __this->get_d_10();
+		NullCheck(L_290);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_291;
+		L_291 = (L_290)->GetAddressAt(0, 6);
+		int32_t L_292 = L_291->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_293 = __this->get_d_10();
+		NullCheck(L_293);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_294;
+		L_294 = (L_293)->GetAddressAt(0, 6);
+		int32_t L_295 = L_294->get_LOCAL_OCC_CNT_6();
+		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_292, (int32_t)L_295));
 		String_t* L_296;
-		L_296 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_291, _stringLiteralE183B10A2438D1A5505D894E0452DCED85BDAE08, L_295, /*hidden argument*/NULL);
-		NullCheck(L_288);
-		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_288, L_296);
-	}
-
-IL_081a:
-	{
-		// if (hit.collider.name == d[0, 9].GUBUN)
-		Collider2D_tDDBF081328B83D21D0BA3B5036D77B32528BA722 * L_297;
-		L_297 = RaycastHit2D_get_collider_m00F7EC55C36F39E2ED64B31354FB4D9C8938D563((RaycastHit2D_t210878DAEBC96C1F69DF9883C454758724A106A4 *)(&V_0), /*hidden argument*/NULL);
-		NullCheck(L_297);
-		String_t* L_298;
-		L_298 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_297, /*hidden argument*/NULL);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_299 = __this->get_d_10();
-		NullCheck(L_299);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_300;
-		L_300 = (L_299)->GetAddressAt(0, ((int32_t)9));
-		String_t* L_301 = L_300->get_GUBUN_0();
-		bool L_302;
-		L_302 = String_op_Equality_m2B91EE68355F142F67095973D32EB5828B7B73CB(L_298, L_301, /*hidden argument*/NULL);
-		if (!L_302)
-		{
-			goto IL_08ff;
-		}
-	}
-	{
-		// if (d[0, 9].INC_DEC > 0)
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_303 = __this->get_d_10();
-		NullCheck(L_303);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_304;
-		L_304 = (L_303)->GetAddressAt(0, ((int32_t)9));
-		int32_t L_305 = L_304->get_INC_DEC_1();
-		if ((((int32_t)L_305) <= ((int32_t)0)))
-		{
-			goto IL_08a5;
-		}
-	}
-	{
-		// StateText.GetComponent<Text>().text = d[0, 9].GUBUN + " <color=red>�� " + d[0, 9].INC_DEC + "</color>";
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_306 = __this->get_StateText_5();
-		NullCheck(L_306);
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_307;
-		L_307 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_306, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_308 = __this->get_d_10();
-		NullCheck(L_308);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_309;
-		L_309 = (L_308)->GetAddressAt(0, ((int32_t)9));
-		String_t* L_310 = L_309->get_GUBUN_0();
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_311 = __this->get_d_10();
-		NullCheck(L_311);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_312;
-		L_312 = (L_311)->GetAddressAt(0, ((int32_t)9));
-		int32_t* L_313 = L_312->get_address_of_INC_DEC_1();
-		String_t* L_314;
-		L_314 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_313, /*hidden argument*/NULL);
-		String_t* L_315;
-		L_315 = String_Concat_m37A5BF26F8F8F1892D60D727303B23FB604FEE78(L_310, _stringLiteral9A87B7E4C3A2F03D42C57F164C1F043F70553A1C, L_314, _stringLiteralCBE844AF922BC0AC1AB4CA94466DC7FD7038D0E2, /*hidden argument*/NULL);
-		NullCheck(L_307);
-		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_307, L_315);
+		L_296 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&V_1), /*hidden argument*/NULL);
+		String_t* L_297;
+		L_297 = String_Concat_m37A5BF26F8F8F1892D60D727303B23FB604FEE78(L_289, _stringLiteral9A87B7E4C3A2F03D42C57F164C1F043F70553A1C, L_296, _stringLiteralCBE844AF922BC0AC1AB4CA94466DC7FD7038D0E2, /*hidden argument*/NULL);
+		NullCheck(L_286);
+		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_286, L_297);
 		// }
-		goto IL_08ff;
+		goto IL_08b1;
 	}
 
-IL_08a5:
+IL_0831:
 	{
-		// else if (d[0, 9].INC_DEC == 0)
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_316 = __this->get_d_10();
-		NullCheck(L_316);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_317;
-		L_317 = (L_316)->GetAddressAt(0, ((int32_t)9));
-		int32_t L_318 = L_317->get_INC_DEC_1();
-		if (L_318)
+		// else if ((d[0, 6].OVER_FLOW_CNT + d[0, 6].LOCAL_OCC_CNT) == 0)
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_298 = __this->get_d_10();
+		NullCheck(L_298);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_299;
+		L_299 = (L_298)->GetAddressAt(0, 6);
+		int32_t L_300 = L_299->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_301 = __this->get_d_10();
+		NullCheck(L_301);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_302;
+		L_302 = (L_301)->GetAddressAt(0, 6);
+		int32_t L_303 = L_302->get_LOCAL_OCC_CNT_6();
+		if (((int32_t)il2cpp_codegen_add((int32_t)L_300, (int32_t)L_303)))
 		{
-			goto IL_08ff;
+			goto IL_08b1;
 		}
 	}
 	{
-		// StateText.GetComponent<Text>().text = d[0, 9].GUBUN + " �� " + d[0, 9].INC_DEC;
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_319 = __this->get_StateText_5();
-		NullCheck(L_319);
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_320;
-		L_320 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_319, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_321 = __this->get_d_10();
-		NullCheck(L_321);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_322;
-		L_322 = (L_321)->GetAddressAt(0, ((int32_t)9));
-		String_t* L_323 = L_322->get_GUBUN_0();
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_324 = __this->get_d_10();
-		NullCheck(L_324);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_325;
-		L_325 = (L_324)->GetAddressAt(0, ((int32_t)9));
-		int32_t* L_326 = L_325->get_address_of_INC_DEC_1();
-		String_t* L_327;
-		L_327 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_326, /*hidden argument*/NULL);
-		String_t* L_328;
-		L_328 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_323, _stringLiteralE183B10A2438D1A5505D894E0452DCED85BDAE08, L_327, /*hidden argument*/NULL);
-		NullCheck(L_320);
-		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_320, L_328);
+		// StateText.GetComponent<Text>().text = d[0, 6].GUBUN + " �� " + (d[0, 6].OVER_FLOW_CNT + d[0, 6].LOCAL_OCC_CNT);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_304 = __this->get_StateText_5();
+		NullCheck(L_304);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_305;
+		L_305 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_304, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_306 = __this->get_d_10();
+		NullCheck(L_306);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_307;
+		L_307 = (L_306)->GetAddressAt(0, 6);
+		String_t* L_308 = L_307->get_GUBUN_0();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_309 = __this->get_d_10();
+		NullCheck(L_309);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_310;
+		L_310 = (L_309)->GetAddressAt(0, 6);
+		int32_t L_311 = L_310->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_312 = __this->get_d_10();
+		NullCheck(L_312);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_313;
+		L_313 = (L_312)->GetAddressAt(0, 6);
+		int32_t L_314 = L_313->get_LOCAL_OCC_CNT_6();
+		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_311, (int32_t)L_314));
+		String_t* L_315;
+		L_315 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&V_1), /*hidden argument*/NULL);
+		String_t* L_316;
+		L_316 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_308, _stringLiteralE183B10A2438D1A5505D894E0452DCED85BDAE08, L_315, /*hidden argument*/NULL);
+		NullCheck(L_305);
+		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_305, L_316);
 	}
 
-IL_08ff:
+IL_08b1:
 	{
-		// if (hit.collider.name == d[0, 10].GUBUN)
-		Collider2D_tDDBF081328B83D21D0BA3B5036D77B32528BA722 * L_329;
-		L_329 = RaycastHit2D_get_collider_m00F7EC55C36F39E2ED64B31354FB4D9C8938D563((RaycastHit2D_t210878DAEBC96C1F69DF9883C454758724A106A4 *)(&V_0), /*hidden argument*/NULL);
-		NullCheck(L_329);
-		String_t* L_330;
-		L_330 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_329, /*hidden argument*/NULL);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_331 = __this->get_d_10();
-		NullCheck(L_331);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_332;
-		L_332 = (L_331)->GetAddressAt(0, ((int32_t)10));
-		String_t* L_333 = L_332->get_GUBUN_0();
-		bool L_334;
-		L_334 = String_op_Equality_m2B91EE68355F142F67095973D32EB5828B7B73CB(L_330, L_333, /*hidden argument*/NULL);
-		if (!L_334)
+		// if (hit.collider.name == d[0, 7].GUBUN)
+		Collider2D_tDDBF081328B83D21D0BA3B5036D77B32528BA722 * L_317;
+		L_317 = RaycastHit2D_get_collider_m00F7EC55C36F39E2ED64B31354FB4D9C8938D563((RaycastHit2D_t210878DAEBC96C1F69DF9883C454758724A106A4 *)(&V_0), /*hidden argument*/NULL);
+		NullCheck(L_317);
+		String_t* L_318;
+		L_318 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_317, /*hidden argument*/NULL);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_319 = __this->get_d_10();
+		NullCheck(L_319);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_320;
+		L_320 = (L_319)->GetAddressAt(0, 7);
+		String_t* L_321 = L_320->get_GUBUN_0();
+		bool L_322;
+		L_322 = String_op_Equality_m2B91EE68355F142F67095973D32EB5828B7B73CB(L_318, L_321, /*hidden argument*/NULL);
+		if (!L_322)
 		{
 			goto IL_09e4;
 		}
 	}
 	{
-		// if (d[0, 10].INC_DEC > 0)
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_335 = __this->get_d_10();
-		NullCheck(L_335);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_336;
-		L_336 = (L_335)->GetAddressAt(0, ((int32_t)10));
-		int32_t L_337 = L_336->get_INC_DEC_1();
-		if ((((int32_t)L_337) <= ((int32_t)0)))
+		// if ((d[0, 7].OVER_FLOW_CNT + d[0, 7].LOCAL_OCC_CNT) > 0)
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_323 = __this->get_d_10();
+		NullCheck(L_323);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_324;
+		L_324 = (L_323)->GetAddressAt(0, 7);
+		int32_t L_325 = L_324->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_326 = __this->get_d_10();
+		NullCheck(L_326);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_327;
+		L_327 = (L_326)->GetAddressAt(0, 7);
+		int32_t L_328 = L_327->get_LOCAL_OCC_CNT_6();
+		if ((((int32_t)((int32_t)il2cpp_codegen_add((int32_t)L_325, (int32_t)L_328))) <= ((int32_t)0)))
 		{
-			goto IL_098a;
+			goto IL_0964;
 		}
 	}
 	{
-		// StateText.GetComponent<Text>().text = d[0, 10].GUBUN + " <color=red>�� " + d[0, 10].INC_DEC + "</color>";
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_338 = __this->get_StateText_5();
-		NullCheck(L_338);
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_339;
-		L_339 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_338, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_340 = __this->get_d_10();
-		NullCheck(L_340);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_341;
-		L_341 = (L_340)->GetAddressAt(0, ((int32_t)10));
-		String_t* L_342 = L_341->get_GUBUN_0();
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_343 = __this->get_d_10();
-		NullCheck(L_343);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_344;
-		L_344 = (L_343)->GetAddressAt(0, ((int32_t)10));
-		int32_t* L_345 = L_344->get_address_of_INC_DEC_1();
-		String_t* L_346;
-		L_346 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_345, /*hidden argument*/NULL);
-		String_t* L_347;
-		L_347 = String_Concat_m37A5BF26F8F8F1892D60D727303B23FB604FEE78(L_342, _stringLiteral9A87B7E4C3A2F03D42C57F164C1F043F70553A1C, L_346, _stringLiteralCBE844AF922BC0AC1AB4CA94466DC7FD7038D0E2, /*hidden argument*/NULL);
-		NullCheck(L_339);
-		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_339, L_347);
+		// StateText.GetComponent<Text>().text = d[0, 7].GUBUN + " <color=red>�� " + (d[0, 7].OVER_FLOW_CNT + d[0, 7].LOCAL_OCC_CNT) + "</color>";
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_329 = __this->get_StateText_5();
+		NullCheck(L_329);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_330;
+		L_330 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_329, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_331 = __this->get_d_10();
+		NullCheck(L_331);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_332;
+		L_332 = (L_331)->GetAddressAt(0, 7);
+		String_t* L_333 = L_332->get_GUBUN_0();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_334 = __this->get_d_10();
+		NullCheck(L_334);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_335;
+		L_335 = (L_334)->GetAddressAt(0, 7);
+		int32_t L_336 = L_335->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_337 = __this->get_d_10();
+		NullCheck(L_337);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_338;
+		L_338 = (L_337)->GetAddressAt(0, 7);
+		int32_t L_339 = L_338->get_LOCAL_OCC_CNT_6();
+		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_336, (int32_t)L_339));
+		String_t* L_340;
+		L_340 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&V_1), /*hidden argument*/NULL);
+		String_t* L_341;
+		L_341 = String_Concat_m37A5BF26F8F8F1892D60D727303B23FB604FEE78(L_333, _stringLiteral9A87B7E4C3A2F03D42C57F164C1F043F70553A1C, L_340, _stringLiteralCBE844AF922BC0AC1AB4CA94466DC7FD7038D0E2, /*hidden argument*/NULL);
+		NullCheck(L_330);
+		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_330, L_341);
 		// }
 		goto IL_09e4;
 	}
 
-IL_098a:
+IL_0964:
 	{
-		// else if (d[0, 10].INC_DEC == 0)
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_348 = __this->get_d_10();
-		NullCheck(L_348);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_349;
-		L_349 = (L_348)->GetAddressAt(0, ((int32_t)10));
-		int32_t L_350 = L_349->get_INC_DEC_1();
-		if (L_350)
+		// else if ((d[0, 7].OVER_FLOW_CNT + d[0, 7].LOCAL_OCC_CNT) == 0)
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_342 = __this->get_d_10();
+		NullCheck(L_342);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_343;
+		L_343 = (L_342)->GetAddressAt(0, 7);
+		int32_t L_344 = L_343->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_345 = __this->get_d_10();
+		NullCheck(L_345);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_346;
+		L_346 = (L_345)->GetAddressAt(0, 7);
+		int32_t L_347 = L_346->get_LOCAL_OCC_CNT_6();
+		if (((int32_t)il2cpp_codegen_add((int32_t)L_344, (int32_t)L_347)))
 		{
 			goto IL_09e4;
 		}
 	}
 	{
-		// StateText.GetComponent<Text>().text = d[0, 10].GUBUN + " �� " + d[0, 10].INC_DEC;
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_351 = __this->get_StateText_5();
-		NullCheck(L_351);
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_352;
-		L_352 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_351, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
+		// StateText.GetComponent<Text>().text = d[0, 7].GUBUN + " �� " + (d[0, 7].OVER_FLOW_CNT + d[0, 7].LOCAL_OCC_CNT);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_348 = __this->get_StateText_5();
+		NullCheck(L_348);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_349;
+		L_349 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_348, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_350 = __this->get_d_10();
+		NullCheck(L_350);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_351;
+		L_351 = (L_350)->GetAddressAt(0, 7);
+		String_t* L_352 = L_351->get_GUBUN_0();
 		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_353 = __this->get_d_10();
 		NullCheck(L_353);
 		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_354;
-		L_354 = (L_353)->GetAddressAt(0, ((int32_t)10));
-		String_t* L_355 = L_354->get_GUBUN_0();
+		L_354 = (L_353)->GetAddressAt(0, 7);
+		int32_t L_355 = L_354->get_OVER_FLOW_CNT_5();
 		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_356 = __this->get_d_10();
 		NullCheck(L_356);
 		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_357;
-		L_357 = (L_356)->GetAddressAt(0, ((int32_t)10));
-		int32_t* L_358 = L_357->get_address_of_INC_DEC_1();
+		L_357 = (L_356)->GetAddressAt(0, 7);
+		int32_t L_358 = L_357->get_LOCAL_OCC_CNT_6();
+		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_355, (int32_t)L_358));
 		String_t* L_359;
-		L_359 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_358, /*hidden argument*/NULL);
+		L_359 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&V_1), /*hidden argument*/NULL);
 		String_t* L_360;
-		L_360 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_355, _stringLiteralE183B10A2438D1A5505D894E0452DCED85BDAE08, L_359, /*hidden argument*/NULL);
-		NullCheck(L_352);
-		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_352, L_360);
+		L_360 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_352, _stringLiteralE183B10A2438D1A5505D894E0452DCED85BDAE08, L_359, /*hidden argument*/NULL);
+		NullCheck(L_349);
+		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_349, L_360);
 	}
 
 IL_09e4:
 	{
-		// if (hit.collider.name == d[0, 11].GUBUN)
+		// if (hit.collider.name == d[0, 8].GUBUN)
 		Collider2D_tDDBF081328B83D21D0BA3B5036D77B32528BA722 * L_361;
 		L_361 = RaycastHit2D_get_collider_m00F7EC55C36F39E2ED64B31354FB4D9C8938D563((RaycastHit2D_t210878DAEBC96C1F69DF9883C454758724A106A4 *)(&V_0), /*hidden argument*/NULL);
 		NullCheck(L_361);
@@ -19743,566 +19674,1049 @@ IL_09e4:
 		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_363 = __this->get_d_10();
 		NullCheck(L_363);
 		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_364;
-		L_364 = (L_363)->GetAddressAt(0, ((int32_t)11));
+		L_364 = (L_363)->GetAddressAt(0, 8);
 		String_t* L_365 = L_364->get_GUBUN_0();
 		bool L_366;
 		L_366 = String_op_Equality_m2B91EE68355F142F67095973D32EB5828B7B73CB(L_362, L_365, /*hidden argument*/NULL);
 		if (!L_366)
 		{
-			goto IL_0ac9;
+			goto IL_0b17;
 		}
 	}
 	{
-		// if (d[0, 11].INC_DEC > 0)
+		// if ((d[0, 8].OVER_FLOW_CNT + d[0, 8].LOCAL_OCC_CNT) > 0)
 		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_367 = __this->get_d_10();
 		NullCheck(L_367);
 		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_368;
-		L_368 = (L_367)->GetAddressAt(0, ((int32_t)11));
-		int32_t L_369 = L_368->get_INC_DEC_1();
-		if ((((int32_t)L_369) <= ((int32_t)0)))
+		L_368 = (L_367)->GetAddressAt(0, 8);
+		int32_t L_369 = L_368->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_370 = __this->get_d_10();
+		NullCheck(L_370);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_371;
+		L_371 = (L_370)->GetAddressAt(0, 8);
+		int32_t L_372 = L_371->get_LOCAL_OCC_CNT_6();
+		if ((((int32_t)((int32_t)il2cpp_codegen_add((int32_t)L_369, (int32_t)L_372))) <= ((int32_t)0)))
 		{
-			goto IL_0a6f;
+			goto IL_0a97;
 		}
 	}
 	{
-		// StateText.GetComponent<Text>().text = d[0, 11].GUBUN + " <color=red>�� " + d[0, 11].INC_DEC + "</color>";
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_370 = __this->get_StateText_5();
-		NullCheck(L_370);
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_371;
-		L_371 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_370, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_372 = __this->get_d_10();
-		NullCheck(L_372);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_373;
-		L_373 = (L_372)->GetAddressAt(0, ((int32_t)11));
-		String_t* L_374 = L_373->get_GUBUN_0();
+		// StateText.GetComponent<Text>().text = d[0, 8].GUBUN + " <color=red>�� " + (d[0, 8].OVER_FLOW_CNT + d[0, 8].LOCAL_OCC_CNT) + "</color>";
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_373 = __this->get_StateText_5();
+		NullCheck(L_373);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_374;
+		L_374 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_373, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
 		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_375 = __this->get_d_10();
 		NullCheck(L_375);
 		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_376;
-		L_376 = (L_375)->GetAddressAt(0, ((int32_t)11));
-		int32_t* L_377 = L_376->get_address_of_INC_DEC_1();
-		String_t* L_378;
-		L_378 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_377, /*hidden argument*/NULL);
-		String_t* L_379;
-		L_379 = String_Concat_m37A5BF26F8F8F1892D60D727303B23FB604FEE78(L_374, _stringLiteral9A87B7E4C3A2F03D42C57F164C1F043F70553A1C, L_378, _stringLiteralCBE844AF922BC0AC1AB4CA94466DC7FD7038D0E2, /*hidden argument*/NULL);
-		NullCheck(L_371);
-		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_371, L_379);
+		L_376 = (L_375)->GetAddressAt(0, 8);
+		String_t* L_377 = L_376->get_GUBUN_0();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_378 = __this->get_d_10();
+		NullCheck(L_378);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_379;
+		L_379 = (L_378)->GetAddressAt(0, 8);
+		int32_t L_380 = L_379->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_381 = __this->get_d_10();
+		NullCheck(L_381);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_382;
+		L_382 = (L_381)->GetAddressAt(0, 8);
+		int32_t L_383 = L_382->get_LOCAL_OCC_CNT_6();
+		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_380, (int32_t)L_383));
+		String_t* L_384;
+		L_384 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&V_1), /*hidden argument*/NULL);
+		String_t* L_385;
+		L_385 = String_Concat_m37A5BF26F8F8F1892D60D727303B23FB604FEE78(L_377, _stringLiteral9A87B7E4C3A2F03D42C57F164C1F043F70553A1C, L_384, _stringLiteralCBE844AF922BC0AC1AB4CA94466DC7FD7038D0E2, /*hidden argument*/NULL);
+		NullCheck(L_374);
+		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_374, L_385);
 		// }
-		goto IL_0ac9;
+		goto IL_0b17;
 	}
 
-IL_0a6f:
+IL_0a97:
 	{
-		// else if (d[0, 11].INC_DEC == 0)
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_380 = __this->get_d_10();
-		NullCheck(L_380);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_381;
-		L_381 = (L_380)->GetAddressAt(0, ((int32_t)11));
-		int32_t L_382 = L_381->get_INC_DEC_1();
-		if (L_382)
+		// else if ((d[0, 8].OVER_FLOW_CNT + d[0, 8].LOCAL_OCC_CNT) == 0)
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_386 = __this->get_d_10();
+		NullCheck(L_386);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_387;
+		L_387 = (L_386)->GetAddressAt(0, 8);
+		int32_t L_388 = L_387->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_389 = __this->get_d_10();
+		NullCheck(L_389);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_390;
+		L_390 = (L_389)->GetAddressAt(0, 8);
+		int32_t L_391 = L_390->get_LOCAL_OCC_CNT_6();
+		if (((int32_t)il2cpp_codegen_add((int32_t)L_388, (int32_t)L_391)))
 		{
-			goto IL_0ac9;
+			goto IL_0b17;
 		}
 	}
 	{
-		// StateText.GetComponent<Text>().text = d[0, 11].GUBUN + " �� " + d[0, 11].INC_DEC;
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_383 = __this->get_StateText_5();
-		NullCheck(L_383);
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_384;
-		L_384 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_383, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_385 = __this->get_d_10();
-		NullCheck(L_385);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_386;
-		L_386 = (L_385)->GetAddressAt(0, ((int32_t)11));
-		String_t* L_387 = L_386->get_GUBUN_0();
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_388 = __this->get_d_10();
-		NullCheck(L_388);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_389;
-		L_389 = (L_388)->GetAddressAt(0, ((int32_t)11));
-		int32_t* L_390 = L_389->get_address_of_INC_DEC_1();
-		String_t* L_391;
-		L_391 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_390, /*hidden argument*/NULL);
-		String_t* L_392;
-		L_392 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_387, _stringLiteralE183B10A2438D1A5505D894E0452DCED85BDAE08, L_391, /*hidden argument*/NULL);
-		NullCheck(L_384);
-		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_384, L_392);
-	}
-
-IL_0ac9:
-	{
-		// if (hit.collider.name == d[0, 12].GUBUN)
-		Collider2D_tDDBF081328B83D21D0BA3B5036D77B32528BA722 * L_393;
-		L_393 = RaycastHit2D_get_collider_m00F7EC55C36F39E2ED64B31354FB4D9C8938D563((RaycastHit2D_t210878DAEBC96C1F69DF9883C454758724A106A4 *)(&V_0), /*hidden argument*/NULL);
+		// StateText.GetComponent<Text>().text = d[0, 8].GUBUN + " �� " + (d[0, 8].OVER_FLOW_CNT + d[0, 8].LOCAL_OCC_CNT);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_392 = __this->get_StateText_5();
+		NullCheck(L_392);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_393;
+		L_393 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_392, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_394 = __this->get_d_10();
+		NullCheck(L_394);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_395;
+		L_395 = (L_394)->GetAddressAt(0, 8);
+		String_t* L_396 = L_395->get_GUBUN_0();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_397 = __this->get_d_10();
+		NullCheck(L_397);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_398;
+		L_398 = (L_397)->GetAddressAt(0, 8);
+		int32_t L_399 = L_398->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_400 = __this->get_d_10();
+		NullCheck(L_400);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_401;
+		L_401 = (L_400)->GetAddressAt(0, 8);
+		int32_t L_402 = L_401->get_LOCAL_OCC_CNT_6();
+		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_399, (int32_t)L_402));
+		String_t* L_403;
+		L_403 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&V_1), /*hidden argument*/NULL);
+		String_t* L_404;
+		L_404 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_396, _stringLiteralE183B10A2438D1A5505D894E0452DCED85BDAE08, L_403, /*hidden argument*/NULL);
 		NullCheck(L_393);
-		String_t* L_394;
-		L_394 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_393, /*hidden argument*/NULL);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_395 = __this->get_d_10();
-		NullCheck(L_395);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_396;
-		L_396 = (L_395)->GetAddressAt(0, ((int32_t)12));
-		String_t* L_397 = L_396->get_GUBUN_0();
-		bool L_398;
-		L_398 = String_op_Equality_m2B91EE68355F142F67095973D32EB5828B7B73CB(L_394, L_397, /*hidden argument*/NULL);
-		if (!L_398)
-		{
-			goto IL_0bae;
-		}
+		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_393, L_404);
 	}
+
+IL_0b17:
 	{
-		// if (d[0, 12].INC_DEC > 0)
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_399 = __this->get_d_10();
-		NullCheck(L_399);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_400;
-		L_400 = (L_399)->GetAddressAt(0, ((int32_t)12));
-		int32_t L_401 = L_400->get_INC_DEC_1();
-		if ((((int32_t)L_401) <= ((int32_t)0)))
-		{
-			goto IL_0b54;
-		}
-	}
-	{
-		// StateText.GetComponent<Text>().text = d[0, 12].GUBUN + " <color=red>�� " + d[0, 12].INC_DEC + "</color>";
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_402 = __this->get_StateText_5();
-		NullCheck(L_402);
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_403;
-		L_403 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_402, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_404 = __this->get_d_10();
-		NullCheck(L_404);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_405;
-		L_405 = (L_404)->GetAddressAt(0, ((int32_t)12));
-		String_t* L_406 = L_405->get_GUBUN_0();
+		// if (hit.collider.name == d[0, 9].GUBUN)
+		Collider2D_tDDBF081328B83D21D0BA3B5036D77B32528BA722 * L_405;
+		L_405 = RaycastHit2D_get_collider_m00F7EC55C36F39E2ED64B31354FB4D9C8938D563((RaycastHit2D_t210878DAEBC96C1F69DF9883C454758724A106A4 *)(&V_0), /*hidden argument*/NULL);
+		NullCheck(L_405);
+		String_t* L_406;
+		L_406 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_405, /*hidden argument*/NULL);
 		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_407 = __this->get_d_10();
 		NullCheck(L_407);
 		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_408;
-		L_408 = (L_407)->GetAddressAt(0, ((int32_t)12));
-		int32_t* L_409 = L_408->get_address_of_INC_DEC_1();
-		String_t* L_410;
-		L_410 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_409, /*hidden argument*/NULL);
-		String_t* L_411;
-		L_411 = String_Concat_m37A5BF26F8F8F1892D60D727303B23FB604FEE78(L_406, _stringLiteral9A87B7E4C3A2F03D42C57F164C1F043F70553A1C, L_410, _stringLiteralCBE844AF922BC0AC1AB4CA94466DC7FD7038D0E2, /*hidden argument*/NULL);
-		NullCheck(L_403);
-		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_403, L_411);
-		// }
-		goto IL_0bae;
-	}
-
-IL_0b54:
-	{
-		// else if (d[0, 12].INC_DEC == 0)
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_412 = __this->get_d_10();
-		NullCheck(L_412);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_413;
-		L_413 = (L_412)->GetAddressAt(0, ((int32_t)12));
-		int32_t L_414 = L_413->get_INC_DEC_1();
-		if (L_414)
+		L_408 = (L_407)->GetAddressAt(0, ((int32_t)9));
+		String_t* L_409 = L_408->get_GUBUN_0();
+		bool L_410;
+		L_410 = String_op_Equality_m2B91EE68355F142F67095973D32EB5828B7B73CB(L_406, L_409, /*hidden argument*/NULL);
+		if (!L_410)
 		{
-			goto IL_0bae;
+			goto IL_0c55;
 		}
 	}
 	{
-		// StateText.GetComponent<Text>().text = d[0, 12].GUBUN + " �� " + d[0, 12].INC_DEC;
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_415 = __this->get_StateText_5();
-		NullCheck(L_415);
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_416;
-		L_416 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_415, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_417 = __this->get_d_10();
+		// if ((d[0, 9].OVER_FLOW_CNT + d[0, 9].LOCAL_OCC_CNT) > 0)
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_411 = __this->get_d_10();
+		NullCheck(L_411);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_412;
+		L_412 = (L_411)->GetAddressAt(0, ((int32_t)9));
+		int32_t L_413 = L_412->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_414 = __this->get_d_10();
+		NullCheck(L_414);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_415;
+		L_415 = (L_414)->GetAddressAt(0, ((int32_t)9));
+		int32_t L_416 = L_415->get_LOCAL_OCC_CNT_6();
+		if ((((int32_t)((int32_t)il2cpp_codegen_add((int32_t)L_413, (int32_t)L_416))) <= ((int32_t)0)))
+		{
+			goto IL_0bd0;
+		}
+	}
+	{
+		// StateText.GetComponent<Text>().text = d[0, 9].GUBUN + " <color=red>�� " + (d[0, 9].OVER_FLOW_CNT + d[0, 9].LOCAL_OCC_CNT) + "</color>";
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_417 = __this->get_StateText_5();
 		NullCheck(L_417);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_418;
-		L_418 = (L_417)->GetAddressAt(0, ((int32_t)12));
-		String_t* L_419 = L_418->get_GUBUN_0();
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_420 = __this->get_d_10();
-		NullCheck(L_420);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_421;
-		L_421 = (L_420)->GetAddressAt(0, ((int32_t)12));
-		int32_t* L_422 = L_421->get_address_of_INC_DEC_1();
-		String_t* L_423;
-		L_423 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_422, /*hidden argument*/NULL);
-		String_t* L_424;
-		L_424 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_419, _stringLiteralE183B10A2438D1A5505D894E0452DCED85BDAE08, L_423, /*hidden argument*/NULL);
-		NullCheck(L_416);
-		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_416, L_424);
-	}
-
-IL_0bae:
-	{
-		// if (hit.collider.name == d[0, 13].GUBUN)
-		Collider2D_tDDBF081328B83D21D0BA3B5036D77B32528BA722 * L_425;
-		L_425 = RaycastHit2D_get_collider_m00F7EC55C36F39E2ED64B31354FB4D9C8938D563((RaycastHit2D_t210878DAEBC96C1F69DF9883C454758724A106A4 *)(&V_0), /*hidden argument*/NULL);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_418;
+		L_418 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_417, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_419 = __this->get_d_10();
+		NullCheck(L_419);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_420;
+		L_420 = (L_419)->GetAddressAt(0, ((int32_t)9));
+		String_t* L_421 = L_420->get_GUBUN_0();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_422 = __this->get_d_10();
+		NullCheck(L_422);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_423;
+		L_423 = (L_422)->GetAddressAt(0, ((int32_t)9));
+		int32_t L_424 = L_423->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_425 = __this->get_d_10();
 		NullCheck(L_425);
-		String_t* L_426;
-		L_426 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_425, /*hidden argument*/NULL);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_427 = __this->get_d_10();
-		NullCheck(L_427);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_428;
-		L_428 = (L_427)->GetAddressAt(0, ((int32_t)13));
-		String_t* L_429 = L_428->get_GUBUN_0();
-		bool L_430;
-		L_430 = String_op_Equality_m2B91EE68355F142F67095973D32EB5828B7B73CB(L_426, L_429, /*hidden argument*/NULL);
-		if (!L_430)
-		{
-			goto IL_0c93;
-		}
-	}
-	{
-		// if (d[0, 13].INC_DEC > 0)
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_431 = __this->get_d_10();
-		NullCheck(L_431);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_432;
-		L_432 = (L_431)->GetAddressAt(0, ((int32_t)13));
-		int32_t L_433 = L_432->get_INC_DEC_1();
-		if ((((int32_t)L_433) <= ((int32_t)0)))
-		{
-			goto IL_0c39;
-		}
-	}
-	{
-		// StateText.GetComponent<Text>().text = d[0, 13].GUBUN + " <color=red>�� " + d[0, 13].INC_DEC + "</color>";
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_434 = __this->get_StateText_5();
-		NullCheck(L_434);
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_435;
-		L_435 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_434, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_436 = __this->get_d_10();
-		NullCheck(L_436);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_437;
-		L_437 = (L_436)->GetAddressAt(0, ((int32_t)13));
-		String_t* L_438 = L_437->get_GUBUN_0();
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_439 = __this->get_d_10();
-		NullCheck(L_439);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_440;
-		L_440 = (L_439)->GetAddressAt(0, ((int32_t)13));
-		int32_t* L_441 = L_440->get_address_of_INC_DEC_1();
-		String_t* L_442;
-		L_442 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_441, /*hidden argument*/NULL);
-		String_t* L_443;
-		L_443 = String_Concat_m37A5BF26F8F8F1892D60D727303B23FB604FEE78(L_438, _stringLiteral9A87B7E4C3A2F03D42C57F164C1F043F70553A1C, L_442, _stringLiteralCBE844AF922BC0AC1AB4CA94466DC7FD7038D0E2, /*hidden argument*/NULL);
-		NullCheck(L_435);
-		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_435, L_443);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_426;
+		L_426 = (L_425)->GetAddressAt(0, ((int32_t)9));
+		int32_t L_427 = L_426->get_LOCAL_OCC_CNT_6();
+		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_424, (int32_t)L_427));
+		String_t* L_428;
+		L_428 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&V_1), /*hidden argument*/NULL);
+		String_t* L_429;
+		L_429 = String_Concat_m37A5BF26F8F8F1892D60D727303B23FB604FEE78(L_421, _stringLiteral9A87B7E4C3A2F03D42C57F164C1F043F70553A1C, L_428, _stringLiteralCBE844AF922BC0AC1AB4CA94466DC7FD7038D0E2, /*hidden argument*/NULL);
+		NullCheck(L_418);
+		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_418, L_429);
 		// }
-		goto IL_0c93;
+		goto IL_0c55;
 	}
 
-IL_0c39:
+IL_0bd0:
 	{
-		// else if (d[0, 13].INC_DEC == 0)
+		// else if ((d[0, 9].OVER_FLOW_CNT + d[0, 9].LOCAL_OCC_CNT) == 0)
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_430 = __this->get_d_10();
+		NullCheck(L_430);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_431;
+		L_431 = (L_430)->GetAddressAt(0, ((int32_t)9));
+		int32_t L_432 = L_431->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_433 = __this->get_d_10();
+		NullCheck(L_433);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_434;
+		L_434 = (L_433)->GetAddressAt(0, ((int32_t)9));
+		int32_t L_435 = L_434->get_LOCAL_OCC_CNT_6();
+		if (((int32_t)il2cpp_codegen_add((int32_t)L_432, (int32_t)L_435)))
+		{
+			goto IL_0c55;
+		}
+	}
+	{
+		// StateText.GetComponent<Text>().text = d[0, 9].GUBUN + " �� " + (d[0, 9].OVER_FLOW_CNT + d[0, 9].LOCAL_OCC_CNT);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_436 = __this->get_StateText_5();
+		NullCheck(L_436);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_437;
+		L_437 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_436, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_438 = __this->get_d_10();
+		NullCheck(L_438);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_439;
+		L_439 = (L_438)->GetAddressAt(0, ((int32_t)9));
+		String_t* L_440 = L_439->get_GUBUN_0();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_441 = __this->get_d_10();
+		NullCheck(L_441);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_442;
+		L_442 = (L_441)->GetAddressAt(0, ((int32_t)9));
+		int32_t L_443 = L_442->get_OVER_FLOW_CNT_5();
 		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_444 = __this->get_d_10();
 		NullCheck(L_444);
 		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_445;
-		L_445 = (L_444)->GetAddressAt(0, ((int32_t)13));
-		int32_t L_446 = L_445->get_INC_DEC_1();
-		if (L_446)
-		{
-			goto IL_0c93;
-		}
-	}
-	{
-		// StateText.GetComponent<Text>().text = d[0, 13].GUBUN + " �� " + d[0, 13].INC_DEC;
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_447 = __this->get_StateText_5();
-		NullCheck(L_447);
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_448;
-		L_448 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_447, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_449 = __this->get_d_10();
-		NullCheck(L_449);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_450;
-		L_450 = (L_449)->GetAddressAt(0, ((int32_t)13));
-		String_t* L_451 = L_450->get_GUBUN_0();
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_452 = __this->get_d_10();
-		NullCheck(L_452);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_453;
-		L_453 = (L_452)->GetAddressAt(0, ((int32_t)13));
-		int32_t* L_454 = L_453->get_address_of_INC_DEC_1();
-		String_t* L_455;
-		L_455 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_454, /*hidden argument*/NULL);
-		String_t* L_456;
-		L_456 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_451, _stringLiteralE183B10A2438D1A5505D894E0452DCED85BDAE08, L_455, /*hidden argument*/NULL);
-		NullCheck(L_448);
-		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_448, L_456);
+		L_445 = (L_444)->GetAddressAt(0, ((int32_t)9));
+		int32_t L_446 = L_445->get_LOCAL_OCC_CNT_6();
+		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_443, (int32_t)L_446));
+		String_t* L_447;
+		L_447 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&V_1), /*hidden argument*/NULL);
+		String_t* L_448;
+		L_448 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_440, _stringLiteralE183B10A2438D1A5505D894E0452DCED85BDAE08, L_447, /*hidden argument*/NULL);
+		NullCheck(L_437);
+		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_437, L_448);
 	}
 
-IL_0c93:
+IL_0c55:
 	{
-		// if (hit.collider.name == d[0, 14].GUBUN)
-		Collider2D_tDDBF081328B83D21D0BA3B5036D77B32528BA722 * L_457;
-		L_457 = RaycastHit2D_get_collider_m00F7EC55C36F39E2ED64B31354FB4D9C8938D563((RaycastHit2D_t210878DAEBC96C1F69DF9883C454758724A106A4 *)(&V_0), /*hidden argument*/NULL);
-		NullCheck(L_457);
-		String_t* L_458;
-		L_458 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_457, /*hidden argument*/NULL);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_459 = __this->get_d_10();
-		NullCheck(L_459);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_460;
-		L_460 = (L_459)->GetAddressAt(0, ((int32_t)14));
-		String_t* L_461 = L_460->get_GUBUN_0();
-		bool L_462;
-		L_462 = String_op_Equality_m2B91EE68355F142F67095973D32EB5828B7B73CB(L_458, L_461, /*hidden argument*/NULL);
-		if (!L_462)
+		// if (hit.collider.name == d[0, 10].GUBUN)
+		Collider2D_tDDBF081328B83D21D0BA3B5036D77B32528BA722 * L_449;
+		L_449 = RaycastHit2D_get_collider_m00F7EC55C36F39E2ED64B31354FB4D9C8938D563((RaycastHit2D_t210878DAEBC96C1F69DF9883C454758724A106A4 *)(&V_0), /*hidden argument*/NULL);
+		NullCheck(L_449);
+		String_t* L_450;
+		L_450 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_449, /*hidden argument*/NULL);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_451 = __this->get_d_10();
+		NullCheck(L_451);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_452;
+		L_452 = (L_451)->GetAddressAt(0, ((int32_t)10));
+		String_t* L_453 = L_452->get_GUBUN_0();
+		bool L_454;
+		L_454 = String_op_Equality_m2B91EE68355F142F67095973D32EB5828B7B73CB(L_450, L_453, /*hidden argument*/NULL);
+		if (!L_454)
 		{
-			goto IL_0d78;
+			goto IL_0d93;
 		}
 	}
 	{
-		// if (d[0, 14].INC_DEC > 0)
+		// if ((d[0, 10].OVER_FLOW_CNT + d[0, 10].LOCAL_OCC_CNT) > 0)
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_455 = __this->get_d_10();
+		NullCheck(L_455);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_456;
+		L_456 = (L_455)->GetAddressAt(0, ((int32_t)10));
+		int32_t L_457 = L_456->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_458 = __this->get_d_10();
+		NullCheck(L_458);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_459;
+		L_459 = (L_458)->GetAddressAt(0, ((int32_t)10));
+		int32_t L_460 = L_459->get_LOCAL_OCC_CNT_6();
+		if ((((int32_t)((int32_t)il2cpp_codegen_add((int32_t)L_457, (int32_t)L_460))) <= ((int32_t)0)))
+		{
+			goto IL_0d0e;
+		}
+	}
+	{
+		// StateText.GetComponent<Text>().text = d[0, 10].GUBUN + " <color=red>�� " + (d[0, 10].OVER_FLOW_CNT + d[0, 10].LOCAL_OCC_CNT) + "</color>";
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_461 = __this->get_StateText_5();
+		NullCheck(L_461);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_462;
+		L_462 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_461, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
 		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_463 = __this->get_d_10();
 		NullCheck(L_463);
 		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_464;
-		L_464 = (L_463)->GetAddressAt(0, ((int32_t)14));
-		int32_t L_465 = L_464->get_INC_DEC_1();
-		if ((((int32_t)L_465) <= ((int32_t)0)))
-		{
-			goto IL_0d1e;
-		}
-	}
-	{
-		// StateText.GetComponent<Text>().text = d[0, 14].GUBUN + " <color=red>�� " + d[0, 14].INC_DEC + "</color>";
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_466 = __this->get_StateText_5();
+		L_464 = (L_463)->GetAddressAt(0, ((int32_t)10));
+		String_t* L_465 = L_464->get_GUBUN_0();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_466 = __this->get_d_10();
 		NullCheck(L_466);
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_467;
-		L_467 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_466, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_468 = __this->get_d_10();
-		NullCheck(L_468);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_469;
-		L_469 = (L_468)->GetAddressAt(0, ((int32_t)14));
-		String_t* L_470 = L_469->get_GUBUN_0();
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_471 = __this->get_d_10();
-		NullCheck(L_471);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_472;
-		L_472 = (L_471)->GetAddressAt(0, ((int32_t)14));
-		int32_t* L_473 = L_472->get_address_of_INC_DEC_1();
-		String_t* L_474;
-		L_474 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_473, /*hidden argument*/NULL);
-		String_t* L_475;
-		L_475 = String_Concat_m37A5BF26F8F8F1892D60D727303B23FB604FEE78(L_470, _stringLiteral9A87B7E4C3A2F03D42C57F164C1F043F70553A1C, L_474, _stringLiteralCBE844AF922BC0AC1AB4CA94466DC7FD7038D0E2, /*hidden argument*/NULL);
-		NullCheck(L_467);
-		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_467, L_475);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_467;
+		L_467 = (L_466)->GetAddressAt(0, ((int32_t)10));
+		int32_t L_468 = L_467->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_469 = __this->get_d_10();
+		NullCheck(L_469);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_470;
+		L_470 = (L_469)->GetAddressAt(0, ((int32_t)10));
+		int32_t L_471 = L_470->get_LOCAL_OCC_CNT_6();
+		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_468, (int32_t)L_471));
+		String_t* L_472;
+		L_472 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&V_1), /*hidden argument*/NULL);
+		String_t* L_473;
+		L_473 = String_Concat_m37A5BF26F8F8F1892D60D727303B23FB604FEE78(L_465, _stringLiteral9A87B7E4C3A2F03D42C57F164C1F043F70553A1C, L_472, _stringLiteralCBE844AF922BC0AC1AB4CA94466DC7FD7038D0E2, /*hidden argument*/NULL);
+		NullCheck(L_462);
+		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_462, L_473);
 		// }
-		goto IL_0d78;
+		goto IL_0d93;
 	}
 
-IL_0d1e:
+IL_0d0e:
 	{
-		// else if (d[0, 14].INC_DEC == 0)
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_476 = __this->get_d_10();
-		NullCheck(L_476);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_477;
-		L_477 = (L_476)->GetAddressAt(0, ((int32_t)14));
-		int32_t L_478 = L_477->get_INC_DEC_1();
-		if (L_478)
+		// else if ((d[0, 10].OVER_FLOW_CNT + d[0, 10].LOCAL_OCC_CNT) == 0)
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_474 = __this->get_d_10();
+		NullCheck(L_474);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_475;
+		L_475 = (L_474)->GetAddressAt(0, ((int32_t)10));
+		int32_t L_476 = L_475->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_477 = __this->get_d_10();
+		NullCheck(L_477);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_478;
+		L_478 = (L_477)->GetAddressAt(0, ((int32_t)10));
+		int32_t L_479 = L_478->get_LOCAL_OCC_CNT_6();
+		if (((int32_t)il2cpp_codegen_add((int32_t)L_476, (int32_t)L_479)))
 		{
-			goto IL_0d78;
+			goto IL_0d93;
 		}
 	}
 	{
-		// StateText.GetComponent<Text>().text = d[0, 14].GUBUN + " �� " + d[0, 14].INC_DEC;
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_479 = __this->get_StateText_5();
-		NullCheck(L_479);
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_480;
-		L_480 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_479, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_481 = __this->get_d_10();
-		NullCheck(L_481);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_482;
-		L_482 = (L_481)->GetAddressAt(0, ((int32_t)14));
-		String_t* L_483 = L_482->get_GUBUN_0();
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_484 = __this->get_d_10();
-		NullCheck(L_484);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_485;
-		L_485 = (L_484)->GetAddressAt(0, ((int32_t)14));
-		int32_t* L_486 = L_485->get_address_of_INC_DEC_1();
-		String_t* L_487;
-		L_487 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_486, /*hidden argument*/NULL);
-		String_t* L_488;
-		L_488 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_483, _stringLiteralE183B10A2438D1A5505D894E0452DCED85BDAE08, L_487, /*hidden argument*/NULL);
+		// StateText.GetComponent<Text>().text = d[0, 10].GUBUN + " �� " + (d[0, 10].OVER_FLOW_CNT + d[0, 10].LOCAL_OCC_CNT);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_480 = __this->get_StateText_5();
 		NullCheck(L_480);
-		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_480, L_488);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_481;
+		L_481 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_480, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_482 = __this->get_d_10();
+		NullCheck(L_482);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_483;
+		L_483 = (L_482)->GetAddressAt(0, ((int32_t)10));
+		String_t* L_484 = L_483->get_GUBUN_0();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_485 = __this->get_d_10();
+		NullCheck(L_485);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_486;
+		L_486 = (L_485)->GetAddressAt(0, ((int32_t)10));
+		int32_t L_487 = L_486->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_488 = __this->get_d_10();
+		NullCheck(L_488);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_489;
+		L_489 = (L_488)->GetAddressAt(0, ((int32_t)10));
+		int32_t L_490 = L_489->get_LOCAL_OCC_CNT_6();
+		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_487, (int32_t)L_490));
+		String_t* L_491;
+		L_491 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&V_1), /*hidden argument*/NULL);
+		String_t* L_492;
+		L_492 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_484, _stringLiteralE183B10A2438D1A5505D894E0452DCED85BDAE08, L_491, /*hidden argument*/NULL);
+		NullCheck(L_481);
+		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_481, L_492);
 	}
 
-IL_0d78:
+IL_0d93:
 	{
-		// if (hit.collider.name == d[0, 15].GUBUN)
-		Collider2D_tDDBF081328B83D21D0BA3B5036D77B32528BA722 * L_489;
-		L_489 = RaycastHit2D_get_collider_m00F7EC55C36F39E2ED64B31354FB4D9C8938D563((RaycastHit2D_t210878DAEBC96C1F69DF9883C454758724A106A4 *)(&V_0), /*hidden argument*/NULL);
-		NullCheck(L_489);
-		String_t* L_490;
-		L_490 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_489, /*hidden argument*/NULL);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_491 = __this->get_d_10();
-		NullCheck(L_491);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_492;
-		L_492 = (L_491)->GetAddressAt(0, ((int32_t)15));
-		String_t* L_493 = L_492->get_GUBUN_0();
-		bool L_494;
-		L_494 = String_op_Equality_m2B91EE68355F142F67095973D32EB5828B7B73CB(L_490, L_493, /*hidden argument*/NULL);
-		if (!L_494)
-		{
-			goto IL_0e5d;
-		}
-	}
-	{
-		// if (d[0, 15].INC_DEC > 0)
+		// if (hit.collider.name == d[0, 11].GUBUN)
+		Collider2D_tDDBF081328B83D21D0BA3B5036D77B32528BA722 * L_493;
+		L_493 = RaycastHit2D_get_collider_m00F7EC55C36F39E2ED64B31354FB4D9C8938D563((RaycastHit2D_t210878DAEBC96C1F69DF9883C454758724A106A4 *)(&V_0), /*hidden argument*/NULL);
+		NullCheck(L_493);
+		String_t* L_494;
+		L_494 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_493, /*hidden argument*/NULL);
 		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_495 = __this->get_d_10();
 		NullCheck(L_495);
 		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_496;
-		L_496 = (L_495)->GetAddressAt(0, ((int32_t)15));
-		int32_t L_497 = L_496->get_INC_DEC_1();
-		if ((((int32_t)L_497) <= ((int32_t)0)))
+		L_496 = (L_495)->GetAddressAt(0, ((int32_t)11));
+		String_t* L_497 = L_496->get_GUBUN_0();
+		bool L_498;
+		L_498 = String_op_Equality_m2B91EE68355F142F67095973D32EB5828B7B73CB(L_494, L_497, /*hidden argument*/NULL);
+		if (!L_498)
 		{
-			goto IL_0e03;
+			goto IL_0ed1;
 		}
 	}
 	{
-		// StateText.GetComponent<Text>().text = d[0, 15].GUBUN + " <color=red>�� " + d[0, 15].INC_DEC + "</color>";
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_498 = __this->get_StateText_5();
-		NullCheck(L_498);
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_499;
-		L_499 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_498, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_500 = __this->get_d_10();
-		NullCheck(L_500);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_501;
-		L_501 = (L_500)->GetAddressAt(0, ((int32_t)15));
-		String_t* L_502 = L_501->get_GUBUN_0();
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_503 = __this->get_d_10();
-		NullCheck(L_503);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_504;
-		L_504 = (L_503)->GetAddressAt(0, ((int32_t)15));
-		int32_t* L_505 = L_504->get_address_of_INC_DEC_1();
-		String_t* L_506;
-		L_506 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_505, /*hidden argument*/NULL);
-		String_t* L_507;
-		L_507 = String_Concat_m37A5BF26F8F8F1892D60D727303B23FB604FEE78(L_502, _stringLiteral9A87B7E4C3A2F03D42C57F164C1F043F70553A1C, L_506, _stringLiteralCBE844AF922BC0AC1AB4CA94466DC7FD7038D0E2, /*hidden argument*/NULL);
+		// if ((d[0, 11].OVER_FLOW_CNT + d[0, 11].LOCAL_OCC_CNT) > 0)
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_499 = __this->get_d_10();
 		NullCheck(L_499);
-		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_499, L_507);
-		// }
-		goto IL_0e5d;
-	}
-
-IL_0e03:
-	{
-		// else if (d[0, 15].INC_DEC == 0)
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_508 = __this->get_d_10();
-		NullCheck(L_508);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_509;
-		L_509 = (L_508)->GetAddressAt(0, ((int32_t)15));
-		int32_t L_510 = L_509->get_INC_DEC_1();
-		if (L_510)
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_500;
+		L_500 = (L_499)->GetAddressAt(0, ((int32_t)11));
+		int32_t L_501 = L_500->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_502 = __this->get_d_10();
+		NullCheck(L_502);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_503;
+		L_503 = (L_502)->GetAddressAt(0, ((int32_t)11));
+		int32_t L_504 = L_503->get_LOCAL_OCC_CNT_6();
+		if ((((int32_t)((int32_t)il2cpp_codegen_add((int32_t)L_501, (int32_t)L_504))) <= ((int32_t)0)))
 		{
-			goto IL_0e5d;
+			goto IL_0e4c;
 		}
 	}
 	{
-		// StateText.GetComponent<Text>().text = d[0, 15].GUBUN + " �� " + d[0, 15].INC_DEC;
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_511 = __this->get_StateText_5();
-		NullCheck(L_511);
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_512;
-		L_512 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_511, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
+		// StateText.GetComponent<Text>().text = d[0, 11].GUBUN + " <color=red>�� " + (d[0, 11].OVER_FLOW_CNT + d[0, 11].LOCAL_OCC_CNT) + "</color>";
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_505 = __this->get_StateText_5();
+		NullCheck(L_505);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_506;
+		L_506 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_505, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_507 = __this->get_d_10();
+		NullCheck(L_507);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_508;
+		L_508 = (L_507)->GetAddressAt(0, ((int32_t)11));
+		String_t* L_509 = L_508->get_GUBUN_0();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_510 = __this->get_d_10();
+		NullCheck(L_510);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_511;
+		L_511 = (L_510)->GetAddressAt(0, ((int32_t)11));
+		int32_t L_512 = L_511->get_OVER_FLOW_CNT_5();
 		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_513 = __this->get_d_10();
 		NullCheck(L_513);
 		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_514;
-		L_514 = (L_513)->GetAddressAt(0, ((int32_t)15));
-		String_t* L_515 = L_514->get_GUBUN_0();
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_516 = __this->get_d_10();
-		NullCheck(L_516);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_517;
-		L_517 = (L_516)->GetAddressAt(0, ((int32_t)15));
-		int32_t* L_518 = L_517->get_address_of_INC_DEC_1();
-		String_t* L_519;
-		L_519 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_518, /*hidden argument*/NULL);
-		String_t* L_520;
-		L_520 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_515, _stringLiteralE183B10A2438D1A5505D894E0452DCED85BDAE08, L_519, /*hidden argument*/NULL);
-		NullCheck(L_512);
-		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_512, L_520);
+		L_514 = (L_513)->GetAddressAt(0, ((int32_t)11));
+		int32_t L_515 = L_514->get_LOCAL_OCC_CNT_6();
+		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_512, (int32_t)L_515));
+		String_t* L_516;
+		L_516 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&V_1), /*hidden argument*/NULL);
+		String_t* L_517;
+		L_517 = String_Concat_m37A5BF26F8F8F1892D60D727303B23FB604FEE78(L_509, _stringLiteral9A87B7E4C3A2F03D42C57F164C1F043F70553A1C, L_516, _stringLiteralCBE844AF922BC0AC1AB4CA94466DC7FD7038D0E2, /*hidden argument*/NULL);
+		NullCheck(L_506);
+		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_506, L_517);
+		// }
+		goto IL_0ed1;
 	}
 
-IL_0e5d:
+IL_0e4c:
 	{
-		// if (hit.collider.name == d[0, 16].GUBUN)
-		Collider2D_tDDBF081328B83D21D0BA3B5036D77B32528BA722 * L_521;
-		L_521 = RaycastHit2D_get_collider_m00F7EC55C36F39E2ED64B31354FB4D9C8938D563((RaycastHit2D_t210878DAEBC96C1F69DF9883C454758724A106A4 *)(&V_0), /*hidden argument*/NULL);
+		// else if ((d[0, 11].OVER_FLOW_CNT + d[0, 11].LOCAL_OCC_CNT) == 0)
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_518 = __this->get_d_10();
+		NullCheck(L_518);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_519;
+		L_519 = (L_518)->GetAddressAt(0, ((int32_t)11));
+		int32_t L_520 = L_519->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_521 = __this->get_d_10();
 		NullCheck(L_521);
-		String_t* L_522;
-		L_522 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_521, /*hidden argument*/NULL);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_523 = __this->get_d_10();
-		NullCheck(L_523);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_524;
-		L_524 = (L_523)->GetAddressAt(0, ((int32_t)16));
-		String_t* L_525 = L_524->get_GUBUN_0();
-		bool L_526;
-		L_526 = String_op_Equality_m2B91EE68355F142F67095973D32EB5828B7B73CB(L_522, L_525, /*hidden argument*/NULL);
-		if (!L_526)
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_522;
+		L_522 = (L_521)->GetAddressAt(0, ((int32_t)11));
+		int32_t L_523 = L_522->get_LOCAL_OCC_CNT_6();
+		if (((int32_t)il2cpp_codegen_add((int32_t)L_520, (int32_t)L_523)))
 		{
-			goto IL_0f41;
+			goto IL_0ed1;
 		}
 	}
 	{
-		// if (d[0, 16].INC_DEC > 0)
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_527 = __this->get_d_10();
-		NullCheck(L_527);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_528;
-		L_528 = (L_527)->GetAddressAt(0, ((int32_t)16));
-		int32_t L_529 = L_528->get_INC_DEC_1();
-		if ((((int32_t)L_529) <= ((int32_t)0)))
-		{
-			goto IL_0ee7;
-		}
-	}
-	{
-		// StateText.GetComponent<Text>().text = d[0, 16].GUBUN + " <color=red>�� " + d[0, 16].INC_DEC + "</color>";
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_530 = __this->get_StateText_5();
-		NullCheck(L_530);
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_531;
-		L_531 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_530, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
+		// StateText.GetComponent<Text>().text = d[0, 11].GUBUN + " �� " + (d[0, 11].OVER_FLOW_CNT + d[0, 11].LOCAL_OCC_CNT);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_524 = __this->get_StateText_5();
+		NullCheck(L_524);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_525;
+		L_525 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_524, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_526 = __this->get_d_10();
+		NullCheck(L_526);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_527;
+		L_527 = (L_526)->GetAddressAt(0, ((int32_t)11));
+		String_t* L_528 = L_527->get_GUBUN_0();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_529 = __this->get_d_10();
+		NullCheck(L_529);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_530;
+		L_530 = (L_529)->GetAddressAt(0, ((int32_t)11));
+		int32_t L_531 = L_530->get_OVER_FLOW_CNT_5();
 		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_532 = __this->get_d_10();
 		NullCheck(L_532);
 		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_533;
-		L_533 = (L_532)->GetAddressAt(0, ((int32_t)16));
-		String_t* L_534 = L_533->get_GUBUN_0();
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_535 = __this->get_d_10();
-		NullCheck(L_535);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_536;
-		L_536 = (L_535)->GetAddressAt(0, ((int32_t)16));
-		int32_t* L_537 = L_536->get_address_of_INC_DEC_1();
+		L_533 = (L_532)->GetAddressAt(0, ((int32_t)11));
+		int32_t L_534 = L_533->get_LOCAL_OCC_CNT_6();
+		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_531, (int32_t)L_534));
+		String_t* L_535;
+		L_535 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&V_1), /*hidden argument*/NULL);
+		String_t* L_536;
+		L_536 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_528, _stringLiteralE183B10A2438D1A5505D894E0452DCED85BDAE08, L_535, /*hidden argument*/NULL);
+		NullCheck(L_525);
+		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_525, L_536);
+	}
+
+IL_0ed1:
+	{
+		// if (hit.collider.name == d[0, 12].GUBUN)
+		Collider2D_tDDBF081328B83D21D0BA3B5036D77B32528BA722 * L_537;
+		L_537 = RaycastHit2D_get_collider_m00F7EC55C36F39E2ED64B31354FB4D9C8938D563((RaycastHit2D_t210878DAEBC96C1F69DF9883C454758724A106A4 *)(&V_0), /*hidden argument*/NULL);
+		NullCheck(L_537);
 		String_t* L_538;
-		L_538 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_537, /*hidden argument*/NULL);
-		String_t* L_539;
-		L_539 = String_Concat_m37A5BF26F8F8F1892D60D727303B23FB604FEE78(L_534, _stringLiteral9A87B7E4C3A2F03D42C57F164C1F043F70553A1C, L_538, _stringLiteralCBE844AF922BC0AC1AB4CA94466DC7FD7038D0E2, /*hidden argument*/NULL);
-		NullCheck(L_531);
-		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_531, L_539);
+		L_538 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_537, /*hidden argument*/NULL);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_539 = __this->get_d_10();
+		NullCheck(L_539);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_540;
+		L_540 = (L_539)->GetAddressAt(0, ((int32_t)12));
+		String_t* L_541 = L_540->get_GUBUN_0();
+		bool L_542;
+		L_542 = String_op_Equality_m2B91EE68355F142F67095973D32EB5828B7B73CB(L_538, L_541, /*hidden argument*/NULL);
+		if (!L_542)
+		{
+			goto IL_100f;
+		}
+	}
+	{
+		// if ((d[0, 12].OVER_FLOW_CNT + d[0, 12].LOCAL_OCC_CNT) > 0)
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_543 = __this->get_d_10();
+		NullCheck(L_543);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_544;
+		L_544 = (L_543)->GetAddressAt(0, ((int32_t)12));
+		int32_t L_545 = L_544->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_546 = __this->get_d_10();
+		NullCheck(L_546);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_547;
+		L_547 = (L_546)->GetAddressAt(0, ((int32_t)12));
+		int32_t L_548 = L_547->get_LOCAL_OCC_CNT_6();
+		if ((((int32_t)((int32_t)il2cpp_codegen_add((int32_t)L_545, (int32_t)L_548))) <= ((int32_t)0)))
+		{
+			goto IL_0f8a;
+		}
+	}
+	{
+		// StateText.GetComponent<Text>().text = d[0, 12].GUBUN + " <color=red>�� " + (d[0, 12].OVER_FLOW_CNT + d[0, 12].LOCAL_OCC_CNT) + "</color>";
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_549 = __this->get_StateText_5();
+		NullCheck(L_549);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_550;
+		L_550 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_549, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_551 = __this->get_d_10();
+		NullCheck(L_551);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_552;
+		L_552 = (L_551)->GetAddressAt(0, ((int32_t)12));
+		String_t* L_553 = L_552->get_GUBUN_0();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_554 = __this->get_d_10();
+		NullCheck(L_554);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_555;
+		L_555 = (L_554)->GetAddressAt(0, ((int32_t)12));
+		int32_t L_556 = L_555->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_557 = __this->get_d_10();
+		NullCheck(L_557);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_558;
+		L_558 = (L_557)->GetAddressAt(0, ((int32_t)12));
+		int32_t L_559 = L_558->get_LOCAL_OCC_CNT_6();
+		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_556, (int32_t)L_559));
+		String_t* L_560;
+		L_560 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&V_1), /*hidden argument*/NULL);
+		String_t* L_561;
+		L_561 = String_Concat_m37A5BF26F8F8F1892D60D727303B23FB604FEE78(L_553, _stringLiteral9A87B7E4C3A2F03D42C57F164C1F043F70553A1C, L_560, _stringLiteralCBE844AF922BC0AC1AB4CA94466DC7FD7038D0E2, /*hidden argument*/NULL);
+		NullCheck(L_550);
+		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_550, L_561);
+		// }
+		goto IL_100f;
+	}
+
+IL_0f8a:
+	{
+		// else if ((d[0, 12].OVER_FLOW_CNT + d[0, 12].LOCAL_OCC_CNT) == 0)
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_562 = __this->get_d_10();
+		NullCheck(L_562);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_563;
+		L_563 = (L_562)->GetAddressAt(0, ((int32_t)12));
+		int32_t L_564 = L_563->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_565 = __this->get_d_10();
+		NullCheck(L_565);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_566;
+		L_566 = (L_565)->GetAddressAt(0, ((int32_t)12));
+		int32_t L_567 = L_566->get_LOCAL_OCC_CNT_6();
+		if (((int32_t)il2cpp_codegen_add((int32_t)L_564, (int32_t)L_567)))
+		{
+			goto IL_100f;
+		}
+	}
+	{
+		// StateText.GetComponent<Text>().text = d[0, 12].GUBUN + " �� " + (d[0, 12].OVER_FLOW_CNT + d[0, 12].LOCAL_OCC_CNT);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_568 = __this->get_StateText_5();
+		NullCheck(L_568);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_569;
+		L_569 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_568, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_570 = __this->get_d_10();
+		NullCheck(L_570);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_571;
+		L_571 = (L_570)->GetAddressAt(0, ((int32_t)12));
+		String_t* L_572 = L_571->get_GUBUN_0();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_573 = __this->get_d_10();
+		NullCheck(L_573);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_574;
+		L_574 = (L_573)->GetAddressAt(0, ((int32_t)12));
+		int32_t L_575 = L_574->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_576 = __this->get_d_10();
+		NullCheck(L_576);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_577;
+		L_577 = (L_576)->GetAddressAt(0, ((int32_t)12));
+		int32_t L_578 = L_577->get_LOCAL_OCC_CNT_6();
+		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_575, (int32_t)L_578));
+		String_t* L_579;
+		L_579 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&V_1), /*hidden argument*/NULL);
+		String_t* L_580;
+		L_580 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_572, _stringLiteralE183B10A2438D1A5505D894E0452DCED85BDAE08, L_579, /*hidden argument*/NULL);
+		NullCheck(L_569);
+		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_569, L_580);
+	}
+
+IL_100f:
+	{
+		// if (hit.collider.name == d[0, 13].GUBUN)
+		Collider2D_tDDBF081328B83D21D0BA3B5036D77B32528BA722 * L_581;
+		L_581 = RaycastHit2D_get_collider_m00F7EC55C36F39E2ED64B31354FB4D9C8938D563((RaycastHit2D_t210878DAEBC96C1F69DF9883C454758724A106A4 *)(&V_0), /*hidden argument*/NULL);
+		NullCheck(L_581);
+		String_t* L_582;
+		L_582 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_581, /*hidden argument*/NULL);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_583 = __this->get_d_10();
+		NullCheck(L_583);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_584;
+		L_584 = (L_583)->GetAddressAt(0, ((int32_t)13));
+		String_t* L_585 = L_584->get_GUBUN_0();
+		bool L_586;
+		L_586 = String_op_Equality_m2B91EE68355F142F67095973D32EB5828B7B73CB(L_582, L_585, /*hidden argument*/NULL);
+		if (!L_586)
+		{
+			goto IL_114d;
+		}
+	}
+	{
+		// if ((d[0, 13].OVER_FLOW_CNT + d[0, 13].LOCAL_OCC_CNT) > 0)
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_587 = __this->get_d_10();
+		NullCheck(L_587);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_588;
+		L_588 = (L_587)->GetAddressAt(0, ((int32_t)13));
+		int32_t L_589 = L_588->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_590 = __this->get_d_10();
+		NullCheck(L_590);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_591;
+		L_591 = (L_590)->GetAddressAt(0, ((int32_t)13));
+		int32_t L_592 = L_591->get_LOCAL_OCC_CNT_6();
+		if ((((int32_t)((int32_t)il2cpp_codegen_add((int32_t)L_589, (int32_t)L_592))) <= ((int32_t)0)))
+		{
+			goto IL_10c8;
+		}
+	}
+	{
+		// StateText.GetComponent<Text>().text = d[0, 13].GUBUN + " <color=red>�� " + (d[0, 13].OVER_FLOW_CNT + d[0, 13].LOCAL_OCC_CNT) + "</color>";
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_593 = __this->get_StateText_5();
+		NullCheck(L_593);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_594;
+		L_594 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_593, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_595 = __this->get_d_10();
+		NullCheck(L_595);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_596;
+		L_596 = (L_595)->GetAddressAt(0, ((int32_t)13));
+		String_t* L_597 = L_596->get_GUBUN_0();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_598 = __this->get_d_10();
+		NullCheck(L_598);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_599;
+		L_599 = (L_598)->GetAddressAt(0, ((int32_t)13));
+		int32_t L_600 = L_599->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_601 = __this->get_d_10();
+		NullCheck(L_601);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_602;
+		L_602 = (L_601)->GetAddressAt(0, ((int32_t)13));
+		int32_t L_603 = L_602->get_LOCAL_OCC_CNT_6();
+		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_600, (int32_t)L_603));
+		String_t* L_604;
+		L_604 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&V_1), /*hidden argument*/NULL);
+		String_t* L_605;
+		L_605 = String_Concat_m37A5BF26F8F8F1892D60D727303B23FB604FEE78(L_597, _stringLiteral9A87B7E4C3A2F03D42C57F164C1F043F70553A1C, L_604, _stringLiteralCBE844AF922BC0AC1AB4CA94466DC7FD7038D0E2, /*hidden argument*/NULL);
+		NullCheck(L_594);
+		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_594, L_605);
+		// }
+		goto IL_114d;
+	}
+
+IL_10c8:
+	{
+		// else if ((d[0, 13].OVER_FLOW_CNT + d[0, 13].LOCAL_OCC_CNT) == 0)
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_606 = __this->get_d_10();
+		NullCheck(L_606);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_607;
+		L_607 = (L_606)->GetAddressAt(0, ((int32_t)13));
+		int32_t L_608 = L_607->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_609 = __this->get_d_10();
+		NullCheck(L_609);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_610;
+		L_610 = (L_609)->GetAddressAt(0, ((int32_t)13));
+		int32_t L_611 = L_610->get_LOCAL_OCC_CNT_6();
+		if (((int32_t)il2cpp_codegen_add((int32_t)L_608, (int32_t)L_611)))
+		{
+			goto IL_114d;
+		}
+	}
+	{
+		// StateText.GetComponent<Text>().text = d[0, 13].GUBUN + " �� " + (d[0, 13].OVER_FLOW_CNT + d[0, 13].LOCAL_OCC_CNT);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_612 = __this->get_StateText_5();
+		NullCheck(L_612);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_613;
+		L_613 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_612, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_614 = __this->get_d_10();
+		NullCheck(L_614);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_615;
+		L_615 = (L_614)->GetAddressAt(0, ((int32_t)13));
+		String_t* L_616 = L_615->get_GUBUN_0();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_617 = __this->get_d_10();
+		NullCheck(L_617);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_618;
+		L_618 = (L_617)->GetAddressAt(0, ((int32_t)13));
+		int32_t L_619 = L_618->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_620 = __this->get_d_10();
+		NullCheck(L_620);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_621;
+		L_621 = (L_620)->GetAddressAt(0, ((int32_t)13));
+		int32_t L_622 = L_621->get_LOCAL_OCC_CNT_6();
+		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_619, (int32_t)L_622));
+		String_t* L_623;
+		L_623 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&V_1), /*hidden argument*/NULL);
+		String_t* L_624;
+		L_624 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_616, _stringLiteralE183B10A2438D1A5505D894E0452DCED85BDAE08, L_623, /*hidden argument*/NULL);
+		NullCheck(L_613);
+		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_613, L_624);
+	}
+
+IL_114d:
+	{
+		// if (hit.collider.name == d[0, 14].GUBUN)
+		Collider2D_tDDBF081328B83D21D0BA3B5036D77B32528BA722 * L_625;
+		L_625 = RaycastHit2D_get_collider_m00F7EC55C36F39E2ED64B31354FB4D9C8938D563((RaycastHit2D_t210878DAEBC96C1F69DF9883C454758724A106A4 *)(&V_0), /*hidden argument*/NULL);
+		NullCheck(L_625);
+		String_t* L_626;
+		L_626 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_625, /*hidden argument*/NULL);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_627 = __this->get_d_10();
+		NullCheck(L_627);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_628;
+		L_628 = (L_627)->GetAddressAt(0, ((int32_t)14));
+		String_t* L_629 = L_628->get_GUBUN_0();
+		bool L_630;
+		L_630 = String_op_Equality_m2B91EE68355F142F67095973D32EB5828B7B73CB(L_626, L_629, /*hidden argument*/NULL);
+		if (!L_630)
+		{
+			goto IL_128b;
+		}
+	}
+	{
+		// if ((d[0, 14].OVER_FLOW_CNT + d[0, 14].LOCAL_OCC_CNT) > 0)
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_631 = __this->get_d_10();
+		NullCheck(L_631);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_632;
+		L_632 = (L_631)->GetAddressAt(0, ((int32_t)14));
+		int32_t L_633 = L_632->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_634 = __this->get_d_10();
+		NullCheck(L_634);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_635;
+		L_635 = (L_634)->GetAddressAt(0, ((int32_t)14));
+		int32_t L_636 = L_635->get_LOCAL_OCC_CNT_6();
+		if ((((int32_t)((int32_t)il2cpp_codegen_add((int32_t)L_633, (int32_t)L_636))) <= ((int32_t)0)))
+		{
+			goto IL_1206;
+		}
+	}
+	{
+		// StateText.GetComponent<Text>().text = d[0, 14].GUBUN + " <color=red>�� " + (d[0, 14].OVER_FLOW_CNT + d[0, 14].LOCAL_OCC_CNT) + "</color>";
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_637 = __this->get_StateText_5();
+		NullCheck(L_637);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_638;
+		L_638 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_637, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_639 = __this->get_d_10();
+		NullCheck(L_639);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_640;
+		L_640 = (L_639)->GetAddressAt(0, ((int32_t)14));
+		String_t* L_641 = L_640->get_GUBUN_0();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_642 = __this->get_d_10();
+		NullCheck(L_642);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_643;
+		L_643 = (L_642)->GetAddressAt(0, ((int32_t)14));
+		int32_t L_644 = L_643->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_645 = __this->get_d_10();
+		NullCheck(L_645);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_646;
+		L_646 = (L_645)->GetAddressAt(0, ((int32_t)14));
+		int32_t L_647 = L_646->get_LOCAL_OCC_CNT_6();
+		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_644, (int32_t)L_647));
+		String_t* L_648;
+		L_648 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&V_1), /*hidden argument*/NULL);
+		String_t* L_649;
+		L_649 = String_Concat_m37A5BF26F8F8F1892D60D727303B23FB604FEE78(L_641, _stringLiteral9A87B7E4C3A2F03D42C57F164C1F043F70553A1C, L_648, _stringLiteralCBE844AF922BC0AC1AB4CA94466DC7FD7038D0E2, /*hidden argument*/NULL);
+		NullCheck(L_638);
+		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_638, L_649);
+		// }
+		goto IL_128b;
+	}
+
+IL_1206:
+	{
+		// else if ((d[0, 14].OVER_FLOW_CNT + d[0, 14].LOCAL_OCC_CNT) == 0)
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_650 = __this->get_d_10();
+		NullCheck(L_650);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_651;
+		L_651 = (L_650)->GetAddressAt(0, ((int32_t)14));
+		int32_t L_652 = L_651->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_653 = __this->get_d_10();
+		NullCheck(L_653);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_654;
+		L_654 = (L_653)->GetAddressAt(0, ((int32_t)14));
+		int32_t L_655 = L_654->get_LOCAL_OCC_CNT_6();
+		if (((int32_t)il2cpp_codegen_add((int32_t)L_652, (int32_t)L_655)))
+		{
+			goto IL_128b;
+		}
+	}
+	{
+		// StateText.GetComponent<Text>().text = d[0, 14].GUBUN + " �� " + (d[0, 14].OVER_FLOW_CNT + d[0, 14].LOCAL_OCC_CNT);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_656 = __this->get_StateText_5();
+		NullCheck(L_656);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_657;
+		L_657 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_656, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_658 = __this->get_d_10();
+		NullCheck(L_658);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_659;
+		L_659 = (L_658)->GetAddressAt(0, ((int32_t)14));
+		String_t* L_660 = L_659->get_GUBUN_0();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_661 = __this->get_d_10();
+		NullCheck(L_661);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_662;
+		L_662 = (L_661)->GetAddressAt(0, ((int32_t)14));
+		int32_t L_663 = L_662->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_664 = __this->get_d_10();
+		NullCheck(L_664);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_665;
+		L_665 = (L_664)->GetAddressAt(0, ((int32_t)14));
+		int32_t L_666 = L_665->get_LOCAL_OCC_CNT_6();
+		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_663, (int32_t)L_666));
+		String_t* L_667;
+		L_667 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&V_1), /*hidden argument*/NULL);
+		String_t* L_668;
+		L_668 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_660, _stringLiteralE183B10A2438D1A5505D894E0452DCED85BDAE08, L_667, /*hidden argument*/NULL);
+		NullCheck(L_657);
+		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_657, L_668);
+	}
+
+IL_128b:
+	{
+		// if (hit.collider.name == d[0, 15].GUBUN)
+		Collider2D_tDDBF081328B83D21D0BA3B5036D77B32528BA722 * L_669;
+		L_669 = RaycastHit2D_get_collider_m00F7EC55C36F39E2ED64B31354FB4D9C8938D563((RaycastHit2D_t210878DAEBC96C1F69DF9883C454758724A106A4 *)(&V_0), /*hidden argument*/NULL);
+		NullCheck(L_669);
+		String_t* L_670;
+		L_670 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_669, /*hidden argument*/NULL);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_671 = __this->get_d_10();
+		NullCheck(L_671);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_672;
+		L_672 = (L_671)->GetAddressAt(0, ((int32_t)15));
+		String_t* L_673 = L_672->get_GUBUN_0();
+		bool L_674;
+		L_674 = String_op_Equality_m2B91EE68355F142F67095973D32EB5828B7B73CB(L_670, L_673, /*hidden argument*/NULL);
+		if (!L_674)
+		{
+			goto IL_13c9;
+		}
+	}
+	{
+		// if ((d[0, 15].OVER_FLOW_CNT + d[0, 15].LOCAL_OCC_CNT) > 0)
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_675 = __this->get_d_10();
+		NullCheck(L_675);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_676;
+		L_676 = (L_675)->GetAddressAt(0, ((int32_t)15));
+		int32_t L_677 = L_676->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_678 = __this->get_d_10();
+		NullCheck(L_678);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_679;
+		L_679 = (L_678)->GetAddressAt(0, ((int32_t)15));
+		int32_t L_680 = L_679->get_LOCAL_OCC_CNT_6();
+		if ((((int32_t)((int32_t)il2cpp_codegen_add((int32_t)L_677, (int32_t)L_680))) <= ((int32_t)0)))
+		{
+			goto IL_1344;
+		}
+	}
+	{
+		// StateText.GetComponent<Text>().text = d[0, 15].GUBUN + " <color=red>�� " + (d[0, 15].OVER_FLOW_CNT + d[0, 15].LOCAL_OCC_CNT) + "</color>";
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_681 = __this->get_StateText_5();
+		NullCheck(L_681);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_682;
+		L_682 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_681, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_683 = __this->get_d_10();
+		NullCheck(L_683);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_684;
+		L_684 = (L_683)->GetAddressAt(0, ((int32_t)15));
+		String_t* L_685 = L_684->get_GUBUN_0();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_686 = __this->get_d_10();
+		NullCheck(L_686);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_687;
+		L_687 = (L_686)->GetAddressAt(0, ((int32_t)15));
+		int32_t L_688 = L_687->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_689 = __this->get_d_10();
+		NullCheck(L_689);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_690;
+		L_690 = (L_689)->GetAddressAt(0, ((int32_t)15));
+		int32_t L_691 = L_690->get_LOCAL_OCC_CNT_6();
+		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_688, (int32_t)L_691));
+		String_t* L_692;
+		L_692 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&V_1), /*hidden argument*/NULL);
+		String_t* L_693;
+		L_693 = String_Concat_m37A5BF26F8F8F1892D60D727303B23FB604FEE78(L_685, _stringLiteral9A87B7E4C3A2F03D42C57F164C1F043F70553A1C, L_692, _stringLiteralCBE844AF922BC0AC1AB4CA94466DC7FD7038D0E2, /*hidden argument*/NULL);
+		NullCheck(L_682);
+		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_682, L_693);
+		// }
+		goto IL_13c9;
+	}
+
+IL_1344:
+	{
+		// else if ((d[0, 15].OVER_FLOW_CNT + d[0, 15].LOCAL_OCC_CNT) == 0)
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_694 = __this->get_d_10();
+		NullCheck(L_694);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_695;
+		L_695 = (L_694)->GetAddressAt(0, ((int32_t)15));
+		int32_t L_696 = L_695->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_697 = __this->get_d_10();
+		NullCheck(L_697);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_698;
+		L_698 = (L_697)->GetAddressAt(0, ((int32_t)15));
+		int32_t L_699 = L_698->get_LOCAL_OCC_CNT_6();
+		if (((int32_t)il2cpp_codegen_add((int32_t)L_696, (int32_t)L_699)))
+		{
+			goto IL_13c9;
+		}
+	}
+	{
+		// StateText.GetComponent<Text>().text = d[0, 15].GUBUN + " �� " + (d[0, 15].OVER_FLOW_CNT + d[0, 15].LOCAL_OCC_CNT);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_700 = __this->get_StateText_5();
+		NullCheck(L_700);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_701;
+		L_701 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_700, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_702 = __this->get_d_10();
+		NullCheck(L_702);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_703;
+		L_703 = (L_702)->GetAddressAt(0, ((int32_t)15));
+		String_t* L_704 = L_703->get_GUBUN_0();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_705 = __this->get_d_10();
+		NullCheck(L_705);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_706;
+		L_706 = (L_705)->GetAddressAt(0, ((int32_t)15));
+		int32_t L_707 = L_706->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_708 = __this->get_d_10();
+		NullCheck(L_708);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_709;
+		L_709 = (L_708)->GetAddressAt(0, ((int32_t)15));
+		int32_t L_710 = L_709->get_LOCAL_OCC_CNT_6();
+		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_707, (int32_t)L_710));
+		String_t* L_711;
+		L_711 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&V_1), /*hidden argument*/NULL);
+		String_t* L_712;
+		L_712 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_704, _stringLiteralE183B10A2438D1A5505D894E0452DCED85BDAE08, L_711, /*hidden argument*/NULL);
+		NullCheck(L_701);
+		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_701, L_712);
+	}
+
+IL_13c9:
+	{
+		// if (hit.collider.name == d[0, 16].GUBUN)
+		Collider2D_tDDBF081328B83D21D0BA3B5036D77B32528BA722 * L_713;
+		L_713 = RaycastHit2D_get_collider_m00F7EC55C36F39E2ED64B31354FB4D9C8938D563((RaycastHit2D_t210878DAEBC96C1F69DF9883C454758724A106A4 *)(&V_0), /*hidden argument*/NULL);
+		NullCheck(L_713);
+		String_t* L_714;
+		L_714 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_713, /*hidden argument*/NULL);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_715 = __this->get_d_10();
+		NullCheck(L_715);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_716;
+		L_716 = (L_715)->GetAddressAt(0, ((int32_t)16));
+		String_t* L_717 = L_716->get_GUBUN_0();
+		bool L_718;
+		L_718 = String_op_Equality_m2B91EE68355F142F67095973D32EB5828B7B73CB(L_714, L_717, /*hidden argument*/NULL);
+		if (!L_718)
+		{
+			goto IL_1503;
+		}
+	}
+	{
+		// if ((d[0, 16].OVER_FLOW_CNT + d[0, 16].LOCAL_OCC_CNT) > 0)
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_719 = __this->get_d_10();
+		NullCheck(L_719);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_720;
+		L_720 = (L_719)->GetAddressAt(0, ((int32_t)16));
+		int32_t L_721 = L_720->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_722 = __this->get_d_10();
+		NullCheck(L_722);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_723;
+		L_723 = (L_722)->GetAddressAt(0, ((int32_t)16));
+		int32_t L_724 = L_723->get_LOCAL_OCC_CNT_6();
+		if ((((int32_t)((int32_t)il2cpp_codegen_add((int32_t)L_721, (int32_t)L_724))) <= ((int32_t)0)))
+		{
+			goto IL_147e;
+		}
+	}
+	{
+		// StateText.GetComponent<Text>().text = d[0, 16].GUBUN + " <color=red>�� " + (d[0, 16].OVER_FLOW_CNT + d[0, 16].LOCAL_OCC_CNT) + "</color>";
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_725 = __this->get_StateText_5();
+		NullCheck(L_725);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_726;
+		L_726 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_725, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_727 = __this->get_d_10();
+		NullCheck(L_727);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_728;
+		L_728 = (L_727)->GetAddressAt(0, ((int32_t)16));
+		String_t* L_729 = L_728->get_GUBUN_0();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_730 = __this->get_d_10();
+		NullCheck(L_730);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_731;
+		L_731 = (L_730)->GetAddressAt(0, ((int32_t)16));
+		int32_t L_732 = L_731->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_733 = __this->get_d_10();
+		NullCheck(L_733);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_734;
+		L_734 = (L_733)->GetAddressAt(0, ((int32_t)16));
+		int32_t L_735 = L_734->get_LOCAL_OCC_CNT_6();
+		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_732, (int32_t)L_735));
+		String_t* L_736;
+		L_736 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&V_1), /*hidden argument*/NULL);
+		String_t* L_737;
+		L_737 = String_Concat_m37A5BF26F8F8F1892D60D727303B23FB604FEE78(L_729, _stringLiteral9A87B7E4C3A2F03D42C57F164C1F043F70553A1C, L_736, _stringLiteralCBE844AF922BC0AC1AB4CA94466DC7FD7038D0E2, /*hidden argument*/NULL);
+		NullCheck(L_726);
+		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_726, L_737);
 		// }
 		return;
 	}
 
-IL_0ee7:
+IL_147e:
 	{
-		// else if (d[0, 16].INC_DEC == 0)
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_540 = __this->get_d_10();
-		NullCheck(L_540);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_541;
-		L_541 = (L_540)->GetAddressAt(0, ((int32_t)16));
-		int32_t L_542 = L_541->get_INC_DEC_1();
-		if (L_542)
+		// else if ((d[0, 16].OVER_FLOW_CNT + d[0, 16].LOCAL_OCC_CNT) == 0)
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_738 = __this->get_d_10();
+		NullCheck(L_738);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_739;
+		L_739 = (L_738)->GetAddressAt(0, ((int32_t)16));
+		int32_t L_740 = L_739->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_741 = __this->get_d_10();
+		NullCheck(L_741);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_742;
+		L_742 = (L_741)->GetAddressAt(0, ((int32_t)16));
+		int32_t L_743 = L_742->get_LOCAL_OCC_CNT_6();
+		if (((int32_t)il2cpp_codegen_add((int32_t)L_740, (int32_t)L_743)))
 		{
-			goto IL_0f41;
+			goto IL_1503;
 		}
 	}
 	{
-		// StateText.GetComponent<Text>().text = d[0, 16].GUBUN + " �� " + d[0, 16].INC_DEC;
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_543 = __this->get_StateText_5();
-		NullCheck(L_543);
-		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_544;
-		L_544 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_543, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_545 = __this->get_d_10();
-		NullCheck(L_545);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_546;
-		L_546 = (L_545)->GetAddressAt(0, ((int32_t)16));
-		String_t* L_547 = L_546->get_GUBUN_0();
-		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_548 = __this->get_d_10();
-		NullCheck(L_548);
-		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_549;
-		L_549 = (L_548)->GetAddressAt(0, ((int32_t)16));
-		int32_t* L_550 = L_549->get_address_of_INC_DEC_1();
-		String_t* L_551;
-		L_551 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_550, /*hidden argument*/NULL);
-		String_t* L_552;
-		L_552 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_547, _stringLiteralE183B10A2438D1A5505D894E0452DCED85BDAE08, L_551, /*hidden argument*/NULL);
-		NullCheck(L_544);
-		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_544, L_552);
+		// StateText.GetComponent<Text>().text = d[0, 16].GUBUN + " �� " + (d[0, 16].OVER_FLOW_CNT + d[0, 16].LOCAL_OCC_CNT);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_744 = __this->get_StateText_5();
+		NullCheck(L_744);
+		Text_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1 * L_745;
+		L_745 = Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137(L_744, /*hidden argument*/Component_GetComponent_TisText_t6A2339DA6C05AE2646FC1A6C8FCC127391BE7FA1_m2D99AC2081683F963C56EC738451EC0B59B5D137_RuntimeMethod_var);
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_746 = __this->get_d_10();
+		NullCheck(L_746);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_747;
+		L_747 = (L_746)->GetAddressAt(0, ((int32_t)16));
+		String_t* L_748 = L_747->get_GUBUN_0();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_749 = __this->get_d_10();
+		NullCheck(L_749);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_750;
+		L_750 = (L_749)->GetAddressAt(0, ((int32_t)16));
+		int32_t L_751 = L_750->get_OVER_FLOW_CNT_5();
+		LoadedData_SidoU5BU2CU5D_t293F92C461875F224C1E475929133A4D2BEE5810* L_752 = __this->get_d_10();
+		NullCheck(L_752);
+		LoadedData_Sido_t163EBD376C90456AF7477AA171501947525F370E * L_753;
+		L_753 = (L_752)->GetAddressAt(0, ((int32_t)16));
+		int32_t L_754 = L_753->get_LOCAL_OCC_CNT_6();
+		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_751, (int32_t)L_754));
+		String_t* L_755;
+		L_755 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)(&V_1), /*hidden argument*/NULL);
+		String_t* L_756;
+		L_756 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_748, _stringLiteralE183B10A2438D1A5505D894E0452DCED85BDAE08, L_755, /*hidden argument*/NULL);
+		NullCheck(L_745);
+		VirtActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_745, L_756);
 	}
 
-IL_0f41:
+IL_1503:
 	{
 		// }
 		return;
@@ -21287,6 +21701,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CLoadDataSidoU3Ed__12_MoveNext_m649F4B
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&XmlDocument_t513899C58F800C43E8D78C0B72BD18C2C036233F_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral229036F5D9823B9E40BCA6207F900E304DA43EDD);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral37D19EB08579F8E1EDF7F40805A19C19605344EA);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral758733BDBED83CBFF4F635AC26CA92AAE477F75D);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral7988BB32B1D89B98310B2836869D1BF813F85BE9);
 		s_Il2CppMethodInitialized = true;
 	}
@@ -21324,7 +21739,7 @@ IL_0011:
 IL_0018:
 		{
 			V_0 = (bool)0;
-			goto IL_0169;
+			goto IL_01e5;
 		}
 
 IL_001f:
@@ -21379,7 +21794,7 @@ IL_001f:
 			__this->set_U3CU3E2__current_1(L_20);
 			__this->set_U3CU3E1__state_0(1);
 			V_0 = (bool)1;
-			goto IL_0169;
+			goto IL_01e5;
 		}
 
 IL_00af:
@@ -21404,7 +21819,7 @@ IL_00c4:
 			L_24 = UnityWebRequest_get_isHttpError_m23ADCBE1CF082A940EF6AA75A15051583228B616(L_23, /*hidden argument*/NULL);
 			if (!L_24)
 			{
-				goto IL_00e3;
+				goto IL_00e6;
 			}
 		}
 
@@ -21418,10 +21833,10 @@ IL_00d1:
 			IL2CPP_RUNTIME_CLASS_INIT(Debug_tEB68BCBEB8EFD60F8043C67146DC05E7F50F374B_il2cpp_TypeInfo_var);
 			Debug_Log_mC26E5AD0D8D156C7FFD173AA15827F69225E9DB8(L_26, /*hidden argument*/NULL);
 			// }
-			goto IL_0151;
+			goto IL_01cd;
 		}
 
-IL_00e3:
+IL_00e6:
 		{
 			// if (www.isDone)
 			UnityWebRequest_tB75B39F6951CA0DBA2D5BEDF85FDCAAC6026A37E * L_27 = __this->get_U3CwwwU3E5__2_5();
@@ -21430,11 +21845,11 @@ IL_00e3:
 			L_28 = UnityWebRequest_get_isDone_mF8C92D10767B80877BCFE6D119CBE9090ACCDFBD(L_27, /*hidden argument*/NULL);
 			if (!L_28)
 			{
-				goto IL_0151;
+				goto IL_01cd;
 			}
 		}
 
-IL_00f0:
+IL_00f6:
 		{
 			// isOnLoading = false;
 			Graph_tA21CC768C2B78536E792E6AEC17BA96FC0161AC1 * L_29 = V_2;
@@ -21485,38 +21900,90 @@ IL_00f0:
 			int32_t L_47 = __this->get_i_3();
 			NullCheck(L_46);
 			Graph_setGraph_m16C8D14D78E36AC093EBBEB62F11CC37BC3357DF(L_46, L_47, /*hidden argument*/NULL);
+			// Debug.Log(G_sidoData[i, 17].GUBUN + ", " + G_sidoData[i, 17].INC_DEC + ", " + G_sidoData[i, 17].STD_DAY);
+			StringU5BU5D_tACEBFEDE350025B554CD507C9AE8FFE49359549A* L_48 = (StringU5BU5D_tACEBFEDE350025B554CD507C9AE8FFE49359549A*)(StringU5BU5D_tACEBFEDE350025B554CD507C9AE8FFE49359549A*)SZArrayNew(StringU5BU5D_tACEBFEDE350025B554CD507C9AE8FFE49359549A_il2cpp_TypeInfo_var, (uint32_t)5);
+			StringU5BU5D_tACEBFEDE350025B554CD507C9AE8FFE49359549A* L_49 = L_48;
+			Graph_tA21CC768C2B78536E792E6AEC17BA96FC0161AC1 * L_50 = V_2;
+			NullCheck(L_50);
+			Loaded_Sido_GraphU5BU2CU5D_t5F73BA1DBE15C6E85C206A0480D97FA12E70898D* L_51 = L_50->get_G_sidoData_4();
+			int32_t L_52 = __this->get_i_3();
+			NullCheck(L_51);
+			Loaded_Sido_Graph_t96C3111F9518654961ADA42798AFA9B44BCC010C * L_53;
+			L_53 = (L_51)->GetAddressAt(L_52, ((int32_t)17));
+			String_t* L_54 = L_53->get_GUBUN_0();
+			NullCheck(L_49);
+			ArrayElementTypeCheck (L_49, L_54);
+			(L_49)->SetAt(static_cast<il2cpp_array_size_t>(0), (String_t*)L_54);
+			StringU5BU5D_tACEBFEDE350025B554CD507C9AE8FFE49359549A* L_55 = L_49;
+			NullCheck(L_55);
+			ArrayElementTypeCheck (L_55, _stringLiteral758733BDBED83CBFF4F635AC26CA92AAE477F75D);
+			(L_55)->SetAt(static_cast<il2cpp_array_size_t>(1), (String_t*)_stringLiteral758733BDBED83CBFF4F635AC26CA92AAE477F75D);
+			StringU5BU5D_tACEBFEDE350025B554CD507C9AE8FFE49359549A* L_56 = L_55;
+			Graph_tA21CC768C2B78536E792E6AEC17BA96FC0161AC1 * L_57 = V_2;
+			NullCheck(L_57);
+			Loaded_Sido_GraphU5BU2CU5D_t5F73BA1DBE15C6E85C206A0480D97FA12E70898D* L_58 = L_57->get_G_sidoData_4();
+			int32_t L_59 = __this->get_i_3();
+			NullCheck(L_58);
+			Loaded_Sido_Graph_t96C3111F9518654961ADA42798AFA9B44BCC010C * L_60;
+			L_60 = (L_58)->GetAddressAt(L_59, ((int32_t)17));
+			int32_t* L_61 = L_60->get_address_of_INC_DEC_1();
+			String_t* L_62;
+			L_62 = Int32_ToString_m340C0A14D16799421EFDF8A81C8A16FA76D48411((int32_t*)L_61, /*hidden argument*/NULL);
+			NullCheck(L_56);
+			ArrayElementTypeCheck (L_56, L_62);
+			(L_56)->SetAt(static_cast<il2cpp_array_size_t>(2), (String_t*)L_62);
+			StringU5BU5D_tACEBFEDE350025B554CD507C9AE8FFE49359549A* L_63 = L_56;
+			NullCheck(L_63);
+			ArrayElementTypeCheck (L_63, _stringLiteral758733BDBED83CBFF4F635AC26CA92AAE477F75D);
+			(L_63)->SetAt(static_cast<il2cpp_array_size_t>(3), (String_t*)_stringLiteral758733BDBED83CBFF4F635AC26CA92AAE477F75D);
+			StringU5BU5D_tACEBFEDE350025B554CD507C9AE8FFE49359549A* L_64 = L_63;
+			Graph_tA21CC768C2B78536E792E6AEC17BA96FC0161AC1 * L_65 = V_2;
+			NullCheck(L_65);
+			Loaded_Sido_GraphU5BU2CU5D_t5F73BA1DBE15C6E85C206A0480D97FA12E70898D* L_66 = L_65->get_G_sidoData_4();
+			int32_t L_67 = __this->get_i_3();
+			NullCheck(L_66);
+			Loaded_Sido_Graph_t96C3111F9518654961ADA42798AFA9B44BCC010C * L_68;
+			L_68 = (L_66)->GetAddressAt(L_67, ((int32_t)17));
+			String_t* L_69 = L_68->get_STD_DAY_2();
+			NullCheck(L_64);
+			ArrayElementTypeCheck (L_64, L_69);
+			(L_64)->SetAt(static_cast<il2cpp_array_size_t>(4), (String_t*)L_69);
+			String_t* L_70;
+			L_70 = String_Concat_mFEA7EFA1A6E75B96B1B7BC4526AAC864BFF83CC9(L_64, /*hidden argument*/NULL);
+			IL2CPP_RUNTIME_CLASS_INIT(Debug_tEB68BCBEB8EFD60F8043C67146DC05E7F50F374B_il2cpp_TypeInfo_var);
+			Debug_Log_mC26E5AD0D8D156C7FFD173AA15827F69225E9DB8(L_70, /*hidden argument*/NULL);
 		}
 
-IL_0151:
+IL_01cd:
 		{
 			// }
 			U3CLoadDataSidoU3Ed__12_U3CU3Em__Finally1_mDF91FBC7295CD6AAC1152DB9AEC00C4835A0CA9A(__this, /*hidden argument*/NULL);
 			__this->set_U3CwwwU3E5__2_5((UnityWebRequest_tB75B39F6951CA0DBA2D5BEDF85FDCAAC6026A37E *)NULL);
 			// }
 			V_0 = (bool)0;
-			goto IL_0169;
+			goto IL_01e5;
 		}
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__last_unhandled_exception = (Exception_t *)e.ex;
-		goto FAULT_0162;
+		goto FAULT_01de;
 	}
 
-FAULT_0162:
+FAULT_01de:
 	{ // begin fault (depth: 1)
 		U3CLoadDataSidoU3Ed__12_System_IDisposable_Dispose_m0186D346A02DEE59116FD0FCC4EF710BF0B74586(__this, /*hidden argument*/NULL);
-		IL2CPP_END_FINALLY(354)
+		IL2CPP_END_FINALLY(478)
 	} // end fault
-	IL2CPP_CLEANUP(354)
+	IL2CPP_CLEANUP(478)
 	{
 		IL2CPP_RETHROW_IF_UNHANDLED(Exception_t *)
 	}
 
-IL_0169:
+IL_01e5:
 	{
-		bool L_48 = V_0;
-		return L_48;
+		bool L_71 = V_0;
+		return L_71;
 	}
 }
 // System.Void Graph/<LoadDataSido>d__12::<>m__Finally1()

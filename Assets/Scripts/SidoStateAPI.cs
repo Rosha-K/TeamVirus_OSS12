@@ -64,13 +64,13 @@ public class SidoStateAPI : MonoBehaviour
     {
         showState();
         TimeText.GetComponent<Text>().text = "기준 일시 : " + d[0, 0].STD_DAY;
-        if (d[0,17].INC_DEC > 0)
+        if ((d[0, 17].OVER_FLOW_CNT + d[0, 17].LOCAL_OCC_CNT) > 0)
         {
-            TotalText.GetComponent<Text>().text = "합계 : <color=red>▲ " + d[0, 17].INC_DEC + "</color>";
+            TotalText.GetComponent<Text>().text = "합계 : <color=red>▲ " + (d[0, 17].OVER_FLOW_CNT + d[0, 17].LOCAL_OCC_CNT) + "</color>";
         }
         else
         {
-            TotalText.GetComponent<Text>().text = "합계 : " + d[0, 17].INC_DEC;
+            TotalText.GetComponent<Text>().text = "합계 : " + (d[0, 17].OVER_FLOW_CNT + d[0, 17].LOCAL_OCC_CNT);
         }
         
     }
@@ -236,221 +236,221 @@ public class SidoStateAPI : MonoBehaviour
                 if (hit.collider.name == d[0,0].GUBUN)
                 {
                     
-                    if (d[0,0].INC_DEC > 0)
+                    if ((d[0, 0].OVER_FLOW_CNT + d[0, 0].LOCAL_OCC_CNT) > 0)
                     {
-                        StateText.GetComponent<Text>().text = d[0, 0].GUBUN+ " <color=red>▲ "+ d[0, 0].INC_DEC+"</color>";
+                        StateText.GetComponent<Text>().text = d[0, 0].GUBUN+ " <color=red>▲ "+ (d[0, 0].OVER_FLOW_CNT + d[0, 0].LOCAL_OCC_CNT) + "</color>";
                     }
-                    else if(d[0, 0].INC_DEC == 0)
+                    else if((d[0, 0].OVER_FLOW_CNT + d[0, 0].LOCAL_OCC_CNT) == 0)
                     {
-                        StateText.GetComponent<Text>().text = d[0, 0].GUBUN + " 〓 "+ d[0, 0].INC_DEC;
+                        StateText.GetComponent<Text>().text = d[0, 0].GUBUN + " 〓 "+ (d[0, 0].OVER_FLOW_CNT + d[0, 0].LOCAL_OCC_CNT);
                     }
                     
                 }
                 if (hit.collider.name == d[0, 1].GUBUN)
                 {
 
-                    if (d[0, 1].INC_DEC > 0)
+                    if ((d[0, 1].OVER_FLOW_CNT + d[0, 1].LOCAL_OCC_CNT) > 0)
                     {
-                        StateText.GetComponent<Text>().text = d[0, 1].GUBUN + " <color=red>▲ " + d[0, 1].INC_DEC + "</color>";
+                        StateText.GetComponent<Text>().text = d[0, 1].GUBUN + " <color=red>▲ " + (d[0, 1].OVER_FLOW_CNT + d[0, 1].LOCAL_OCC_CNT) + "</color>";
                     }
-                    else if (d[0, 1].INC_DEC == 0)
+                    else if ((d[0, 1].OVER_FLOW_CNT + d[0, 1].LOCAL_OCC_CNT) == 0)
                     {
-                        StateText.GetComponent<Text>().text = d[0, 1].GUBUN + " 〓 " + d[0, 1].INC_DEC;
+                        StateText.GetComponent<Text>().text = d[0, 1].GUBUN + " 〓 " + (d[0, 1].OVER_FLOW_CNT + d[0, 1].LOCAL_OCC_CNT);
                     }
 
                 }
                 if (hit.collider.name == d[0, 2].GUBUN)
                 {
 
-                    if (d[0, 2].INC_DEC > 0)
+                    if ((d[0, 2].OVER_FLOW_CNT + d[0, 2].LOCAL_OCC_CNT) > 0)
                     {
-                        StateText.GetComponent<Text>().text = d[0, 2].GUBUN + " <color=red>▲ " + d[0, 2].INC_DEC + "</color>";
+                        StateText.GetComponent<Text>().text = d[0, 2].GUBUN + " <color=red>▲ " + (d[0, 2].OVER_FLOW_CNT + d[0, 2].LOCAL_OCC_CNT) + "</color>";
                     }
-                    else if (d[0, 2].INC_DEC == 0)
+                    else if ((d[0, 2].OVER_FLOW_CNT + d[0, 2].LOCAL_OCC_CNT) == 0)
                     {
-                        StateText.GetComponent<Text>().text = d[0, 2].GUBUN + " 〓 " + d[0, 2].INC_DEC;
+                        StateText.GetComponent<Text>().text = d[0, 2].GUBUN + " 〓 " + (d[0, 2].OVER_FLOW_CNT + d[0, 2].LOCAL_OCC_CNT);
                     }
 
                 }
                 if (hit.collider.name == d[0, 3].GUBUN)
                 {
 
-                    if (d[0, 3].INC_DEC > 0)
+                    if ((d[0, 3].OVER_FLOW_CNT + d[0, 3].LOCAL_OCC_CNT) > 0)
                     {
-                        StateText.GetComponent<Text>().text = d[0, 3].GUBUN + " <color=red>▲ " + d[0, 3].INC_DEC + "</color>";
+                        StateText.GetComponent<Text>().text = d[0, 3].GUBUN + " <color=red>▲ " + (d[0, 3].OVER_FLOW_CNT + d[0, 3].LOCAL_OCC_CNT) + "</color>";
                     }
-                    else if (d[0, 3].INC_DEC == 0)
+                    else if ((d[0, 3].OVER_FLOW_CNT + d[0, 3].LOCAL_OCC_CNT) == 0)
                     {
-                        StateText.GetComponent<Text>().text = d[0, 3].GUBUN + " 〓 " + d[0, 3].INC_DEC;
+                        StateText.GetComponent<Text>().text = d[0, 3].GUBUN + " 〓 " + (d[0, 3].OVER_FLOW_CNT + d[0, 3].LOCAL_OCC_CNT);
                     }
 
                 }
                 if (hit.collider.name == d[0, 4].GUBUN)
                 {
 
-                    if (d[0, 4].INC_DEC > 0)
+                    if ((d[0, 4].OVER_FLOW_CNT + d[0, 4].LOCAL_OCC_CNT) > 0)
                     {
-                        StateText.GetComponent<Text>().text = d[0, 4].GUBUN + " <color=red>▲ " + d[0, 4].INC_DEC + "</color>";
+                        StateText.GetComponent<Text>().text = d[0, 4].GUBUN + " <color=red>▲ " + (d[0, 4].OVER_FLOW_CNT + d[0, 4].LOCAL_OCC_CNT) + "</color>";
                     }
-                    else if (d[0, 4].INC_DEC == 0)
+                    else if ((d[0, 4].OVER_FLOW_CNT + d[0, 4].LOCAL_OCC_CNT) == 0)
                     {
-                        StateText.GetComponent<Text>().text = d[0, 4].GUBUN + " 〓 " + d[0, 4].INC_DEC;
+                        StateText.GetComponent<Text>().text = d[0, 4].GUBUN + " 〓 " + (d[0, 4].OVER_FLOW_CNT + d[0, 4].LOCAL_OCC_CNT);
                     }
 
                 }
                 if (hit.collider.name == d[0, 5].GUBUN)
                 {
 
-                    if (d[0, 5].INC_DEC > 0)
+                    if ((d[0, 5].OVER_FLOW_CNT + d[0, 5].LOCAL_OCC_CNT) > 0)
                     {
-                        StateText.GetComponent<Text>().text = d[0, 5].GUBUN + " <color=red>▲ " + d[0, 5].INC_DEC + "</color>";
+                        StateText.GetComponent<Text>().text = d[0, 5].GUBUN + " <color=red>▲ " + (d[0, 5].OVER_FLOW_CNT + d[0, 5].LOCAL_OCC_CNT) + "</color>";
                     }
-                    else if (d[0, 5].INC_DEC == 0)
+                    else if ((d[0, 5].OVER_FLOW_CNT + d[0, 5].LOCAL_OCC_CNT) == 0)
                     {
-                        StateText.GetComponent<Text>().text = d[0, 5].GUBUN + " 〓 " + d[0, 5].INC_DEC;
+                        StateText.GetComponent<Text>().text = d[0, 5].GUBUN + " 〓 " + (d[0, 5].OVER_FLOW_CNT + d[0, 5].LOCAL_OCC_CNT);
                     }
 
                 }
                 if (hit.collider.name == d[0, 6].GUBUN)
                 {
 
-                    if (d[0, 6].INC_DEC > 0)
+                    if ((d[0, 6].OVER_FLOW_CNT + d[0, 6].LOCAL_OCC_CNT) > 0)
                     {
-                        StateText.GetComponent<Text>().text = d[0, 6].GUBUN + " <color=red>▲ " + d[0, 6].INC_DEC + "</color>";
+                        StateText.GetComponent<Text>().text = d[0, 6].GUBUN + " <color=red>▲ " + (d[0, 6].OVER_FLOW_CNT + d[0, 6].LOCAL_OCC_CNT) + "</color>";
                     }
-                    else if (d[0, 6].INC_DEC == 0)
+                    else if ((d[0, 6].OVER_FLOW_CNT + d[0, 6].LOCAL_OCC_CNT) == 0)
                     {
-                        StateText.GetComponent<Text>().text = d[0, 6].GUBUN + " 〓 " + d[0, 6].INC_DEC;
+                        StateText.GetComponent<Text>().text = d[0, 6].GUBUN + " 〓 " + (d[0, 6].OVER_FLOW_CNT + d[0, 6].LOCAL_OCC_CNT);
                     }
 
                 }
                 if (hit.collider.name == d[0, 7].GUBUN)
                 {
 
-                    if (d[0, 7].INC_DEC > 0)
+                    if ((d[0, 7].OVER_FLOW_CNT + d[0, 7].LOCAL_OCC_CNT) > 0)
                     {
-                        StateText.GetComponent<Text>().text = d[0, 7].GUBUN + " <color=red>▲ " + d[0, 7].INC_DEC + "</color>";
+                        StateText.GetComponent<Text>().text = d[0, 7].GUBUN + " <color=red>▲ " + (d[0, 7].OVER_FLOW_CNT + d[0, 7].LOCAL_OCC_CNT) + "</color>";
                     }
-                    else if (d[0, 7].INC_DEC == 0)
+                    else if ((d[0, 7].OVER_FLOW_CNT + d[0, 7].LOCAL_OCC_CNT) == 0)
                     {
-                        StateText.GetComponent<Text>().text = d[0, 7].GUBUN + " 〓 " + d[0, 7].INC_DEC;
+                        StateText.GetComponent<Text>().text = d[0, 7].GUBUN + " 〓 " + (d[0, 7].OVER_FLOW_CNT + d[0, 7].LOCAL_OCC_CNT);
                     }
 
                 }
                 if (hit.collider.name == d[0, 8].GUBUN)
                 {
 
-                    if (d[0, 8].INC_DEC > 0)
+                    if ((d[0, 8].OVER_FLOW_CNT + d[0, 8].LOCAL_OCC_CNT) > 0)
                     {
-                        StateText.GetComponent<Text>().text = d[0, 8].GUBUN + " <color=red>▲ " + d[0, 8].INC_DEC + "</color>";
+                        StateText.GetComponent<Text>().text = d[0, 8].GUBUN + " <color=red>▲ " + (d[0, 8].OVER_FLOW_CNT + d[0, 8].LOCAL_OCC_CNT) + "</color>";
                     }
-                    else if (d[0, 8].INC_DEC == 0)
+                    else if ((d[0, 8].OVER_FLOW_CNT + d[0, 8].LOCAL_OCC_CNT) == 0)
                     {
-                        StateText.GetComponent<Text>().text = d[0, 8].GUBUN + " 〓 " + d[0, 8].INC_DEC;
+                        StateText.GetComponent<Text>().text = d[0, 8].GUBUN + " 〓 " + (d[0, 8].OVER_FLOW_CNT + d[0, 8].LOCAL_OCC_CNT);
                     }
 
                 }
                 if (hit.collider.name == d[0, 9].GUBUN)
                 {
 
-                    if (d[0, 9].INC_DEC > 0)
+                    if ((d[0, 9].OVER_FLOW_CNT + d[0, 9].LOCAL_OCC_CNT) > 0)
                     {
-                        StateText.GetComponent<Text>().text = d[0, 9].GUBUN + " <color=red>▲ " + d[0, 9].INC_DEC + "</color>";
+                        StateText.GetComponent<Text>().text = d[0, 9].GUBUN + " <color=red>▲ " + (d[0, 9].OVER_FLOW_CNT + d[0, 9].LOCAL_OCC_CNT) + "</color>";
                     }
-                    else if (d[0, 9].INC_DEC == 0)
+                    else if ((d[0, 9].OVER_FLOW_CNT + d[0, 9].LOCAL_OCC_CNT) == 0)
                     {
-                        StateText.GetComponent<Text>().text = d[0, 9].GUBUN + " 〓 " + d[0, 9].INC_DEC;
+                        StateText.GetComponent<Text>().text = d[0, 9].GUBUN + " 〓 " + (d[0, 9].OVER_FLOW_CNT + d[0, 9].LOCAL_OCC_CNT);
                     }
 
                 }
                 if (hit.collider.name == d[0, 10].GUBUN)
                 {
 
-                    if (d[0, 10].INC_DEC > 0)
+                    if ((d[0, 10].OVER_FLOW_CNT + d[0, 10].LOCAL_OCC_CNT) > 0)
                     {
-                        StateText.GetComponent<Text>().text = d[0, 10].GUBUN + " <color=red>▲ " + d[0, 10].INC_DEC + "</color>";
+                        StateText.GetComponent<Text>().text = d[0, 10].GUBUN + " <color=red>▲ " + (d[0, 10].OVER_FLOW_CNT + d[0, 10].LOCAL_OCC_CNT) + "</color>";
                     }
-                    else if (d[0, 10].INC_DEC == 0)
+                    else if ((d[0, 10].OVER_FLOW_CNT + d[0, 10].LOCAL_OCC_CNT) == 0)
                     {
-                        StateText.GetComponent<Text>().text = d[0, 10].GUBUN + " 〓 " + d[0, 10].INC_DEC;
+                        StateText.GetComponent<Text>().text = d[0, 10].GUBUN + " 〓 " + (d[0, 10].OVER_FLOW_CNT + d[0, 10].LOCAL_OCC_CNT);
                     }
 
                 }
                 if (hit.collider.name == d[0, 11].GUBUN)
                 {
 
-                    if (d[0, 11].INC_DEC > 0)
+                    if ((d[0, 11].OVER_FLOW_CNT + d[0, 11].LOCAL_OCC_CNT) > 0)
                     {
-                        StateText.GetComponent<Text>().text = d[0, 11].GUBUN + " <color=red>▲ " + d[0, 11].INC_DEC + "</color>";
+                        StateText.GetComponent<Text>().text = d[0, 11].GUBUN + " <color=red>▲ " + (d[0, 11].OVER_FLOW_CNT + d[0, 11].LOCAL_OCC_CNT) + "</color>";
                     }
-                    else if (d[0, 11].INC_DEC == 0)
+                    else if ((d[0, 11].OVER_FLOW_CNT + d[0, 11].LOCAL_OCC_CNT) == 0)
                     {
-                        StateText.GetComponent<Text>().text = d[0, 11].GUBUN + " 〓 " + d[0, 11].INC_DEC;
+                        StateText.GetComponent<Text>().text = d[0, 11].GUBUN + " 〓 " + (d[0, 11].OVER_FLOW_CNT + d[0, 11].LOCAL_OCC_CNT);
                     }
 
                 }
                 if (hit.collider.name == d[0, 12].GUBUN)
                 {
 
-                    if (d[0, 12].INC_DEC > 0)
+                    if ((d[0, 12].OVER_FLOW_CNT + d[0, 12].LOCAL_OCC_CNT) > 0)
                     {
-                        StateText.GetComponent<Text>().text = d[0, 12].GUBUN + " <color=red>▲ " + d[0, 12].INC_DEC + "</color>";
+                        StateText.GetComponent<Text>().text = d[0, 12].GUBUN + " <color=red>▲ " + (d[0, 12].OVER_FLOW_CNT + d[0, 12].LOCAL_OCC_CNT) + "</color>";
                     }
-                    else if (d[0, 12].INC_DEC == 0)
+                    else if ((d[0, 12].OVER_FLOW_CNT + d[0, 12].LOCAL_OCC_CNT) == 0)
                     {
-                        StateText.GetComponent<Text>().text = d[0, 12].GUBUN + " 〓 " + d[0, 12].INC_DEC;
+                        StateText.GetComponent<Text>().text = d[0, 12].GUBUN + " 〓 " + (d[0, 12].OVER_FLOW_CNT + d[0, 12].LOCAL_OCC_CNT);
                     }
 
                 }
                 if (hit.collider.name == d[0, 13].GUBUN)
                 {
 
-                    if (d[0, 13].INC_DEC > 0)
+                    if ((d[0, 13].OVER_FLOW_CNT + d[0, 13].LOCAL_OCC_CNT) > 0)
                     {
-                        StateText.GetComponent<Text>().text = d[0, 13].GUBUN + " <color=red>▲ " + d[0, 13].INC_DEC + "</color>";
+                        StateText.GetComponent<Text>().text = d[0, 13].GUBUN + " <color=red>▲ " + (d[0, 13].OVER_FLOW_CNT + d[0, 13].LOCAL_OCC_CNT) + "</color>";
                     }
-                    else if (d[0, 13].INC_DEC == 0)
+                    else if ((d[0, 13].OVER_FLOW_CNT + d[0, 13].LOCAL_OCC_CNT) == 0)
                     {
-                        StateText.GetComponent<Text>().text = d[0, 13].GUBUN + " 〓 " + d[0, 13].INC_DEC;
+                        StateText.GetComponent<Text>().text = d[0, 13].GUBUN + " 〓 " + (d[0, 13].OVER_FLOW_CNT + d[0, 13].LOCAL_OCC_CNT);
                     }
 
                 }
                 if (hit.collider.name == d[0, 14].GUBUN)
                 {
 
-                    if (d[0, 14].INC_DEC > 0)
+                    if ((d[0, 14].OVER_FLOW_CNT + d[0, 14].LOCAL_OCC_CNT) > 0)
                     {
-                        StateText.GetComponent<Text>().text = d[0, 14].GUBUN + " <color=red>▲ " + d[0, 14].INC_DEC + "</color>";
+                        StateText.GetComponent<Text>().text = d[0, 14].GUBUN + " <color=red>▲ " + (d[0, 14].OVER_FLOW_CNT + d[0, 14].LOCAL_OCC_CNT) + "</color>";
                     }
-                    else if (d[0, 14].INC_DEC == 0)
+                    else if ((d[0, 14].OVER_FLOW_CNT + d[0, 14].LOCAL_OCC_CNT) == 0)
                     {
-                        StateText.GetComponent<Text>().text = d[0, 14].GUBUN + " 〓 " + d[0, 14].INC_DEC;
+                        StateText.GetComponent<Text>().text = d[0, 14].GUBUN + " 〓 " + (d[0, 14].OVER_FLOW_CNT + d[0, 14].LOCAL_OCC_CNT);
                     }
 
                 }
                 if (hit.collider.name == d[0, 15].GUBUN)
                 {
 
-                    if (d[0, 15].INC_DEC > 0)
+                    if ((d[0, 15].OVER_FLOW_CNT + d[0, 15].LOCAL_OCC_CNT) > 0)
                     {
-                        StateText.GetComponent<Text>().text = d[0, 15].GUBUN + " <color=red>▲ " + d[0, 15].INC_DEC + "</color>";
+                        StateText.GetComponent<Text>().text = d[0, 15].GUBUN + " <color=red>▲ " + (d[0, 15].OVER_FLOW_CNT + d[0, 15].LOCAL_OCC_CNT) + "</color>";
                     }
-                    else if (d[0, 15].INC_DEC == 0)
+                    else if ((d[0, 15].OVER_FLOW_CNT + d[0, 15].LOCAL_OCC_CNT) == 0)
                     {
-                        StateText.GetComponent<Text>().text = d[0, 15].GUBUN + " 〓 " + d[0, 15].INC_DEC;
+                        StateText.GetComponent<Text>().text = d[0, 15].GUBUN + " 〓 " + (d[0, 15].OVER_FLOW_CNT + d[0, 15].LOCAL_OCC_CNT);
                     }
 
                 }
                 if (hit.collider.name == d[0, 16].GUBUN)
                 {
 
-                    if (d[0, 16].INC_DEC > 0)
+                    if ((d[0, 16].OVER_FLOW_CNT + d[0, 16].LOCAL_OCC_CNT) > 0)
                     {
-                        StateText.GetComponent<Text>().text = d[0, 16].GUBUN + " <color=red>▲ " + d[0, 16].INC_DEC + "</color>";
+                        StateText.GetComponent<Text>().text = d[0, 16].GUBUN + " <color=red>▲ " + (d[0, 16].OVER_FLOW_CNT + d[0, 16].LOCAL_OCC_CNT) + "</color>";
                     }
-                    else if (d[0, 16].INC_DEC == 0)
+                    else if ((d[0, 16].OVER_FLOW_CNT + d[0, 16].LOCAL_OCC_CNT) == 0)
                     {
-                        StateText.GetComponent<Text>().text = d[0, 16].GUBUN + " 〓 " + d[0, 16].INC_DEC;
+                        StateText.GetComponent<Text>().text = d[0, 16].GUBUN + " 〓 " + (d[0, 16].OVER_FLOW_CNT + d[0, 16].LOCAL_OCC_CNT);
                     }
 
                 }

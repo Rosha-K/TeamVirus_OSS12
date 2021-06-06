@@ -65,9 +65,9 @@ public class Graph : MonoBehaviour
     public void setGraph(int i)
     {
         date[i].GetComponent<Text>().text = graphDate[i];
-        bar[i].transform.localScale = new Vector3(bar[i].transform.localScale.x, (G_sidoData[i, 17].INC_DEC) / 4, bar[i].transform.localScale.z);
-        value[i].GetComponent<Text>().text = G_sidoData[i, 17].INC_DEC.ToString();
-        value[i].transform.position = new Vector3(value[i].transform.position.x, value[i].transform.position.y+ (G_sidoData[i, 17].INC_DEC), value[i].transform.position.z);
+        bar[i].transform.localScale = new Vector3(bar[i].transform.localScale.x, (G_sidoData[i, 17].OVER_FLOW_CNT+ G_sidoData[i, 17].LOCAL_OCC_CNT) / 4, bar[i].transform.localScale.z);
+        value[i].GetComponent<Text>().text = (G_sidoData[i, 17].OVER_FLOW_CNT + G_sidoData[i, 17].LOCAL_OCC_CNT).ToString();
+        value[i].transform.position = new Vector3(value[i].transform.position.x, value[i].transform.position.y+ (G_sidoData[i, 17].OVER_FLOW_CNT + G_sidoData[i, 17].LOCAL_OCC_CNT), value[i].transform.position.z);
 
 
     }
@@ -103,7 +103,7 @@ public class Graph : MonoBehaviour
                     xmlData.LoadXml(getResult);
                     ProcessPlayer(xmlData, i);
                     setGraph(i);
-                    //Debug.Log(G_sidoData[i, 17].GUBUN + ", " + G_sidoData[i, 17].INC_DEC + ", " + G_sidoData[i, 17].STD_DAY);
+                    Debug.Log(G_sidoData[i, 17].GUBUN + ", " + G_sidoData[i, 17].INC_DEC + ", " + G_sidoData[i, 17].STD_DAY);
                 }
             }
         }
