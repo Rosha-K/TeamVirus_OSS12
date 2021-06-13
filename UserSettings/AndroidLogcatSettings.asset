@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "LMV409N8cbc56af",
         "name": "com.Team_Virus.Corona19livecheck",
-        "processId": 20286,
+        "processId": 21471,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -108,6 +108,12 @@
             "deviceId": "LMV409N8cbc56af",
             "name": "com.Team_Virus.Corona19livecheck",
             "processId": 20286,
+            "exited": false
+        },
+        {
+            "deviceId": "LMV409N8cbc56af",
+            "name": "com.Team_Virus.Corona19livecheck",
+            "processId": 21471,
             "exited": false
         }
     ],
